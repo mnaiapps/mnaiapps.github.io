@@ -1,82 +1,163 @@
-<!-- Save as: mnaiapps.github.io/expense/help.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Help Center - Expense mnAI</title>
+    <title>Expense mnAI - Full Guide</title>
     <style>
         :root {
-            --bg-color: #f7f7f7; --card-bg: #ffffff;
-            --text-primary: #1c1c1e; --text-secondary: #636366;
-            --accent: #007aff; --border: #e5e5ea;
+            --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --secondary: #636366;
+            --accent: #007aff; --border: #e5e5ea; --tip-bg: rgba(0, 122, 255, 0.05);
+            --tip-border: #007aff; --code-bg: #f8f8f8;
         }
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-color: #000000; --card-bg: #1c1c1e;
-                --text-primary: #ffffff; --text-secondary: #8e8e93;
-                --accent: #0a84ff; --border: #38383a;
+                --bg: #000000; --card: #1c1c1e; --text: #ffffff; --secondary: #8e8e93;
+                --accent: #0a84ff; --border: #38383a; --code-bg: #2c2c2e;
             }
         }
-        body { font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto; background-color: var(--bg-color); color: var(--text-primary); line-height: 1.5; margin: 0; padding: 20px; scroll-behavior: smooth; }
-        .container { max-width: 680px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        h1 { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 24px; }
-        h2 { font-size: 24px; font-weight: 700; margin-top: 48px; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-        h3 { font-size: 19px; font-weight: 600; margin-top: 24px; margin-bottom: 8px; }
-        p { margin-bottom: 16px; color: var(--text-primary); }
-        .tip-box { background: rgba(255, 214, 0, 0.1); border-left: 4px solid #ffd600; padding: 16px; border-radius: 8px; margin: 20px 0; font-size: 15px; }
-        img { width: 100%; border-radius: 12px; margin: 16px 0; border: 1px solid var(--border); }
-        @media (max-width: 600px) { .container { padding: 24px; border-radius: 0; box-shadow: none; } body { padding: 0; } }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 0; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .content-card { background: var(--card); border-radius: 32px; padding: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid var(--border); }
+        h1 { font-size: 48px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 20px; line-height: 1.1; }
+        h2 { font-size: 30px; font-weight: 700; margin-top: 80px; margin-bottom: 24px; border-bottom: 1.5px solid var(--border); padding-bottom: 16px; color: var(--accent); }
+        h3 { font-size: 22px; font-weight: 600; margin-top: 40px; margin-bottom: 16px; }
+        p, li { font-size: 17px; margin-bottom: 20px; color: var(--text); opacity: 0.9; }
+        strong { font-weight: 600; color: var(--text); }
+        .note { background: var(--tip-bg); border-left: 5px solid var(--tip-border); padding: 24px; border-radius: 12px; margin: 32px 0; font-size: 16px; }
+        .screenshot { background: var(--bg); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; text-align: center; color: var(--secondary); font-style: italic; margin: 30px 0; font-size: 14px; }
+        table { width: 100%; border-collapse: collapse; margin: 32px 0; background: var(--bg); border-radius: 12px; overflow: hidden; }
+        th, td { text-align: left; padding: 16px; border-bottom: 1px solid var(--border); }
+        th { font-size: 13px; text-transform: uppercase; color: var(--secondary); letter-spacing: 0.5px; }
+        hr { border: 0; height: 1px; background: var(--border); margin: 60px 0; }
+        code { background: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-family: "SF Mono", Menlo, monospace; font-size: 14px; }
+        
+        /* Table of Contents */
+        .toc { background: var(--bg); border-radius: 20px; padding: 30px; margin-bottom: 50px; }
+        .toc h4 { margin: 0 0 15px 0; font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 1.5px; }
+        .toc ul { list-style: none; padding: 0; margin: 0; display: block; }
+        .toc li { margin-bottom: 10px; font-size: 15px; }
+        .toc a { text-decoration: none; color: var(--accent); font-weight: 500; }
+        
+        @media (max-width: 600px) { h1 { font-size: 34px; } .content-card { padding: 30px 20px; border-radius: 0; border: 0; } .container { padding: 0; } }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Help Center</h1>
+        <div class="content-card">
+            <h1>Expense mnAI<br><span style="color: var(--secondary); font-weight: 500;">User Guide</span></h1>
+            
+            <nav class="toc">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="#introduction">1. Introduction</a></li>
+                    <li><a href="#getting-started">2. Getting Started</a></li>
+                    <li><a href="#accounts">3. Accounts</a></li>
+                    <li><a href="#categories-groups">4. Categories & Groups</a></li>
+                    <li><a href="#transactions">5. Transactions</a></li>
+                    <li><a href="#recurring-bills">6. Recurring Bills</a></li>
+                    <li><a href="#recurring-budgets">7. Recurring Budgets</a></li>
+                    <li><a href="#reports-analytics">8. Reports & Analytics</a></li>
+                    <li><a href="#sync-icloud">9. Sync & iCloud</a></li>
+                    <li><a href="#workspaces-collaboration">10. Workspaces & Collaboration</a></li>
+                    <li><a href="#privacy-security">11. Privacy & Security</a></li>
+                    <li><a href="#faq">12. Frequently Asked Questions</a></li>
+                </ul>
+            </nav>
 
-        <section id="introduction">
-            <h2>1. Introduction</h2>
-            <p>Welcome to Expense mnAI. Our goal is to provide a privacy-first, powerful financial tracking experience using your own iCloud storage.</p>
-        </section>
+            <section id="introduction">
+                <h2>1. Introduction</h2>
+                <p>Expense mnAI is a private, intelligent finance manager built exclusively for Apple devices. It is designed to give you a complete picture of your financial life — your income, spending, recurring commitments, and budget health — without ever sharing your data with advertisers, third-party analytics services, or any external server outside of Apple's own iCloud infrastructure.</p>
+                <h3>What Expense mnAI does</h3>
+                <p>It understands the difference between a salary deposit, a supermarket trip, and a credit card payment, and organises each one so you can understand where your money actually goes each month.</p>
+                <div class="note">Everything you see is automated: bills are generated on their due dates, and budgets reset automatically at the start of the month.</div>
+            </section>
 
-        <section id="accounts">
-            <h2>2. Accounts</h2>
-            <p>Manage your Bank Accounts, Cash, and Credit Cards here. You can set opening balances and track transfers between them.</p>
-        </section>
+            <section id="getting-started">
+                <h2>2. Getting Started</h2>
+                <h3 id="workspaces-setup">2.1 Setting Up Workspaces</h3>
+                <p>A Personal workspace is created automatically. It is your private financial environment — stored exclusively in your personal iCloud. Switching between workspaces is as simple as tapping the name at the top of the screen.</p>
+                
+                <h3 id="default-data">2.2 Default Data & First Launch</h3>
+                <table>
+                    <thead><tr><th>Group</th><th>Categories</th></tr></thead>
+                    <tbody>
+                        <tr><td>Food & Dining</td><td>Groceries, Dining Out</td></tr>
+                        <tr><td>Utilities</td><td>Electricity, Internet</td></tr>
+                        <tr><td>Salary</td><td>Base Salary, Bonus</td></tr>
+                    </tbody>
+                </table>
 
-        <section id="categories">
-            <h2>3. Categories & Groups</h2>
-            <p>Organize your spending into Groups (e.g., "Housing") and Categories (e.g., "Rent"). Use icons and colors to customize your view.</p>
-        </section>
+                <h3 id="navigation-guide">2.3 Navigation & Interface</h3>
+                <div class="screenshot">[SCREENSHOT: Navigation Pill Bar - Annotated]</div>
+                <p><strong>On iPhone:</strong> A bottom pill bar provides fast access to Dashboard and Transactions. The Menu button opens all other sections.</p>
+                <p><strong>On iPad:</strong> Use the Sidebar for full navigation across all modules.</p>
+            </section>
 
-        <section id="transactions">
-            <h2>4. Transactions</h2>
-            <p>Record your Expenses, Income, and Transfers. You can attach receipts and add tags for deep filtering.</p>
-        </section>
+            <section id="accounts">
+                <h2>3. Accounts</h2>
+                <h3 id="account-types">3.1 Understanding Account Types</h3>
+                <p>Account types (Cash, Checking, Savings, etc.) help organize your balance sheet. You can create custom types like "Crypto Wallet" in the Setup menu.</p>
+                <h3 id="managing-accounts">3.2 Creating and Managing Accounts</h3>
+                <p>Navigate to Accounts and tap <strong>+</strong>. Every account needs a name and a starting balance. You can mark one account as <strong>Primary</strong> to pre-select it during transaction entry.</p>
+            </section>
 
-        <section id="recurring-bills">
-            <h2>5. Recurring Bills</h2>
-            <p>Never miss a payment. Set up recurring bills and receive notifications before they are due.</p>
-        </section>
+            <section id="categories-groups">
+                <h2>4. Categories & Groups</h2>
+                <p>Use <strong>Groups</strong> (e.g., Housing) as parent containers and <strong>Categories</strong> (e.g., Rent) as specific items. Every transaction gets both, allowing for high-level summaries and deep-dive analysis.</p>
+            </section>
 
-        <section id="recurring-budgets">
-            <h2>6. Recurring Budgets</h2>
-            <p>Set monthly or yearly limits for specific categories. Expense mnAI tracks your "Daily Burn Rate" to help you stay on track.</p>
-        </section>
+            <section id="transactions">
+                <h2>5. Transactions</h2>
+                <h3 id="recording-expense">5.1 Recording an Expense</h3>
+                <div class="screenshot">[SCREENSHOT: Transaction Entry Form]</div>
+                <p>Assign your spend to an account and category. You can add <strong>Tags</strong> like "Business Trip" or "Holiday 2025" for cross-category tracking.</p>
+                <h3 id="transfers">5.3 Transfers Between Accounts</h3>
+                <p>Move money from Checking to Savings without affecting your Net Cash Flow. Use the "Pay From" and "Pay To" fields to adjust both balances at once.</p>
+            </section>
 
-        <section id="reports">
-            <h2>7. Reports & Analytics</h2>
-            <p>View deep insights into your spending patterns. Our Intelligence engine detects anomalies and highlights trends automatically.</p>
-        </section>
+            <section id="recurring-bills">
+                <h2>6. Recurring Bills</h2>
+                <p>Define a bill once (like Netflix or Rent), and Expense mnAI generates a "Pending" instance 30 days ahead of the due date. Mark them as paid when the money actually leaves your account.</p>
+            </section>
 
-        <section id="sync">
-            <h2>8. Sync & Cloud</h2>
-            <p>Your data is stored in your private iCloud. Enable Family Sync to collaborate with others in real-time.</p>
-        </section>
+            <section id="recurring-budgets">
+                <h2>7. Recurring Budgets</h2>
+                <p>Set a target spending limit. If you enable <strong>Carry-Forward</strong>, any unspent money rolls over into the next month's allowance.</p>
+            </section>
 
-        <section id="workspaces">
-            <h2>9. Workspaces</h2>
-            <p>Keep your Personal, Work, and Family finances completely separate using dedicated Workspaces.</p>
-        </section>
+            <section id="reports-analytics">
+                <h2>8. Reports & Analytics</h2>
+                <h3 id="monthly-report">8.1 Monthly Report</h3>
+                <p>See Total Income vs Total Expenses. Net Cash Flow is the ultimate metric for your financial health this month.</p>
+                <h3 id="intelligence-insights">8.3 Intelligence & Insights</h3>
+                <p>AI-generated anomalies (e.g., "Grocery spend is 20% higher than average") are calculated purely on-device using local intelligence.</p>
+            </section>
+
+            <section id="sync-icloud">
+                <h2>9. Sync & iCloud</h2>
+                <p><strong>Single Sync</strong> tracks your data across your iPhone, iPad, and Mac. <strong>Family Sharing</strong> enables shared workspaces for collaboration.</p>
+                <div class="note">Subscription required for cloud features. Core tracking remains free on a single device.</div>
+            </section>
+
+            <section id="workspaces-collaboration">
+                <h2>10. Workspaces & Collaboration</h2>
+                <p>Invite others to a shared workspace using the native iCloud Share Sheet. Collaborators can see and add transactions in real-time.</p>
+            </section>
+
+            <section id="privacy-security">
+                <h2>11. Privacy & Security</h2>
+                <p>Zero developer access. No company servers. No third-party SDKs. Your finances are as private as your Apple ID.</p>
+            </section>
+
+            <section id="faq">
+                <h2>12. Frequently Asked Questions</h2>
+                <h3>Can I use it offline?</h3>
+                <p>Yes. Data saves locally and syncs to iCloud whenever you are back online.</p>
+                <h3>What if I cancel?</h3>
+                <p>The app reverts to local-only mode. You never lose access to your historical data.</p>
+            </section>
+        </div>
     </div>
 </body>
 </html>
