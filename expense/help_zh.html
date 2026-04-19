@@ -1,308 +1,300 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Expense mnAI - Complete User Guide</title>
-    <style>
-        :root {
-            --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --secondary: #636366;
-            --accent: #007aff; --border: #e5e5ea; --tip-bg: rgba(0, 122, 255, 0.05);
-            --tip-border: #007aff; --code-bg: #f8f8f8;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #000000; --card: #1c1c1e; --text: #ffffff; --secondary: #8e8e93;
-                --accent: #0a84ff; --border: #38383a; --code-bg: #2c2c2e;
-            }
-        }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 0; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .content-card { background: var(--card); border-radius: 32px; padding: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid var(--border); }
-        h1 { font-size: 42px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 20px; line-height: 1.1; }
-        h2 { font-size: 28px; font-weight: 700; margin-top: 80px; margin-bottom: 24px; border-bottom: 1.5px solid var(--border); padding-bottom: 16px; color: var(--accent); scroll-margin-top: 100px; }
-        h3 { font-size: 20px; font-weight: 600; margin-top: 40px; margin-bottom: 16px; scroll-margin-top: 100px; }
-        p, li { font-size: 16px; margin-bottom: 18px; color: var(--text); opacity: 0.9; }
-        strong { font-weight: 600; color: var(--text); }
-        .note { background: var(--tip-bg); border-left: 5px solid var(--tip-border); padding: 24px; border-radius: 12px; margin: 32px 0; font-size: 15px; }
-        .note h5 { margin: 0 0 8px 0; color: var(--tip-border); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
-        .screenshot { background: var(--bg); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; text-align: center; color: var(--secondary); font-style: italic; margin: 30px 0; font-size: 14px; }
-        table { width: 100%; border-collapse: collapse; margin: 32px 0; background: var(--bg); border-radius: 12px; overflow: hidden; font-size: 15px; }
-        th, td { text-align: left; padding: 14px; border-bottom: 1px solid var(--border); }
-        th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 0.5px; background: rgba(0,0,0,0.02); }
-        .toc { background: var(--bg); border-radius: 20px; padding: 30px; margin-bottom: 50px; }
-        .toc h4 { margin: 0 0 15px 0; font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 1.5px; }
-        .toc ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-        .toc li { margin-bottom: 6px; font-size: 14px; }
-        .toc a { text-decoration: none; color: var(--accent); font-weight: 500; }
-        @media (max-width: 600px) { h1 { font-size: 32px; } .content-card { padding: 30px 20px; border-radius: 0; border: 0; } .container { padding: 0; } .toc ul { grid-template-columns: 1fr; } }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="content-card">
-        <h1>Expense mnAI<br><span style="color: var(--secondary); font-weight: 500;">Complete User Guide</span></h1>
-        
-        <nav class="toc">
-            <h4>Jump to Section</h4>
-            <ul>
-                <li><a href="#introduction">1. Introduction</a></li>
-                <li><a href="#getting-started">2. Getting Started</a></li>
-                <li><a href="#accounts">3. Accounts</a></li>
-                <li><a href="#categories-groups">4. Categories & Groups</a></li>
-                <li><a href="#transactions">5. Transactions</a></li>
-                <li><a href="#recurring-bills">6. Recurring Bills</a></li>
-                <li><a href="#recurring-budgets">7. Recurring Budgets</a></li>
-                <li><a href="#reports-analytics">8. Reports & Analytics</a></li>
-                <li><a href="#sync-icloud">9. Sync & iCloud</a></li>
-                <li><a href="#workspaces-collaboration">10. Workspaces & Collaboration</a></li>
-                <li><a href="#privacy-security">11. Privacy & Security</a></li>
-                <li><a href="#faq">12. Frequently Asked Questions</a></li>
-            </ul>
-        </nav>
+\<\!DOCTYPE html\>
 
-        <!-- 1. Introduction -->
-        <section id="introduction">
-            <h2>1. Introduction</h2>
-            <p>Expense mnAI is a private, intelligent finance manager built exclusively for Apple devices. It is designed to give you a complete picture of your financial life — your income, spending, recurring commitments, and budget health — without ever sharing your data with advertisers, third‑party analytics services, or any external server outside of Apple's own iCloud infrastructure.</p>
-            <h3>What Expense mnAI does</h3>
-            <p>Expense mnAI tracks the money coming in, going out, and moving between your accounts. It understands the difference between a salary deposit, a supermarket trip, and a credit card payment, and organises each one so you can understand where your money actually goes each month.</p>
-            <p>Beyond simple tracking, Expense mnAI automates the repetitive parts of personal finance. Your recurring bills — rent, subscriptions, utilities — are generated automatically on their due dates so you never have to log them manually. Your budgets reset themselves at the start of every month. And at a glance, the dashboard tells you your net worth, this month's cash flow, and your top spending categories before you have opened a single menu.</p>
-            <h3>What makes Expense mnAI different</h3>
-            <ul>
-                <li><strong>Zero developer access.</strong> Your transactions, balances, and accounts are stored exclusively on your device and in your personal iCloud account. The developers cannot see your data. There are no company servers holding your financial information.</li>
-                <li><strong>Apple-native protection.</strong> Everything is encrypted by your Apple ID and synced through iCloud. The same security infrastructure that protects your photos and messages protects your finances.</li>
-                <li><strong>No third-party tracking.</strong> Expense mnAI contains no advertising SDKs, no analytics frameworks, and no data brokers. Your financial behaviour is never used to profile you.</li>
-                <li><strong>Workspaces.</strong> Your personal finances and shared household finances are kept cleanly separate. A Personal workspace is yours alone. Shared workspaces let you collaborate with family members or a partner — each seeing the same data in real time.</li>
-            </ul>
-        </section>
+\<html lang="zh-CN"\>
+\<head\>
+\<meta charset="UTF-8"\>
+\<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"\>
+\<title\>Expense mnAI - 完整用户指南\</title\>
+\<style\>
+:root {
+\--bg: \#f2f2f7; --card: \#ffffff; --text: \#1c1c1e; --secondary: \#636366;
+\--accent: \#007aff; --border: \#e5e5ea; --tip-bg: rgba(0, 122, 255, 0.05);
+\--tip-border: \#007aff; --code-bg: \#f8f8f8;
+}
+@media (prefers-color-scheme: dark) {
+:root {
+\--bg: \#000000; --card: \#1c1c1e; --text: \#ffffff; --secondary: \#8e8e93;
+\--accent: \#0a84ff; --border: \#38383a; --code-bg: \#2c2c2e;
+}
+}
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei"; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 0; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+.container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+.content-card { background: var(--card); border-radius: 32px; padding: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid var(--border); }
+h1 { font-size: 42px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 20px; line-height: 1.1; }
+h2 { font-size: 28px; font-weight: 700; margin-top: 80px; margin-bottom: 24px; border-bottom: 1.5px solid var(--border); padding-bottom: 16px; color: var(--accent); scroll-margin-top: 100px; }
+h3 { font-size: 20px; font-weight: 600; margin-top: 40px; margin-bottom: 16px; scroll-margin-top: 100px; }
+p, li { font-size: 16px; margin-bottom: 18px; color: var(--text); opacity: 0.9; }
+strong { font-weight: 600; color: var(--text); }
+.note { background: var(--tip-bg); border-left: 5px solid var(--tip-border); padding: 24px; border-radius: 12px; margin: 32px 0; font-size: 15px; }
+.note h5 { margin: 0 0 8px 0; color: var(--tip-border); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.screenshot { background: var(--bg); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; text-align: center; color: var(--secondary); font-style: italic; margin: 30px 0; font-size: 14px; }
+table { width: 100%; border-collapse: collapse; margin: 32px 0; background: var(--bg); border-radius: 12px; overflow: hidden; font-size: 15px; }
+th, td { text-align: left; padding: 14px; border-bottom: 1px solid var(--border); }
+th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 0.5px; background: rgba(0,0,0,0.02); }
+.toc { background: var(--bg); border-radius: 20px; padding: 30px; margin-bottom: 50px; }
+.toc h4 { margin: 0 0 15px 0; font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 1.5px; }
+.toc ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.toc li { margin-bottom: 6px; font-size: 14px; }
+.toc a { text-decoration: none; color: var(--accent); font-weight: 500; }
+@media (max-width: 600px) { h1 { font-size: 32px; } .content-card { padding: 30px 20px; border-radius: 0; border: 0; } .container { padding: 0; } .toc ul { grid-template-columns: 1fr; } }
+\</style\>
+\</head\>
+\<body\>
+\<div class="container"\>
+\<div class="content-card"\>
+\<h1\>Expense mnAI<br>\<span style="color: var(--secondary); font-weight: 500;"\>完整用户指南\</span\>\</h1\>
 
-        <!-- 2. Getting Started -->
-        <section id="getting-started">
-            <h2>2. Getting Started</h2>
-            <h3>2.1 Setting Up Workspaces</h3>
-            <p>When you open Expense mnAI for the first time, a Personal workspace is created automatically. This is your private financial environment — only you can see it, and it is stored exclusively in your personal iCloud account. No one else, not even people you later invite to a shared workspace, will ever see your Personal workspace.</p>
-            <p><strong>What is a workspace?</strong><br>
-            A workspace is a self-contained financial environment. It has its own accounts, categories, transactions, budgets, and bills. Think of it as a separate set of books. Your Personal workspace contains your individual finances. A shared workspace might contain your household finances — the expenses and income you manage together with someone else.</p>
-            <p><strong>Creating a shared workspace</strong><br>
-            Shared workspaces require a Family Sharing plan. To create one, tap the workspace name at the top of the screen to open the workspace picker, then tap "Create Shared Workspace." You will be asked to give it a name. Once created, you can invite others to join — see section 10.4 for the full process.</p>
-            <p><strong>Switching between workspaces</strong><br>
-            Tap the workspace name or avatar at the top of the screen at any time to see your available workspaces and switch between them. The app remembers which workspace you were last using.</p>
+```
+    <nav class="toc">
+        <h4>跳转至章节</h4>
+        <ul>
+            <li><a href="#introduction">1. 简介</a></li>
+            <li><a href="#getting-started">2. 入门指南</a></li>
+            <li><a href="#accounts">3. 账户管理</a></li>
+            <li><a href="#categories-groups">4. 类别与分组</a></li>
+            <li><a href="#transactions">5. 交易记录</a></li>
+            <li><a href="#recurring-bills">6. 周期性账单</a></li>
+            <li><a href="#recurring-budgets">7. 周期性预算</a></li>
+            <li><a href="#reports-analytics">8. 报告与分析</a></li>
+            <li><a href="#sync-icloud">9. 同步与 iCloud</a></li>
+            <li><a href="#workspaces-collaboration">10. 工作区与协作</a></li>
+            <li><a href="#privacy-security">11. 隐私与安全</a></li>
+            <li><a href="#faq">12. 常见问题 (FAQ)</a></li>
+        </ul>
+    </nav>
 
-            <h3>2.2 Default Data & First Launch</h3>
-            <p>On first launch, Expense mnAI seeds your Personal workspace with a set of default account types, category groups, and categories. These are starting points based on common financial patterns — you are not locked into them and can add, edit, or delete everything except built-in system types.</p>
-            <p><strong>Default account types:</strong> Cash, Checking, Savings, Credit Card, Investment, Loan.</p>
-            <p><strong>Default category groups and categories</strong></p>
-            <table>
-                <thead><tr><th>Group</th><th>Categories</th></tr></thead>
-                <tbody>
-                    <tr><td>Food & Dining</td><td>Groceries, Dining Out</td></tr>
-                    <tr><td>Transportation</td><td>Fuel, Public Transit</td></tr>
-                    <tr><td>Housing</td><td>Rent / Mortgage</td></tr>
-                    <tr><td>Utilities</td><td>Electricity, Internet</td></tr>
-                    <tr><td>Entertainment</td><td>(Add your own categories)</td></tr>
-                    <tr><td>Salary</td><td>Base Salary, Bonus</td></tr>
-                    <tr><td>Investments</td><td>(Add your own categories)</td></tr>
-                    <tr><td>Freelance</td><td>(Add your own categories)</td></tr>
-                    <tr><td>Gifts</td><td>(Add your own categories)</td></tr>
-                    <tr><td>Other Income</td><td>(Add your own categories)</td></tr>
-                </tbody>
-            </table>
-            <p>You are encouraged to add categories that reflect your actual life — whether that is "School Fees," "Pet Care," or "Side Hustle."</p>
+    <section id="introduction">
+        <h2>1. 简介</h2>
+        <p>Expense mnAI 是一款智能且专注于隐私的财务管理器，专为 Apple 设备设计。它旨在为您提供财务生活的完整视图——包括收入、支出、周期性义务和预算健康状况——且绝不会将您的数据分享给广告商、第三方分析服务或 Apple iCloud 基础设施之外的任何外部服务器。</p>
+        <h3>Expense mnAI 的功能</h3>
+        <p>Expense mnAI 追踪资金的流入、流出以及在账户之间的转移。它能识别工资存入、超市购物和信用卡还款之间的区别，并进行组织整理，让您清楚了解每个月资金的真实去向。</p>
+        <p>除了基础追踪，Expense mnAI 还实现了个人财务中重复性部分的自动化。您的周期性账单（如房租、订阅费、水电费）会在到期日自动生成，无需手动输入。您的预算会在每月初自动重置。通过仪表盘，您无需打开菜单即可一眼看到净资产、本月现金流及主要支出类别。</p>
+        <h3>Expense mnAI 的独特之处</h3>
+        <ul>
+            <li><strong>开发者零访问。</strong> 您的交易、余额和账户仅存储在您的设备和个人 iCloud 账户中。开发者无法查看您的数据，没有任何公司服务器会保存您的财务信息。</li>
+            <li><strong>原生 Apple 保护。</strong> 所有内容都由您的 Apple ID 加密并通过 iCloud 同步。保护您照片和信息的同一套安全基础设施也在保护您的财务。</li>
+            <li><strong>无第三方追踪。</strong> Expense mnAI 不包含任何广告 SDK、分析框架或数据经纪商插件。您的财务行为绝不会被用于用户画像。</li>
+            <li><strong>工作区。</strong> 将个人财务与共享家庭财务严格区分。个人工作区仅归您所有；共享工作区允许您与家人或伴侣协作，实时查看相同数据。</li>
+        </ul>
+    </section>
 
-            <h3>2.3 Navigation & Interface Guide</h3>
-            <p>Expense mnAI uses a floating navigation bar that adapts to your device.</p>
-            <div class="screenshot">📱 [SCREENSHOT: Navigation - Mobile Closed vs Open] <br>Annotated view showing the bottom pill bar and the result of tapping the menu button on iPhone.</div>
-            <p><strong>On iPhone (portrait):</strong> A pill-shaped bar floats at the bottom of the screen with two fixed tabs — Dashboard and Transactions — and a menu button on the right. Tapping the menu button opens a full-screen navigation panel with access to all sections.</p>
-            <div class="screenshot">🖥️ [SCREENSHOT: Navigation - iPad Sidebar] <br>View showing the compact top bar expanding into the sidebar on iPad/Mac.</div>
-            <p><strong>On iPad and Mac:</strong> A compact floating bar sits at the top. Tapping the left icon expands it into a full sidebar showing all navigation sections. The sidebar closes automatically when you select a destination.</p>
-            <p><strong>Main sections:</strong></p>
-            <table>
-                <thead><tr><th>Section</th><th>What you will find</th></tr></thead>
-                <tbody>
-                    <tr><td>Dashboard</td><td>Net worth, monthly cash flow, upcoming bills, budget summary</td></tr>
-                    <tr><td>Transactions</td><td>All income, expenses, and transfers for the active workspace</td></tr>
-                    <tr><td>Accounts</td><td>Your accounts and their balances</td></tr>
-                    <tr><td>Monthly Report</td><td>Historical month‑by‑month breakdowns</td></tr>
-                    <tr><td>Budget Analysis</td><td>Visual breakdown of budget performance</td></tr>
-                    <tr><td>Intelligence</td><td>AI‑generated spending insights and patterns</td></tr>
-                    <tr><td>Upcoming Bills</td><td>Bills due in the next 30 days</td></tr>
-                    <tr><td>Active Budgets</td><td>Current month budget trackers</td></tr>
-                    <tr><td>Recurring Bills</td><td>Manage bill templates</td></tr>
-                    <tr><td>Recurring Budgets</td><td>Manage budget templates</td></tr>
-                    <tr><td>Account Types</td><td>Manage account type labels</td></tr>
-                    <tr><td>Categories</td><td>Manage your spending categories</td></tr>
-                    <tr><td>Category Groups</td><td>Manage group containers</td></tr>
-                    <tr><td>Settings</td><td>Currency, language, appearance, subscription</td></tr>
-                </tbody>
-            </table>
-        </section>
+    <section id="getting-started">
+        <h2>2. 入门指南</h2>
+        <h3>2.1 设置工作区</h3>
+        <p>首次打开 Expense mnAI 时，系统会自动创建一个“个人工作区”。这是您的私人财务环境：仅您可见，且仅存储在您的个人 iCloud 账户中。任何其他人，即使是您稍后邀请加入共享工作区的人，也永远无法看到您的个人工作区。</p>
+        <p><strong>什么是工作区？</strong><br>
+        工作区是一个独立的财务环境。它拥有自己的账户、类别、交易、预算和账单。可以将其视为一套独立的账本。个人工作区包含您的个人财务；共享工作区可以包含家庭财务——即您与他人共同管理的收支。</p>
+        <p><strong>创建共享工作区</strong><br>
+        共享工作区需要“家人共享”订阅计划。要创建共享工作区，请点击屏幕顶部的工作区名称以打开工作区选择器，然后点击“创建共享工作区”。系统会要求您为其命名。创建后，您可以邀请他人加入（具体流程见第 10.4 节）。</p>
+        <p><strong>切换工作区</strong><br>
+        随时点击顶部的工作区名称或头像即可查看并切换可用的工作区。应用会记住您上次使用的工作区。</p>
 
-        <!-- 3. Accounts -->
-        <section id="accounts">
-            <h2>3. Accounts</h2>
-            <h3>3.1 Understanding Account Types</h3>
-            <p>An account type is a label that describes what kind of financial account something is — checking, savings, credit card, and so on. Account types do not affect calculations; they are for your own organisation and display. Expense mnAI comes with six default account types: Cash, Checking, Savings, Credit Card, Investment, and Loan. You can create your own custom types if none of the defaults match — for example "Crypto Wallet" or "Provident Fund."</p>
-            <h3>3.2 Creating and Managing Accounts</h3>
-            <p>Accounts are the financial containers inside a workspace. Every transaction must be linked to at least one account — either the account money came from, the account money went to, or both in the case of a transfer.</p>
-            <p><strong>To create an account:</strong> Navigate to Accounts from the menu, tap the + button, enter a name (e.g., "HDFC Savings"), select an account type, optionally enter an opening balance and date, then tap Save.</p>
-            <p><strong>Editing an account:</strong> Tap the account to open its detail view, then tap Edit. You can change the name, type, notes, and primary default setting.</p>
-            <p><strong>Setting a primary account:</strong> One account can be marked as your primary default. This account is pre‑selected when you open the transaction entry screen, saving you a tap for your most common account.</p>
-            <p><strong>Soft‑deleting an account:</strong> Rather than permanently deleting an account with historical transactions, you can mark it as inactive. Inactive accounts are hidden from active lists but their transaction history is preserved for accurate reporting.</p>
-            <h3>3.3 Opening Balances</h3>
-            <p>When you add an existing account to Expense mnAI, you can enter the balance it already had on a specific date. This is your opening balance. Expense mnAI uses this as the starting point and calculates the current balance by adding income and subtracting expenses from that date forward. If you are setting up Expense mnAI for the first time and your accounts already have existing money, set the opening balance to the current balance as of today with today's date.</p>
-        </section>
+        <h3>2.2 默认数据与首次运行</h3>
+        <p>在首次运行时，Expense mnAI 会为您的个人工作区预置一套默认的账户类型、类别分组和类别。这些是基于常见财务模型建立的起点；您不受其限制，可以添加、编辑或删除除内置系统类型以外的任何项。</p>
+        <p><strong>默认账户类型：</strong> 现金、活期存款、储蓄、信用卡、投资、贷款。</p>
+        <p><strong>默认类别分组与类别</strong></p>
+        <table>
+            <thead><tr><th>分组</th><th>类别</th></tr></thead>
+            <tbody>
+                <tr><td>餐饮</td><td>食杂店、外食</td></tr>
+                <tr><td>交通</td><td>燃料、公共交通</td></tr>
+                <tr><td>居住</td><td>房租/房贷</td></tr>
+                <tr><td>公共事业</td><td>电费、互联网</td></tr>
+                <tr><td>娱乐</td><td>（添加自定义类别）</td></tr>
+                <tr><td>工资</td><td>基本工资、奖金</td></tr>
+                <tr><td>投资收入</td><td>（添加自定义类别）</td></tr>
+                <tr><td>自由职业</td><td>（添加自定义类别）</td></tr>
+                <tr><td>礼物</td><td>（添加自定义类别）</td></tr>
+                <tr><td>其他收入</td><td>（添加自定义类别）</td></tr>
+            </tbody>
+        </table>
+        <p>我们鼓励您添加反映真实生活的类别——无论是“学费”、“宠物护理”还是“副业”。</p>
 
-        <!-- 4. Categories & Groups -->
-        <section id="categories-groups">
-            <h2>4. Categories & Groups</h2>
-            <h3>4.1 Understanding the Category System</h3>
-            <p>Expense mnAI uses a two-level system to organise your transactions: <strong>Groups</strong> and <strong>Categories</strong>. A Group is a broad container — for example "Food & Dining" or "Transportation." A Category is a specific item inside a group — for example "Groceries" or "Fuel." Every transaction can be assigned both a group and a category, giving you the ability to see your spending summarised at either level.</p>
-            <p>This two-level structure means you can see "I spent ₹14,000 on Food & Dining this month" and also drill down to see "₹9,000 was groceries and ₹5,000 was dining out." Groups are also typed: a group is either an Expense group or an Income group. This determines how transactions assigned to it are interpreted in your reports.</p>
-            <h3>4.2 Creating Custom Groups</h3>
-            <p>Navigate to Category Groups from the menu, tap the + button, enter a name, select an icon from the SF Symbols library, choose Expense or Income, then tap Save. Your custom group will appear alongside the defaults and can be used immediately.</p>
-            <h3>4.3 Creating Custom Categories</h3>
-            <p>Navigate to Categories from the menu, tap the + button, enter a name, select an icon, choose which group this category belongs to, then tap Save. Categories must belong to a group. The group determines the category's type (expense or income).</p>
-            <h3>4.4 Favourites</h3>
-            <p>Categories and groups can be marked as favourites. Favourites appear at the top of the selection list when you are entering a transaction, making your most common choices faster to reach. Tap and hold any category or group and select "Add to Favourites."</p>
-        </section>
+        <h3>2.3 界面与导航指南</h3>
+        <p>Expense mnAI 使用可根据设备自适应的悬浮导航栏。</p>
+        <div class="screenshot">📱 [屏幕截图：导航 - 手机端收起与展开] <br>标注视图显示 iPhone 上的胶囊状底部栏以及点击菜单按钮后的效果。</div>
+        <p><strong>iPhone (纵向)：</strong> 一个胶囊状栏位悬浮在屏幕底部，包含两个固定标签（仪表盘和交易记录）以及右侧的菜单按钮。点击菜单按钮可打开全屏导航面板，访问所有章节。</p>
+        <div class="screenshot">🖥️ [屏幕截图：导航 - iPad 侧边栏] <br>显示 iPad/Mac 上顶部精简栏展开为完整侧边栏的视图。</div>
+        <p><strong>iPad 和 Mac：</strong> 顶部设有一个精简的悬浮栏。点击左侧图标可展开为显示所有导航章节的完整侧边栏。选择目的地后，侧边栏会自动收起。</p>
+        <p><strong>主要章节：</strong></p>
+        <table>
+            <thead><tr><th>章节</th><th>内容说明</th></tr></thead>
+            <tbody>
+                <tr><td>仪表盘</td><td>净资产、每月现金流、近期账单、预算概览</td></tr>
+                <tr><td>交易记录</td><td>当前工作区的所有收入、支出和转账</td></tr>
+                <tr><td>账户管理</td><td>您的账户及其当前余额</td></tr>
+                <tr><td>月度报告</td><td>逐月的历史财务细分</td></tr>
+                <tr><td>预算分析</td><td>预算执行情况的可视化细分</td></tr>
+                <tr><td>智能洞察</td><td>AI 生成的见解和消费模式</td></tr>
+                <tr><td>近期账单</td><td>未来 30 天内到期的账单</td></tr>
+                <tr><td>当前预算</td><td>本月的预算追踪情况</td></tr>
+                <tr><td>周期性账单</td><td>账单模板管理</td></tr>
+                <tr><td>周期性预算</td><td>预算模板管理</td></tr>
+                <tr><td>账户类型</td><td>账户类型标签管理</td></tr>
+                <tr><td>类别管理</td><td>支出类别管理</td></tr>
+                <tr><td>类别分组</td><td>分组容器管理</td></tr>
+                <tr><td>设置</td><td>币种、语言、外观、订阅管理</td></tr>
+            </tbody>
+        </table>
+    </section>
 
-        <!-- 5. Transactions -->
-        <section id="transactions">
-            <h2>5. Transactions</h2>
-            <h3>5.1 Recording an Expense</h3>
-            <p>An expense records money leaving one of your accounts.</p>
-            <div class="screenshot">📸 [SCREENSHOT: Transaction Form - Expense] <br>Annotated form showing Amount, Pay From, Category, and Note fields.</div>
-            <p><strong>To add an expense:</strong> Tap the + button (visible on the Dashboard and Transactions screen), select "Expense", enter the amount, select the date, choose the account the money came from ("Pay From"), select a group and category, optionally add notes/tags/receipt, then tap Save. The account balance will immediately reflect the deduction.</p>
-            <h3>5.2 Recording Income</h3>
-            <p>Income records money arriving into one of your accounts — a salary, a freelance payment, a cash gift, or any other inflow. Tap +, select "Income", enter the amount, choose the account the money arrived into ("Pay To"), select an income group and category, add notes if needed, then tap Save.</p>
-            <h3>5.3 Transfers Between Accounts</h3>
-            <div class="screenshot">🔄 [SCREENSHOT: Transaction Form - Transfer] <br>Callout pointing to the dual account selectors: 'Pay From' and 'Pay To'.</div>
-            <p>A transfer records money moving between two of your own accounts — for example, paying your credit card bill from your checking account. Tap +, select "Transfer", enter the amount, select the source account ("Pay From") and the destination account ("Pay To"), select the date, add notes, then tap Save. Transfers do not affect your total net worth but do affect individual account balances.</p>
-            <h3>5.4 Attaching Receipts</h3>
-            <p>You can attach a photo or PDF receipt to any transaction. After saving a transaction, open it and tap "Add Receipt." You can take a new photo or choose an existing image from your photo library. Receipts are stored on your device and synced to iCloud with your other data.</p>
-            <h3>5.5 Tags</h3>
-            <p>Tags are free-form labels you can apply to transactions for custom organisation outside the group/category system. For example, tag several transactions as "Holiday 2025" or "Office Supplies." To add a tag, tap the Tags field when entering or editing a transaction and type a new tag name or select an existing one.</p>
-            <h3>5.6 Editing & Deleting Transactions</h3>
-            <p>Tap any transaction in the list to open it. From the detail view, tap Edit to make changes. To delete a transaction, swipe left on it in the list and tap Delete, or open the transaction and tap the Delete button. Deleted transactions are permanently removed and cannot be recovered.</p>
-        </section>
+    <section id="accounts">
+        <h2>3. 账户管理</h2>
+        <h3>3.1 理解账户类型</h3>
+        <p>账户类型是描述财务账户性质的标签——如活期、储蓄、信用卡等。账户类型不影响计算，仅用于组织和显示。Expense mnAI 包含六种标准类型：现金、活期存款、储蓄、信用卡、投资和贷款。如果标准类型不适用，您可以创建自定义类型——例如“加密钱包”或“应急基金”。</p>
+        <h3>3.2 创建与管理账户</h3>
+        <p>账户是工作区内的财务容器。每笔交易必须至少关联一个账户——资金来源账户、资金去向账户，或者在转账时两者兼有。</p>
+        <p><strong>创建账户：</strong> 从菜单进入“账户管理”，点击 + 按钮，输入名称（如“招行工资卡”），选择账户类型，可选输入期初余额和日期，然后点击保存。</p>
+        <p><strong>编辑账户：</strong> 点击账户进入详情页，然后点击编辑。您可以更改名称、类型、备注以及是否设为默认主账户。</p>
+        <p><strong>设为主账户：</strong> 一个账户可以被标记为默认账户。在打开交易录入界面时，系统会预选此账户，为您最常用的账户节省点击步骤。</p>
+        <p><strong>账户“软”删除：</strong> 对于拥有历史交易记录的账户，建议将其标记为“非活动”而非永久删除。非活动账户会从活动列表中隐藏，但保留其历史记录以确保报表准确性。</p>
+        <h3>3.3 期初余额</h3>
+        <p>向 Expense mnAI 添加现有账户时，您可以输入该账户在特定日期的已有余额。这就是您的“期初余额”。Expense mnAI 将以此为起点，通过从该日期起加收入、减支出来计算当前余额。如果您是首次设置应用且账户中已有资金，请将期初余额设置为当天的实际余额。</p>
+    </section>
 
-        <!-- 6. Recurring Bills -->
-        <section id="recurring-bills">
-            <h2>6. Recurring Bills</h2>
-            <h3>6.1 How Recurring Bills Work</h3>
-            <p>Recurring bills are automated transaction templates. You define a bill once — its name, amount, frequency, category, and source account — and Expense mnAI generates a pending bill entry on each due date. Bills are generated into a "pending" state first. You review them in Upcoming Bills and mark them as paid once the money has actually left your account.</p>
-            <h3>6.2 Creating a Recurring Bill</h3>
-            <p>Navigate to Recurring Bills from the menu, tap the + button, enter the bill name, choose the transaction type (Expense or Income), set the frequency (Monthly, Weekly, Quarterly, or Yearly), set the start date, optionally enter a default amount, assign a category/group/source account, optionally set an end date, then tap Save.</p>
-            <h3>6.3 Managing Bill Instances</h3>
-            <p>Each generated occurrence is a bill instance. You can view all instances by opening the recurring bill template. Modify a single instance without affecting the template by opening it and editing its amount, date, or notes. To skip an instance (e.g., a bill that did not occur), mark it as skipped rather than paid.</p>
-            <h3>6.4 Marking Bills as Paid</h3>
-            <div class="screenshot">✅ [SCREENSHOT: Upcoming Bills List] <br>View showing pending bills with the 'Mark as Paid' action highlighted.</div>
-            <p>Navigate to "Upcoming Bills" from the main menu. Bills due in the next 30 days are listed. Tap a bill and select "Mark as Paid" to confirm payment, optionally adjusting the actual amount if it differed from the default. Once marked as paid, the bill instance creates a corresponding transaction in your history.</p>
-        </section>
+    <section id="categories-groups">
+        <h2>4. 类别与分组</h2>
+        <h3>4.1 理解类别系统</h3>
+        <p>Expense mnAI 使用二级系统组织交易：<strong>分组 (Groups)</strong> 和 <strong>类别 (Categories)</strong>。分组是大类容器——例如“餐饮”或“交通”。类别是分组内的具体项目——例如“食杂店”或“燃料”。每笔交易可以同时分配分组和类别，方便您从两个层级查看支出汇总。</p>
+        <p>这种二级结构意味着您可以查看“本月餐饮花费了 1000 元”，也可以深入查看其中“600 元用于食杂店，400 元用于餐厅”。分组也有类型：支出或收入。这决定了分配给该分组的交易在报表中如何被解读。</p>
+        <h3>4.2 创建自定义分组</h3>
+        <p>进入菜单中的“类别分组”，点击 + 按钮，输入名称，从 SF Symbols 库选择图标，选择类型（支出或收入），然后点击保存。自定义分组将显示在默认分组旁边，可立即使用。</p>
+        <h3>4.3 创建自定义类别</h3>
+        <p>进入菜单中的“类别管理”，点击 + 按钮，输入名称，选择图标，选择该类别所属的分组，然后点击保存。类别必须属于某个分组，其类型（支出/收入）由所属分组决定。</p>
+        <h3>4.4 收藏项</h3>
+        <p>类别和分组都可以标记为收藏。在录入交易时，收藏项会显示在选择列表的顶部，方便快速选择常用项。长按类别或分组并选择“添加到收藏”即可。</p>
+    </section>
 
-        <!-- 7. Recurring Budgets -->
-        <section id="recurring-budgets">
-            <h2>7. Recurring Budgets</h2>
-            <h3>7.1 How Budgets Work</h3>
-            <p>Recurring budgets are self-resetting spending targets. You define a budget once — its name, amount, frequency, and the categories or groups it covers — and Expense mnAI generates a fresh budget period automatically at the start of each cycle. No manual resetting required.</p>
-            <h3>7.2 Creating a Budget</h3>
-            <p>Navigate to Recurring Budgets from the menu, tap +, enter a name, set the frequency (Monthly, Weekly, Quarterly), enter the budget amount, set the start date (typically the 1st of the current month), assign the scope (one or more category groups or specific categories; leave empty to apply to all expenses), enable Carry‑Forward if desired, then tap Save.</p>
-            <h3>7.3 Carry-Forward</h3>
-            <p>When Carry-Forward is enabled, any unspent amount at the end of a period is added to the next period's budget. For example, if your Food budget is ₹12,000 and you only spent ₹9,000, the next month starts with ₹15,000 (₹12,000 base + ₹3,000 carried forward).</p>
-            <h3>7.4 Tracking Budget Health</h3>
-            <div class="screenshot">📊 [SCREENSHOT: Budget Health Indicators] <br>Showcasing Green (Healthy), Amber (Approaching), and Red (Over Budget) progress bars.</div>
-            <p>The "Active Budgets" section and the Dashboard show your current budget positions: allocated amount, spent so far, remaining balance, and a colour‑coded progress bar. Budget Analysis (section 8.2) gives a full historical view.</p>
-        </section>
+    <section id="transactions">
+        <h2>5. 交易记录</h2>
+        <h3>5.1 记录支出</h3>
+        <p>支出记录资金离开您账户的情况。</p>
+        <div class="screenshot">📸 [屏幕截图：交易表单 - 支出] <br>标注了金额、付款账户、类别和备注字段的表单。</div>
+        <p><strong>添加支出：</strong> 点击 + 按钮（在仪表盘和交易页面均可见），选择“支出”，输入金额，选择日期，选择资金来源账户（付款账户），选择分组和类别，可选添加备注/标签/收据，然后点击保存。账户余额将立即反映此扣款。</p>
+        <h3>5.2 记录收入</h3>
+        <p>收入记录资金进入账户的情况——如工资、自由职业报酬、现金礼物或其他流入。点击 +，选择“收入”，输入金额，选择资金存入账户（收款账户），选择收入分组和类别，根据需要添加备注，点击保存。</p>
+        <h3>5.3 账户间转账</h3>
+        <div class="screenshot">🔄 [屏幕截图：交易表单 - 转账] <br>标注了双账户选择器的说明：“付款账户”和“收款账户”。</div>
+        <p>转账记录两个自有账户之间的资金移动——例如从活期账户归还信用卡欠款。点击 +，选择“转账”，输入金额，选择来源账户（付款账户）和目标账户（收款账户），选择日期，添加备注，点击保存。转账不会影响您的总净资产，但会改变各账户的余额。</p>
+        <h3>5.4 关联收据</h3>
+        <p>您可以为任何交易附上照片或 PDF 收据。保存交易后，打开该交易并点击“添加收据”。您可以拍摄新照片或从库中选择已有图像。收据存储在设备上，并随其他数据同步到 iCloud。</p>
+        <h3>5.5 标签 (Tags)</h3>
+        <p>标签是自定义标签，允许您在分组/类别系统之外进行组织。例如，将多笔交易标记为“2025 假期”或“办公用品”。要添加标签，在录入或编辑交易时点击标签字段，输入新名称或选择已有名称。</p>
+        <h3>5.6 编辑与删除交易</h3>
+        <p>在列表中点击交易以查看详情。在详情页点击编辑进行修改。要删除交易，在列表中的交易上向左滑动并点击删除，或打开交易点击删除按钮。删除的交易将被永久清除且无法恢复。</p>
+    </section>
 
-        <!-- 8. Reports & Analytics -->
-        <section id="reports-analytics">
-            <h2>8. Reports & Analytics</h2>
-            <h3>8.1 Monthly Report</h3>
-            <div class="screenshot">📈 [SCREENSHOT: Monthly Report Overview] <br>Populated dashboard view with the category breakdown Donut Chart.</div>
-            <p>The Monthly Report gives you a detailed financial breakdown for any past month. Access it from the main menu under "Monthly Report." It shows: Total Income, Total Expenses, Net Cash Flow, Spending by Group (visual chart), Spending by Category, Account Balances at month end, and Top Expenses. Use the month navigation arrows to move between past months.</p>
-            <h3>8.2 Budget Analysis</h3>
-            <p>Budget Analysis provides a historical view of your budget performance across all recurring budgets. For each budget you can see period‑by‑period performance (over/under), average spending vs. target, best and worst months, and a trend line. This helps identify budget targets that are set too high or too low and spot spending drift.</p>
-            <h3>8.3 Intelligence & Insights</h3>
-            <p>The Intelligence section uses your transaction history to surface patterns, anomalies, and suggestions automatically. It analyses spending patterns, net worth trend, top spending days, category drift, cash flow forecast, and provides a weekly summary (requires notification permission). All insights are generated locally on your device — no data is sent to any server.</p>
-        </section>
+    <section id="recurring-bills">
+        <h2>6. 周期性账单</h2>
+        <h3>6.1 周期性账单如何运作</h3>
+        <p>周期性账单是自动化的交易模板。您只需设置一次——名称、金额、频率、类别和来源账户——Expense mnAI 就会在每个到期日生成一个待处理的账单项。账单最初以“待处理”状态创建。您可以在“近期账单”中查看，并在资金实际扣除后将其标记为已付。</p>
+        <h3>6.2 创建周期性账单</h3>
+        <p>从菜单进入“周期性账单”，点击 + 按钮，输入账单名称，选择交易类型（支出或收入），设置频率（每周、每月、每季度或每年），设置开始日期，可选输入默认金额，分配类别/分组/来源账户，可选设置结束日期，点击保存。</p>
+        <h3>6.3 管理账单实例</h3>
+        <p>生成的每笔付款都是一个“实例”。您可以通过打开周期性账单模板查看所有实例。打开单个实例可对其进行编辑（如修改金额、日期或备注），且不会影响模板。如需跳过某次付款（例如免除了一次费用），可将其标记为“跳过”而非已付。</p>
+        <h3>6.4 将账单标记为已付</h3>
+        <div class="screenshot">✅ [屏幕截图：近期账单列表] <br>显示待处理账单的视图，突出了“标记为已付”操作。</div>
+        <p>进入主菜单的“近期账单”。这里显示未来 30 天内到期的账单。点击账单并选择“标记为已付”确认支付，如实际金额与默认值不同可在此调整。一旦标记为已付，该账单实例将在您的历史记录中创建一笔对应的交易。</p>
+    </section>
 
-        <!-- 9. Sync & iCloud -->
-        <section id="sync-icloud">
-            <h2>9. Sync & iCloud</h2>
-            <h3>9.1 Sync Plans Overview</h3>
-            <table>
-                <thead><tr><th>Plan</th><th>What you get</th></tr></thead>
-                <tbody>
-                    <tr><td><strong>Free</strong></td><td>Full app features on one device. Local storage only. No iCloud sync.</td></tr>
-                    <tr><td><strong>Single Sync — Monthly / Yearly</strong></td><td>Your Personal workspace syncs across all your Apple devices signed into the same iCloud account.</td></tr>
-                    <tr><td><strong>Single Sync — Lifetime</strong></td><td>Same as Single Sync, paid once, no recurring charge.</td></tr>
-                    <tr><td><strong>Family Sharing — Monthly / Yearly</strong></td><td>Everything in Single Sync plus the ability to create Shared workspaces and invite others.</td></tr>
-                    <tr><td><strong>Family Sharing — Lifetime</strong></td><td>Same as Family Sharing, paid once.</td></tr>
-                </tbody>
-            </table>
-            <h3>9.2 Choosing the Right Plan</h3>
-            <p><strong>Free</strong> – single device only.<br>
-            <strong>Single Sync</strong> – multiple Apple devices for your Personal workspace.<br>
-            <strong>Family Sharing</strong> – Single Sync features plus shared workspaces with others.<br>
-            <strong>Lifetime plans</strong> – same features as monthly/yearly, one‑time payment.</p>
-            <h3>9.3 Multi-Device Sync</h3>
-            <p>With an active Single Sync or Family Sharing plan, your Personal workspace is automatically kept in sync across all Apple devices signed into the same iCloud account. Changes upload within seconds; other devices download changes within 30‑60 seconds. Conflict resolution: the most recently edited version wins.</p>
-            <h3>9.4 Adding a New Device</h3>
-            <p>Install the app on a new device, sign into the same iCloud account, purchase (or restore) your plan. Once your subscription is confirmed, the new device automatically downloads your existing data from iCloud. Within a minute or two, all your accounts, transactions, budgets, and bills appear.</p>
-            <h3>9.5 Restoring Purchases</h3>
-            <p>To restore your subscription after reinstalling or on a new device, go to Settings → Subscription & Plan → Restore Purchases, then sign in with your Apple ID if prompted. Lifetime plans are re‑activated on any device signed into the same Apple ID. If sync does not activate after restore, sign out of iCloud and back in, then try Restore Purchases again.</p>
-        </section>
+    <section id="recurring-budgets">
+        <h2>7. 周期性预算</h2>
+        <h3>7.1 预算如何运作</h3>
+        <p>周期性预算是会自动重置的支出目标。您只需设置一次——名称、金额、频率以及覆盖的类别或分组——Expense mnAI 就会在每个周期开始时自动生成新的预算期。无需手动重置。</p>
+        <h3>7.2 创建预算</h3>
+        <p>从菜单进入“周期性预算”，点击 +，输入名称，设置频率（每周、每月、每季度），输入预算金额，设置开始日期（通常为本月 1 号），分配范围（一个或多个类别分组或特定类别；留空则应用于所有支出），可选开启“余额顺延”，点击保存。</p>
+        <h3>7.3 余额顺延 (Carry-Forward)</h3>
+        <p>开启余额顺延后，周期结束时任何未使用的金额都会添加到下一期的预算中。例如，如果您的餐饮预算是 500 元，实际仅花费 400 元，则下个月的起始可用预算将变为 600 元（500 元基准 + 100 元顺延）。</p>
+        <h3>7.4 追踪预算健康状况</h3>
+        <div class="screenshot">📊 [屏幕截图：预算健康指标] <br>展示绿色（健康）、橙色（接近上限）和红色（超支）进度条的示例。</div>
+        <p>“当前预算”章节和仪表盘会显示您目前的现状：已分配多少、已支出多少、剩余余额以及颜色编码的进度条。“预算分析”（第 8.2 节）提供历史趋势图。</p>
+    </section>
 
-        <!-- 10. Workspaces & Collaboration -->
-        <section id="workspaces-collaboration">
-            <h2>10. Workspaces & Collaboration</h2>
-            <h3>10.1 Workspace Overview</h3>
-            <div class="screenshot">🏠 [SCREENSHOT: Workspace Picker] <br>Showing the top navigation entry point and the list of available workspaces (Personal + Shared).</div>
-            <p>A workspace is a completely isolated financial environment. Expense mnAI supports two types: <strong>Personal workspace</strong> (private, stored in your private iCloud database) and <strong>Shared workspaces</strong> (collaborative, stored in a shared iCloud database). Switch between workspaces at any time from the workspace picker (tap the workspace name/avatar at the top of the screen).</p>
-            <h3>10.2 Personal Workspace</h3>
-            <p>Your Personal workspace is created automatically on first launch (identified by a flower icon). It is stored exclusively in your private iCloud database. Others you invite to shared workspaces have no access to your Personal workspace. It cannot be deleted, renamed, or transferred.</p>
-            <h3>10.3 Shared Workspaces</h3>
-            <p>Shared workspaces require a Family Sharing plan. They are for tracking household income/expenses together, managing joint budgets, or sharing bills. All invited members see the same data in real time and have full read/write access. If the owner's Family plan lapses, the workspace remains visible to participants until the share is explicitly revoked.</p>
-            <h3>10.4 Inviting Others to Collaborate</h3>
-            <div class="screenshot">✉️ [SCREENSHOT: Inviting Collaborators] <br>The iCloud Share Sheet appearing after tapping the share icon.</div>
-            <p><strong>Requirements:</strong> Family Sharing plan, workspace already synchronised to iCloud. To send an invitation: open the workspace picker, tap the share icon next to the shared workspace (or open workspace settings → "Invite People"). The iCloud sharing sheet appears; share the invitation link via Messages, Mail, AirDrop, etc. The recipient taps the link and accepts the system prompt to join.</p>
-            <h3>10.5 Accepting a Workspace Invitation</h3>
-            <p>Open the invitation link on your iPhone, iPad, or Mac with Expense mnAI installed. A system prompt "Join [Workspace Name]?" appears. Tap Accept. The workspace will appear in your workspace picker within a few seconds. If it does not appear immediately, close and reopen the app and wait up to one minute. You do not need a paid plan to participate in a shared workspace.</p>
-            <h3>10.6 Managing Collaborators</h3>
-            <p>The workspace owner can remove a collaborator by opening the share sheet from the workspace picker, tapping the participant's name, and selecting "Remove Access." The participant will lose access immediately. A participant can leave a shared workspace by opening the share sheet and tapping "Stop Participating."</p>
-        </section>
+    <section id="reports-analytics">
+        <h2>8. 报告与分析</h2>
+        <h3>8.1 月度报告</h3>
+        <div class="screenshot">📈 [屏幕截图：月度报告摘要] <br>仪表盘视图，显示了类别占比的饼图。</div>
+        <p>月度报告为您提供每个已结束月份的详细财务细分。进入主菜单的“月度报告”，内容包括：总收入、总支出、净现金流、按分组支出的可视化图表、按类别支出、月末账户余额以及大额支出项。使用导航箭头在已结束的月份间切换。</p>
+        <h3>8.2 预算分析</h3>
+        <p>预算分析提供周期性预算执行情况的历史视图。对于每项预算，您可以查看各期的表现（是否达标）、平均支出与目标的对比、表现最好和最差的月份以及趋势线。这有助于识别过高或过低的预算目标，并捕捉消费习惯的变化。</p>
+        <h3>8.3 智能洞察 (Intelligence)</h3>
+        <p>“智能洞察”章节利用您的交易历史自动提炼模式、异常情况和建议。它会分析消费习惯、净资产趋势、消费高峰日、类别偏移、现金流预测，并提供每周摘要（需要开启通知权限）。所有洞察均在设备本地生成——数据绝不发送至服务器。</p>
+    </section>
 
-        <!-- 11. Privacy & Security -->
-        <section id="privacy-security">
-            <h2>11. Privacy & Security</h2>
-            <p>Expense mnAI is built entirely on Apple's security infrastructure. There are no Expense mnAI company servers involved in storing or transmitting your financial data.</p>
-            <ul>
-                <li><strong>Local storage:</strong> Free plan data lives exclusively on your device in an encrypted SQLite database.</li>
-                <li><strong>iCloud sync:</strong> When sync is enabled, data is transmitted through Apple's iCloud servers with encryption in transit and at rest.</li>
-                <li><strong>Developer access:</strong> Developers have no mechanism to read your data. No admin portal, no database export, no analytics pipeline.</li>
-                <li><strong>No advertising:</strong> The app contains no advertising SDKs and participates in no ad targeting or retargeting systems.</li>
-                <li><strong>iCloud account changes:</strong> If you sign out of iCloud and sign in as a different user, the app detects the change and wipes the local database to protect the previous user's data.</li>
-            </ul>
-        </section>
+    <section id="sync-icloud">
+        <h2>9. 同步与 iCloud</h2>
+        <h3>9.1 同步计划概览</h3>
+        <table>
+            <thead><tr><th>计划</th><th>内容</th></tr></thead>
+            <tbody>
+                <tr><td><strong>免费版</strong></td><td>单设备完整功能。仅本地存储，无 iCloud 同步。</td></tr>
+                <tr><td><strong>单人同步 — 月付 / 年付</strong></td><td>个人工作区在登录同一 Apple ID 的所有 Apple 设备间同步。</td></tr>
+                <tr><td><strong>单人同步 — 终身</strong></td><td>与单人同步相同，一次性付费，无后续费用。</td></tr>
+                <tr><td><strong>家人共享 — 月付 / 年付</strong></td><td>包含单人同步所有功能，外加创建共享工作区并邀请他人的能力。</td></tr>
+                <tr><td><strong>家人共享 — 终身</strong></td><td>与家人共享计划相同，一次性付费。</td></tr>
+            </tbody>
+        </table>
+        <h3>9.2 选择合适的计划</h3>
+        <p><strong>免费版</strong> – 适合仅在单一设备上使用。<br>
+        <strong>单人同步</strong> – 适合在多个个人 Apple 设备间同步数据。<br>
+        <strong>家人共享</strong> – 包含单人同步功能，并支持与他人共享数据。<br>
+        <strong>终身计划</strong> – 功能与月/年付相同，但为买断制。</p>
+        <h3>9.3 跨设备同步</h3>
+        <p>在有效的单人同步或家人共享计划下，您的个人工作区会自动在所有使用相同 Apple ID 的 Apple 设备间同步。更改会在数秒内上传，其他设备通常在 30-60 秒内下载更新。冲突解决原则：以最后编辑的版本为准。</p>
+        <h3>9.4 添加新设备</h3>
+        <p>在新设备上安装应用，登录相同的 Apple ID，购买（或恢复）您的计划。订阅确认后，新设备将自动从 iCloud 下载现有数据。一两分钟内，您的所有账户、交易、预算和账单都将出现。</p>
+        <h3>9.5 恢复购买</h3>
+        <p>重新安装或在新设备上使用时，请前往 设置 → 订阅与计划 → 恢复购买，并根据提示登录 Apple ID。终身计划将在使用相同 Apple ID 的任何设备上重新激活。如果恢复后同步未开始，请尝试注销并重新登录 iCloud，然后再次尝试恢复购买。</p>
+    </section>
 
-        <!-- 12. FAQ -->
-        <section id="faq">
-            <h2>12. Frequently Asked Questions</h2>
-            <p><strong>Can I use Expense mnAI without an internet connection?</strong><br>Yes. All core features work fully offline. Changes sync to your other devices when you next connect.</p>
-            <p><strong>Does the app work on Mac?</strong><br>Yes. Expense mnAI is available on Mac via Mac Catalyst and behaves consistently with the iPhone and iPad experience.</p>
-            <p><strong>What happens to my data if I cancel my subscription?</strong><br>Your data remains on your device. You lose sync access, but your existing data is not removed.</p>
-            <p><strong>What happens to a shared workspace if the owner cancels their Family plan?</strong><br>The shared workspace remains accessible to participants through iCloud sharing infrastructure for as long as Apple maintains the share.</p>
-            <p><strong>Can I have multiple Personal workspaces?</strong><br>No. The Personal workspace is singular—one per iCloud account. You can create multiple shared workspaces instead.</p>
-            <p><strong>My transactions are not syncing. What should I try?</strong><br>Check your internet connection, verify your iCloud sign-in, and ensure your subscription is active in the app's settings. Try toggling airplane mode off and on to force a sync attempt. If the issue persists, contact support.</p>
-            <p><strong>Can two people share a Personal workspace?</strong><br>No. Personal workspaces are private by design. Create a Shared workspace for collaborative data.</p>
-            <p><strong>Is there a limit to how many transactions I can add?</strong><br>No. There is no artificial limit on the number of transactions, accounts, or categories.</p>
-            <p><strong>Does Expense mnAI support multiple currencies?</strong><br>Yes. Each workspace has its own currency setting. Cross-currency reporting between workspaces is not currently supported.</p>
-            <p><strong>How do I contact support?</strong><br>Navigate to Settings → Help & Support, or visit the support page linked in the App Store. Please include your device model and iOS version when reporting an issue.</p>
-        </section>
+    <section id="workspaces-collaboration">
+        <h2>10. 工作区与协作</h2>
+        <h3>10.1 工作区概览</h3>
+        <div class="screenshot">🏠 [屏幕截图：工作区选择器] <br>显示顶部的导航入口及可用空间列表（个人 + 共享）。</div>
+        <p>工作区是完全隔离的财务环境。Expense mnAI 支持两种类型：<strong>个人工作区</strong>（私人，存储在您的私人 iCloud 数据库中）和 <strong>共享工作区</strong>（协作，存储在共享 iCloud 数据库中）。通过选择器（点击顶部名称/头像）随时切换。</p>
+        <h3>10.2 个人工作区</h3>
+        <p>个人工作区在首次运行时自动创建（图标为花朵）。它仅存储在您的私人 iCloud 数据库中。您邀请加入共享工作区的人员无法访问您的个人工作区。该空间不可删除、重命名或转让。</p>
+        <h3>10.3 共享工作区</h3>
+        <p>共享工作区需要“家人共享”订阅。利用它可以共同追踪家庭收支、管理共同预算或分摊账单。所有受邀成员实时查看相同数据，并拥有完整的读写权限。如果所有者的家人共享计划过期，参与者仍可见该工作区，直到所有者撤销访问权限。</p>
+        <h3>10.4 邀请他人协作</h3>
+        <div class="screenshot">✉️ [屏幕截图：邀请协作人员] <br>点击分享图标后出现的 iCloud 分享表单。</div>
+        <p><strong>要求：</strong> 拥有家人共享计划，且工作区已同步至 iCloud。发送邀请：打开工作区选择器，点击共享工作区旁的分享图标（或进入工作区设置 → “邀请人员”）。会出现 iCloud 分享表单；通过信息、邮件、AirDrop 等分享链接。接收者点击链接并接受系统邀请即可加入。</p>
+        <h3>10.5 接受工作区邀请</h3>
+        <p>在安装了 Expense mnAI 的 iPhone、iPad 或 Mac 上打开邀请链接。系统会提示“加入 [空间名称]？”，点击加入。该工作区会在数秒内出现在您的选择器中。如果未立即出现，请尝试重启应用并等待一分钟。您无需拥有付费计划即可加入他人的共享工作区。</p>
+        <h3>10.6 管理协作人员</h3>
+        <p>工作区所有者可以移除人员：从选择器打开分享表单，点击参与者名称并选择“移除权限”，该成员将立即失去访问权。参与者也可以通过分享表单点击“停止共享”来退出共享工作区。</p>
+    </section>
 
-        <p style="text-align: center; margin-top: 80px; font-size: 13px; color: var(--secondary);">Expense mnAI — Your Financial Architect, Secure & Private.</p>
-    </div>
+    <section id="privacy-security">
+        <h2>11. 隐私与安全</h2>
+        <p>Expense mnAI 完全基于 Apple 的安全基础设施构建。Expense mnAI 公司不参与任何财务数据的存储或传输。</p>
+        <ul>
+            <li><strong>本地存储：</strong> 免费版数据仅以加密 SQLite 数据库形式存储在您的设备上。</li>
+            <li><strong>iCloud 同步：</strong> 开启同步后，数据通过 Apple 的 iCloud 服务器传输，在传输过程和静态存储中均经过加密。</li>
+            <li><strong>开发者访问：</strong> 开发者无法读取您的数据。没有管理后台，无法导出数据库，也没有分析管道。</li>
+            <li><strong>无广告：</strong> 应用不含任何广告 SDK，不参与任何广告定向或再营销系统。</li>
+            <li><strong>iCloud 账户更改：</strong> 如果您注销 iCloud 并登录另一个用户，应用会检测到更改并清除本地数据库，以保护前一个用户的数据。</li>
+        </ul>
+    </section>
+
+    <section id="faq">
+        <h2>12. 常见问题 (FAQ)</h2>
+        <p><strong>我可以在没有互联网连接的情况下使用 Expense mnAI 吗？</strong><br>可以。所有核心功能均可离线使用。当您再次上线时，更改将同步到其他设备。</p>
+        <p><strong>应用能在 Mac 上运行吗？</strong><br>可以。Expense mnAI 通过 Mac Catalyst 适配 Mac，其体验与 iPhone 和 iPad 保持一致。</p>
+        <p><strong>如果我取消订阅，我的数据会怎样？</strong><br>您的数据将保留在设备上。虽然您会失去同步功能，但现有数据不会被删除。</p>
+        <p><strong>如果所有者取消了家人共享计划，共享工作区会怎样？</strong><br>只要 Apple 维持该共享资源活跃，共享工作区在 iCloud 分享架构下对参与者仍然可见。</p>
+        <p><strong>我可以拥有多个个人工作区吗？</strong><br>不可以。个人工作区是唯一的——每个 iCloud 账户一个。您可以转而创建多个共享工作区。</p>
+        <p><strong>交易记录没有同步，我该怎么办？</strong><br>检查网络连接，核实 iCloud 登录状态，并确保订阅在应用设置中显示为激活。尝试切换飞行模式以强制触发同步。如果问题依旧，请联系支持团队。</p>
+        <p><strong>两个人可以共用一个个人工作区吗？</strong><br>不可以。个人工作区设计为私人专用。如需协作，请创建共享工作区。</p>
+        <p><strong>添加交易数量有限制吗？</strong><br>没有。应用对交易、账户或类别的数量没有人为限制。</p>
+        <p><strong>Expense mnAI 支持多币种吗？</strong><br>支持。每个工作区都有自己的币种设置。目前不支持工作区之间的跨币种报表统计。</p>
+        <p><strong>如何联系支持团队？</strong><br>前往 设置 → 帮助与支持，或访问 App Store 中链接的支持页面。反馈问题时请说明您的设备型号和 iOS 版本。</p>
+    </section>
+
+    <p style="text-align: center; margin-top: 80px; font-size: 13px; color: var(--secondary);">Expense mnAI — 您的财务架构师，安全且私密。</p>
 </div>
-</body>
-</html>
+```
+
+\</div\>
+\</body\>
+\</html\>
