@@ -35,6 +35,10 @@
         .toc ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
         .toc li { margin-bottom: 6px; font-size: 14px; }
         .toc a { text-decoration: none; color: var(--accent); font-weight: 500; }
+        
+        /* New styling for the infographic */
+        .hero-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 30px 0; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        
         @media (max-width: 600px) { h1 { font-size: 32px; } .content-card { padding: 30px 20px; border-radius: 0; border: 0; } .container { padding: 0; } .toc ul { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -61,9 +65,11 @@
             </ul>
         </nav>
 
-        <!-- 1. Introduction -->
         <section id="introduction">
             <h2>1. Introduction</h2>
+            
+            <img src="../../assets/infographic-en.jpg" alt="Expense mnAI Overview" class="hero-image" onerror="this.onerror=null;this.src='../../assets/infographic-en.jpg';">
+
             <p>Expense mnAI is a private, intelligent finance manager built exclusively for Apple devices. It is designed to give you a complete picture of your financial life — your income, spending, recurring commitments, and budget health — without ever sharing your data with advertisers, third‑party analytics services, or any external server outside of Apple's own iCloud infrastructure.</p>
             <h3>What Expense mnAI does</h3>
             <p>Expense mnAI tracks the money coming in, going out, and moving between your accounts. It understands the difference between a salary deposit, a supermarket trip, and a credit card payment, and organises each one so you can understand where your money actually goes each month.</p>
@@ -77,7 +83,6 @@
             </ul>
         </section>
 
-        <!-- 2. Getting Started -->
         <section id="getting-started">
             <h2>2. Getting Started</h2>
             <h3>2.1 Setting Up Workspaces</h3>
@@ -138,7 +143,6 @@
             </table>
         </section>
 
-        <!-- 3. Accounts -->
         <section id="accounts">
             <h2>3. Accounts</h2>
             <h3>3.1 Understanding Account Types</h3>
@@ -153,7 +157,6 @@
             <p>When you add an existing account to Expense mnAI, you can enter the balance it already had on a specific date. This is your opening balance. Expense mnAI uses this as the starting point and calculates the current balance by adding income and subtracting expenses from that date forward. If you are setting up Expense mnAI for the first time and your accounts already have existing money, set the opening balance to the current balance as of today with today's date.</p>
         </section>
 
-        <!-- 4. Categories & Groups -->
         <section id="categories-groups">
             <h2>4. Categories & Groups</h2>
             <h3>4.1 Understanding the Category System</h3>
@@ -167,7 +170,6 @@
             <p>Categories and groups can be marked as favourites. Favourites appear at the top of the selection list when you are entering a transaction, making your most common choices faster to reach. Tap and hold any category or group and select "Add to Favourites."</p>
         </section>
 
-        <!-- 5. Transactions -->
         <section id="transactions">
             <h2>5. Transactions</h2>
             <h3>5.1 Recording an Expense</h3>
@@ -187,7 +189,6 @@
             <p>Tap any transaction in the list to open it. From the detail view, tap Edit to make changes. To delete a transaction, swipe left on it in the list and tap Delete, or open the transaction and tap the Delete button. Deleted transactions are permanently removed and cannot be recovered.</p>
         </section>
 
-        <!-- 6. Recurring Bills -->
         <section id="recurring-bills">
             <h2>6. Recurring Bills</h2>
             <h3>6.1 How Recurring Bills Work</h3>
@@ -201,7 +202,6 @@
             <p>Navigate to "Upcoming Bills" from the main menu. Bills due in the next 30 days are listed. Tap a bill and select "Mark as Paid" to confirm payment, optionally adjusting the actual amount if it differed from the default. Once marked as paid, the bill instance creates a corresponding transaction in your history.</p>
         </section>
 
-        <!-- 7. Recurring Budgets -->
         <section id="recurring-budgets">
             <h2>7. Recurring Budgets</h2>
             <h3>7.1 How Budgets Work</h3>
@@ -215,7 +215,6 @@
             <p>The "Active Budgets" section and the Dashboard show your current budget positions: allocated amount, spent so far, remaining balance, and a colour‑coded progress bar. Budget Analysis (section 8.2) gives a full historical view.</p>
         </section>
 
-        <!-- 8. Reports & Analytics -->
         <section id="reports-analytics">
             <h2>8. Reports & Analytics</h2>
             <h3>8.1 Monthly Report</h3>
@@ -227,7 +226,6 @@
             <p>The Intelligence section uses your transaction history to surface patterns, anomalies, and suggestions automatically. It analyses spending patterns, net worth trend, top spending days, category drift, cash flow forecast, and provides a weekly summary (requires notification permission). All insights are generated locally on your device — no data is sent to any server.</p>
         </section>
 
-        <!-- 9. Sync & iCloud -->
         <section id="sync-icloud">
             <h2>9. Sync & iCloud</h2>
             <h3>9.1 Sync Plans Overview</h3>
@@ -254,7 +252,6 @@
             <p>To restore your subscription after reinstalling or on a new device, go to Settings → Subscription & Plan → Restore Purchases, then sign in with your Apple ID if prompted. Lifetime plans are re‑activated on any device signed into the same Apple ID. If sync does not activate after restore, sign out of iCloud and back in, then try Restore Purchases again.</p>
         </section>
 
-        <!-- 10. Workspaces & Collaboration -->
         <section id="workspaces-collaboration">
             <h2>10. Workspaces & Collaboration</h2>
             <h3>10.1 Workspace Overview</h3>
@@ -273,7 +270,6 @@
             <p>The workspace owner can remove a collaborator by opening the share sheet from the workspace picker, tapping the participant's name, and selecting "Remove Access." The participant will lose access immediately. A participant can leave a shared workspace by opening the share sheet and tapping "Stop Participating."</p>
         </section>
 
-        <!-- 11. Privacy & Security -->
         <section id="privacy-security">
             <h2>11. Privacy & Security</h2>
             <p>Expense mnAI is built entirely on Apple's security infrastructure. There are no Expense mnAI company servers involved in storing or transmitting your financial data.</p>
@@ -286,7 +282,6 @@
             </ul>
         </section>
 
-        <!-- 12. FAQ -->
         <section id="faq">
             <h2>12. Frequently Asked Questions</h2>
             <p><strong>Can I use Expense mnAI without an internet connection?</strong><br>Yes. All core features work fully offline. Changes sync to your other devices when you next connect.</p>
