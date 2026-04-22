@@ -27,6 +27,8 @@ strong { font-weight: 600; color: var(--text); }
 .note { background: var(--tip-bg); border-left: 5px solid var(--tip-border); padding: 24px; border-radius: 12px; margin: 32px 0; font-size: 15px; }
 .note h5 { margin: 0 0 8px 0; color: var(--tip-border); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
 .screenshot { background: var(--bg); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; text-align: center; color: var(--secondary); font-style: italic; margin: 30px 0; font-size: 14px; }
+.hero-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 30px 0; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.img-caption { text-align: center; color: var(--secondary); font-size: 14px; font-style: italic; margin-top: -20px; margin-bottom: 30px; }
 table { width: 100%; border-collapse: collapse; margin: 32px 0; background: var(--bg); border-radius: 12px; overflow: hidden; font-size: 15px; }
 th, td { text-align: left; padding: 14px; border-bottom: 1px solid var(--border); }
 th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 0.5px; background: rgba(0,0,0,0.02); }
@@ -63,6 +65,9 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 
     <section id="introduction">
         <h2>1. Introduzione</h2>
+        
+        <img src="assets/infographic-it.jpg" alt="Panoramica di Expense mnAI" class="hero-image" onerror="this.onerror=null;this.src='assets/infographic-en.jpg';">
+        
         <p>Expense mnAI è un gestore finanziario intelligente e privato, progettato esclusivamente per i dispositivi Apple. È costruito per offrirti un quadro completo della tua vita finanziaria — le tue entrate, le tue uscite, i tuoi impegni ricorrenti e la salute del tuo budget — senza mai condividere i tuoi dati con inserzionisti, servizi di analisi di terze parti o qualsiasi server esterno al di fuori dell'infrastruttura iCloud di Apple.</p>
         <h3>Cosa fa Expense mnAI</h3>
         <p>Expense mnAI traccia il denaro che entra, esce e si sposta tra i tuoi conti. Comprende la differenza tra un deposito di stipendio, una spesa al supermercato e un pagamento della carta di credito, organizzando tutto in modo che tu possa capire dove finisce realmente il tuo denaro ogni mese.</p>
@@ -110,9 +115,15 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 
         <h3>2.3 Guida all'interfaccia e alla navigazione</h3>
         <p>Expense mnAI utilizza una barra di navigazione flottante che si adatta al tuo dispositivo.</p>
-        <div class="screenshot">📱 [SCREENSHOT: Navigazione - Mobile Chiuso vs Aperto] <br>Vista annotata che mostra la barra inferiore a pillola e il risultato del tocco sul pulsante menu su iPhone.</div>
+        
+        <img src="assets/help2.3.1-en.jpg" alt="Navigazione - Mobile Chiuso vs Aperto" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.1-en.jpg';">
+        <div class="img-caption">📱 Vista annotata che mostra la barra inferiore a pillola e il risultato del tocco sul pulsante menu su iPhone.</div>
+        
         <p><strong>Su iPhone (Portrait):</strong> Una barra a pillola flotta nella parte inferiore dello schermo con due tab fissi — Dashboard e Transazioni — e un pulsante menu sulla destra. Toccando il pulsante menu si apre un pannello di navigazione a schermo intero con accesso a tutte le sezioni.</p>
-        <div class="screenshot">🖥️ [SCREENSHOT: Navigazione - Sidebar iPad] <br>Vista che mostra la barra superiore compatta che si espande in una sidebar su iPad/Mac.</div>
+        
+        <img src="assets/help2.3.2-en.jpg" alt="Navigazione - Sidebar iPad" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.2-en.jpg';">
+        <div class="img-caption">🖥️ Vista che mostra la barra superiore compatta che si espande in una sidebar su iPad/Mac.</div>
+        
         <p><strong>Su iPad e Mac:</strong> Una barra flottante compatta si trova in alto. Toccando l'icona a sinistra si espande in una sidebar completa che mostra tutte le sezioni di navigazione. La sidebar si chiude automaticamente quando selezioni una destinazione.</p>
         <p><strong>Sezioni principali:</strong></p>
         <table>
@@ -167,19 +178,25 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h2>5. Transazioni</h2>
         <h3>5.1 Registrare un'uscita</h3>
         <p>Un'uscita registra denaro che lascia uno dei tuoi conti.</p>
-        <div class="screenshot">📸 [SCREENSHOT: Form Transazione - Uscita] <br>Modulo annotato che mostra i campi Importo, Paga da, Categoria e Nota.</div>
+        
+        <img src="assets/help5.1-en.jpg" alt="Form Transazione - Uscita" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.1-en.jpg';">
+        <div class="img-caption">📸 Modulo annotato che mostra i campi Importo, Paga da, Categoria e Nota.</div>
+        
         <p><strong>Per aggiungere un'uscita:</strong> Tocca il pulsante + (visibile sulla dashboard e sulla schermata transazioni), seleziona "Uscita", inserisci l'importo, seleziona la data, scegli il conto da cui proviene il denaro ("Paga da"), seleziona un gruppo e una categoria, aggiungi opzionalmente note/tag/ricevuta e tocca Salva. Il saldo del conto rifletterà immediatamente la detrazione.</p>
         <h3>5.2 Registrare un'entrata</h3>
         <p>Un'entrata registra denaro che arriva in uno dei tuoi conti — uno stipendio, un pagamento freelance, un regalo o qualsiasi altra entrata. Tocca +, seleziona "Entrata", inserisci l'importo, scegli il conto in cui è arrivato il denaro ("Paga a"), seleziona un gruppo e una categoria di entrata, aggiungi note se necessario e tocca Salva.</p>
         <h3>5.3 Trasferimenti tra conti</h3>
-        <div class="screenshot">🔄 [SCREENSHOT: Form Transazione - Trasferimento] <br>Didascalia che indica i doppi selettori di conto: 'Paga da' e 'Paga a'.</div>
+        
+        <img src="assets/help5.3-en.jpg" alt="Form Transazione - Trasferimento" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.3-en.jpg';">
+        <div class="img-caption">🔄 Didascalia che indica i doppi selettori di conto: 'Paga da' e 'Paga a'.</div>
+        
         <p>Un trasferimento registra lo spostamento di denaro tra due dei tuoi conti — ad esempio, pagare il saldo della carta di credito dal tuo conto corrente. Tocca +, seleziona "Trasferimento", inserisci l'importo, seleziona il conto di origine ("Paga da") e il conto di destinazione ("Paga a"), seleziona la data, aggiungi note e tocca Salva. I trasferimenti non influenzano il tuo patrimonio netto totale, ma modificano i saldi dei singoli conti.</p>
         <h3>5.4 Allegare ricevute</h3>
         <p>Puoi allegare una foto o una ricevuta PDF a qualsiasi transazione. Dopo aver salvato una transazione, aprila e tocca "Aggiungi Ricevuta". Puoi scattare una nuova foto o scegliere un'immagine esistente dalla libreria. Le ricevute sono memorizzate sul dispositivo e sincronizzate su iCloud insieme agli altri dati.</p>
         <h3>5.5 Tag</h3>
         <p>I tag sono etichette libere che puoi applicare alle transazioni per un'organizzazione personalizzata al di fuori del sistema gruppo/categoria. Ad esempio, tagga più transazioni come "Vacanze 2025" o "Ufficio". Per aggiungere un tag, tocca il campo Tag durante l'inserimento o la modifica di una transazione e digita un nuovo nome o selezionane uno esistente.</p>
         <h3>5.6 Modifica ed eliminazione delle transazioni</h3>
-        <p>Tocca qualsiasi transazione nella lista per aprirla. Dalla vista dettagliata, tocca Modifica per apportare cambiamenti. Per eliminare una transazione, scorri verso sinistra su di essa nella lista e tocca Elimina, oppure apri la transazione e tocca il pulsante Elimina. Le transazioni eliminate vengono rimosse permanentemente e non possono essere recuperate.</p>
+        <p>Toca qualsiasi transazione nella lista per aprirla. Dalla vista dettagliata, tocca Modifica per apportare cambiamenti. Per eliminare una transazione, scorri verso sinistra su di essa nella lista e tocca Elimina, oppure apri la transazione e tocca il pulsante Elimina. Le transazioni eliminate vengono rimosse permanentemente e non possono essere recuperate.</p>
     </section>
 
     <section id="recurring-bills">
@@ -191,7 +208,10 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h3>6.3 Gestione delle occorrenze delle fatture</h3>
         <p>Ogni occorrenza generata è un'istanza della fattura. Puoi vedere tutte le istanze aprendo il modello di fattura ricorrente. Modifica una singola istanza senza influenzare il modello aprendola e cambiando l'importo, la data o le note. Per saltare un'istanza (es. una fattura che non è stata emessa), contrassegnala come saltata invece che come pagata.</p>
         <h3>6.4 Contrassegnare le fatture come pagate</h3>
-        <div class="screenshot">✅ [SCREENSHOT: Lista Fatture in arrivo] <br>Vista che mostra le fatture in sospeso con l'azione 'Segna come pagata' in evidenza.</div>
+        
+        <img src="assets/help6.4-en.jpg" alt="Lista Fatture in arrivo" class="hero-image" onerror="this.onerror=null;this.src='assets/help6.4-en.jpg';">
+        <div class="img-caption">✅ Vista che mostra le fatture in sospeso con l'azione 'Segna come pagata' in evidenza.</div>
+        
         <p>Vai su "Fatture in arrivo" dal menu principale. Verranno elencate le fatture in scadenza nei prossimi 30 giorni. Tocca una fattura e seleziona "Segna come pagata" per confermare il pagamento, aggiustando eventualmente l'importo reale se diverso da quello predefinito. Una volta segnata come pagata, l'istanza della fattura crea una transazione corrispondente nella tua cronologia.</p>
     </section>
 
@@ -204,14 +224,20 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h3>7.3 Porto-avanti Saldo (Carry-Forward)</h3>
         <p>Quando il Porto-avanti Saldo è attivo, qualsiasi importo non speso alla fine di un periodo viene aggiunto al budget del periodo successivo. Ad esempio, se il tuo budget per il Cibo è di 500€ e ne spendi solo 400€, il mese successivo inizierà con 600€ (i 500€ base + i 100€ avanzati).</p>
         <h3>7.4 Monitoraggio della salute del budget</h3>
-        <div class="screenshot">📊 [SCREENSHOT: Indicatori Salute Budget] <br>Esempio di barre di progresso Verde (In salute), Arancione (Vicino al limite) e Rosso (Budget superato).</div>
+        
+        <img src="assets/help7.4-en.jpg" alt="Indicatori Salute Budget" class="hero-image" onerror="this.onerror=null;this.src='assets/help7.4-en.jpg';">
+        <div class="img-caption">📊 Esempio di barre di progresso Verde (In salute), Arancione (Vicino al limite) e Rosso (Budget superato).</div>
+        
         <p>La sezione "Budget Attivi" e la dashboard mostrano le tue posizioni attuali: quanto allocato, quanto speso finora, il saldo rimanente e una barra di progresso colorata. L'Analisi Budget (sezione 8.2) fornisce una vista storica completa.</p>
     </section>
 
     <section id="reports-analytics">
         <h2>8. Rapporti e Analisi</h2>
         <h3>8.1 Rapporto Mensile</h3>
-        <div class="screenshot">📈 [SCREENSHOT: Riepilogo Rapporto Mensile] <br>Vista dashboard popolata con il grafico a ciambella della ripartizione per categoria.</div>
+        
+        <img src="assets/help8.1-en.jpg" alt="Riepilogo Rapporto Mensile" class="hero-image" onerror="this.onerror=null;this.src='assets/help8.1-en.jpg';">
+        <div class="img-caption">📈 Vista dashboard popolata con il grafico a ciambella della ripartizione per categoria.</div>
+        
         <p>Il rapporto mensile ti offre una scomposizione finanziaria dettagliata per ogni mese passato. Accedi dal menu principale sotto "Rapporto Mensile". Mostra: Entrate Totali, Uscite Totali, Flusso di Cassa Netto, Spese per Gruppo (grafico visivo), Spese per Categoria, Saldi dei conti a fine mese e Spese principali. Usa le frecce di navigazione per spostarti tra i mesi passati.</p>
         <h3>8.2 Analisi Budget</h3>
         <p>L'Analisi Budget fornisce una panoramica storica delle prestazioni dei tuoi budget ricorrenti. Per ogni budget, puoi vedere le prestazioni periodo dopo periodo (sopra/sotto soglia), la spesa media rispetto all'obiettivo, i mesi migliori e peggiori e una linea di tendenza. Questo aiuta a identificare obiettivi di budget troppo alti o bassi e a notare derive nelle spese.</p>
@@ -248,14 +274,20 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
     <section id="workspaces-collaboration">
         <h2>10. Spazi di lavoro e Collaborazione</h2>
         <h3>10.1 Panoramica dello spazio di lavoro</h3>
-        <div class="screenshot">🏠 [SCREENSHOT: Selettore Spazio di Lavoro] <br>Mostra il punto di ingresso in alto e la lista degli spazi disponibili (Personale + Condiviso).</div>
+        
+        <img src="assets/help10.1-en.jpg" alt="Selettore Spazio di Lavoro" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.1-en.jpg';">
+        <div class="img-caption">🏠 Mostra il punto di ingresso in alto e la lista degli spazi disponibili (Personale + Condiviso).</div>
+        
         <p>Uno spazio di lavoro è un ambiente finanziario completamente isolato. Expense mnAI supporta due tipi: <strong>Spazio Personale</strong> (privato, salvato nel tuo database iCloud privato) e <strong>Spazi Condivisi</strong> (collaborativi, salvati in un database iCloud condiviso). Passa da uno spazio all'altro in qualsiasi momento dal selettore (tocca il nome/avatar in alto).</p>
         <h3>10.2 Spazio di lavoro Personale</h3>
         <p>Il tuo spazio Personale viene creato automaticamente al primo avvio (identificato dall'icona di un fiore). È memorizzato esclusivamente nel tuo database iCloud privato. Le persone che inviti negli spazi condivisi non hanno accesso al tuo spazio Personale. Non può essere eliminato, rinominato o trasferito.</p>
         <h3>10.3 Spazi di lavoro Condivisi</h3>
         <p>Gli spazi condivisi richiedono un piano In Famiglia. Servono per tracciare insieme le entrate/uscite di casa, gestire budget comuni o condividere fatture. Tutti i membri invitati vedono gli stessi dati in tempo reale e hanno accesso completo in lettura/scrittura. Se il piano In Famiglia del proprietario scade, lo spazio rimane visibile ai partecipanti finché il proprietario non ne revoca l'accesso.</p>
         <h3>10.4 Invitare altri a collaborare</h3>
-        <div class="screenshot">✉️ [SCREENSHOT: Invitare Collaboratori] <br>Il foglio di condivisione iCloud che appare dopo aver toccato l'icona di condivisione.</div>
+        
+        <img src="assets/help10.4-en.jpg" alt="Invitare Collaboratori" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.4-en.jpg';">
+        <div class="img-caption">✉️ Il foglio di condivisione iCloud che appare dopo aver toccato l'icona di condivisione.</div>
+        
         <p><strong>Requisiti:</strong> Piano In Famiglia, spazio di lavoro già sincronizzato su iCloud. Per inviare un invito: apri il selettore, tocca l'icona di condivisione accanto allo spazio condiviso (o vai in impostazioni dello spazio → "Invita Persone"). Apparirà il foglio di condivisione iCloud; condividi il link via Messaggi, Mail, AirDrop, ecc. Il destinatario tocca il link e accetta l'invito di sistema per partecipare.</p>
         <h3>10.5 Accettare un invito a uno spazio</h3>
         <p>Apri il link di invito sul tuo iPhone, iPad o Mac con Expense mnAI installato. Apparirà un avviso di sistema "Partecipare a [Nome Spazio]?". Tocca Accetta. Lo spazio apparirà nel tuo selettore entro pochi secondi. Se non appare subito, chiudi e riapri l'app e attendi fino a un minuto. Non hai bisogno di un piano a pagamento per partecipare a uno spazio condiviso.</p>
