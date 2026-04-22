@@ -1,20 +1,19 @@
-\<\!DOCTYPE html\>
-
-\<html lang="zh-CN"\>
-\<head\>
-\<meta charset="UTF-8"\>
-\<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"\>
-\<title\>Expense mnAI - 完整用户指南\</title\>
-\<style\>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>Expense mnAI - 完整用户指南</title>
+<style>
 :root {
-\--bg: \#f2f2f7; --card: \#ffffff; --text: \#1c1c1e; --secondary: \#636366;
-\--accent: \#007aff; --border: \#e5e5ea; --tip-bg: rgba(0, 122, 255, 0.05);
-\--tip-border: \#007aff; --code-bg: \#f8f8f8;
+--bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --secondary: #636366;
+--accent: #007aff; --border: #e5e5ea; --tip-bg: rgba(0, 122, 255, 0.05);
+--tip-border: #007aff; --code-bg: #f8f8f8;
 }
 @media (prefers-color-scheme: dark) {
 :root {
-\--bg: \#000000; --card: \#1c1c1e; --text: \#ffffff; --secondary: \#8e8e93;
-\--accent: \#0a84ff; --border: \#38383a; --code-bg: \#2c2c2e;
+--bg: #000000; --card: #1c1c1e; --text: #ffffff; --secondary: #8e8e93;
+--accent: #0a84ff; --border: #38383a; --code-bg: #2c2c2e;
 }
 }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei"; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 0; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
@@ -28,6 +27,8 @@ strong { font-weight: 600; color: var(--text); }
 .note { background: var(--tip-bg); border-left: 5px solid var(--tip-border); padding: 24px; border-radius: 12px; margin: 32px 0; font-size: 15px; }
 .note h5 { margin: 0 0 8px 0; color: var(--tip-border); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
 .screenshot { background: var(--bg); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; text-align: center; color: var(--secondary); font-style: italic; margin: 30px 0; font-size: 14px; }
+.hero-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 30px 0; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.img-caption { text-align: center; color: var(--secondary); font-size: 14px; font-style: italic; margin-top: -20px; margin-bottom: 30px; }
 table { width: 100%; border-collapse: collapse; margin: 32px 0; background: var(--bg); border-radius: 12px; overflow: hidden; font-size: 15px; }
 th, td { text-align: left; padding: 14px; border-bottom: 1px solid var(--border); }
 th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 0.5px; background: rgba(0,0,0,0.02); }
@@ -37,14 +38,13 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 .toc li { margin-bottom: 6px; font-size: 14px; }
 .toc a { text-decoration: none; color: var(--accent); font-weight: 500; }
 @media (max-width: 600px) { h1 { font-size: 32px; } .content-card { padding: 30px 20px; border-radius: 0; border: 0; } .container { padding: 0; } .toc ul { grid-template-columns: 1fr; } }
-\</style\>
-\</head\>
-\<body\>
-\<div class="container"\>
-\<div class="content-card"\>
-\<h1\>Expense mnAI<br>\<span style="color: var(--secondary); font-weight: 500;"\>完整用户指南\</span\>\</h1\>
+</style>
+</head>
+<body>
+<div class="container">
+<div class="content-card">
+<h1>Expense mnAI<br><span style="color: var(--secondary); font-weight: 500;">完整用户指南</span></h1>
 
-```
     <nav class="toc">
         <h4>跳转至章节</h4>
         <ul>
@@ -65,6 +65,9 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 
     <section id="introduction">
         <h2>1. 简介</h2>
+        
+        <img src="assets/infographic-zh.jpg" alt="Expense mnAI 概览" class="hero-image" onerror="this.onerror=null;this.src='assets/infographic-en.jpg';">
+
         <p>Expense mnAI 是一款智能且专注于隐私的财务管理器，专为 Apple 设备设计。它旨在为您提供财务生活的完整视图——包括收入、支出、周期性义务和预算健康状况——且绝不会将您的数据分享给广告商、第三方分析服务或 Apple iCloud 基础设施之外的任何外部服务器。</p>
         <h3>Expense mnAI 的功能</h3>
         <p>Expense mnAI 追踪资金的流入、流出以及在账户之间的转移。它能识别工资存入、超市购物和信用卡还款之间的区别，并进行组织整理，让您清楚了解每个月资金的真实去向。</p>
@@ -74,7 +77,7 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
             <li><strong>开发者零访问。</strong> 您的交易、余额和账户仅存储在您的设备和个人 iCloud 账户中。开发者无法查看您的数据，没有任何公司服务器会保存您的财务信息。</li>
             <li><strong>原生 Apple 保护。</strong> 所有内容都由您的 Apple ID 加密并通过 iCloud 同步。保护您照片和信息的同一套安全基础设施也在保护您的财务。</li>
             <li><strong>无第三方追踪。</strong> Expense mnAI 不包含任何广告 SDK、分析框架或数据经纪商插件。您的财务行为绝不会被用于用户画像。</li>
-            <li><strong>工作区。</strong> 将个人财务与共享家庭财务严格区分。个人工作区仅归您所有；共享工作区允许您与家人或伴侣协作，实时查看相同数据。</li>
+            <li><strong>工作区。</strong> 将个人财务与共享家庭财务严格区分。个人工作区仅归您所有；共享工作区允许您与伴侣或家人协作，实时查看相同数据。</li>
         </ul>
     </section>
 
@@ -112,9 +115,15 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 
         <h3>2.3 界面与导航指南</h3>
         <p>Expense mnAI 使用可根据设备自适应的悬浮导航栏。</p>
-        <div class="screenshot">📱 [屏幕截图：导航 - 手机端收起与展开] <br>标注视图显示 iPhone 上的胶囊状底部栏以及点击菜单按钮后的效果。</div>
+        
+        <img src="assets/help2.3.1-en.jpg" alt="导航 - 手机端收起与展开" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.1-en.jpg';">
+        <div class="img-caption">📱 标注视图显示 iPhone 上的胶囊状底部栏以及点击菜单按钮后的效果。</div>
+        
         <p><strong>iPhone (纵向)：</strong> 一个胶囊状栏位悬浮在屏幕底部，包含两个固定标签（仪表盘和交易记录）以及右侧的菜单按钮。点击菜单按钮可打开全屏导航面板，访问所有章节。</p>
-        <div class="screenshot">🖥️ [屏幕截图：导航 - iPad 侧边栏] <br>显示 iPad/Mac 上顶部精简栏展开为完整侧边栏的视图。</div>
+        
+        <img src="assets/help2.3.2-en.jpg" alt="导航 - iPad 侧边栏" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.2-en.jpg';">
+        <div class="img-caption">🖥️ 显示 iPad/Mac 上顶部精简栏展开为完整侧边栏的视图。</div>
+        
         <p><strong>iPad 和 Mac：</strong> 顶部设有一个精简的悬浮栏。点击左侧图标可展开为显示所有导航章节的完整侧边栏。选择目的地后，侧边栏会自动收起。</p>
         <p><strong>主要章节：</strong></p>
         <table>
@@ -169,12 +178,18 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h2>5. 交易记录</h2>
         <h3>5.1 记录支出</h3>
         <p>支出记录资金离开您账户的情况。</p>
-        <div class="screenshot">📸 [屏幕截图：交易表单 - 支出] <br>标注了金额、付款账户、类别和备注字段的表单。</div>
+        
+        <img src="assets/help5.1-en.jpg" alt="交易表单 - 支出" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.1-en.jpg';">
+        <div class="img-caption">📸 标注了金额、付款账户、类别和备注字段的表单。</div>
+        
         <p><strong>添加支出：</strong> 点击 + 按钮（在仪表盘和交易页面均可见），选择“支出”，输入金额，选择日期，选择资金来源账户（付款账户），选择分组和类别，可选添加备注/标签/收据，然后点击保存。账户余额将立即反映此扣款。</p>
         <h3>5.2 记录收入</h3>
         <p>收入记录资金进入账户的情况——如工资、自由职业报酬、现金礼物或其他流入。点击 +，选择“收入”，输入金额，选择资金存入账户（收款账户），选择收入分组和类别，根据需要添加备注，点击保存。</p>
         <h3>5.3 账户间转账</h3>
-        <div class="screenshot">🔄 [屏幕截图：交易表单 - 转账] <br>标注了双账户选择器的说明：“付款账户”和“收款账户”。</div>
+        
+        <img src="assets/help5.3-en.jpg" alt="交易表单 - 转账" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.3-en.jpg';">
+        <div class="img-caption">🔄 标注了双账户选择器的说明：“付款账户”和“收款账户”。</div>
+        
         <p>转账记录两个自有账户之间的资金移动——例如从活期账户归还信用卡欠款。点击 +，选择“转账”，输入金额，选择来源账户（付款账户）和目标账户（收款账户），选择日期，添加备注，点击保存。转账不会影响您的总净资产，但会改变各账户的余额。</p>
         <h3>5.4 关联收据</h3>
         <p>您可以为任何交易附上照片或 PDF 收据。保存交易后，打开该交易并点击“添加收据”。您可以拍摄新照片或从库中选择已有图像。收据存储在设备上，并随其他数据同步到 iCloud。</p>
@@ -193,7 +208,10 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h3>6.3 管理账单实例</h3>
         <p>生成的每笔付款都是一个“实例”。您可以通过打开周期性账单模板查看所有实例。打开单个实例可对其进行编辑（如修改金额、日期或备注），且不会影响模板。如需跳过某次付款（例如免除了一次费用），可将其标记为“跳过”而非已付。</p>
         <h3>6.4 将账单标记为已付</h3>
-        <div class="screenshot">✅ [屏幕截图：近期账单列表] <br>显示待处理账单的视图，突出了“标记为已付”操作。</div>
+        
+        <img src="assets/help6.4-en.jpg" alt="近期账单列表" class="hero-image" onerror="this.onerror=null;this.src='assets/help6.4-en.jpg';">
+        <div class="img-caption">✅ 显示待处理账单的视图，突出了“标记为已付”操作。</div>
+        
         <p>进入主菜单的“近期账单”。这里显示未来 30 天内到期的账单。点击账单并选择“标记为已付”确认支付，如实际金额与默认值不同可在此调整。一旦标记为已付，该账单实例将在您的历史记录中创建一笔对应的交易。</p>
     </section>
 
@@ -206,14 +224,20 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h3>7.3 余额顺延 (Carry-Forward)</h3>
         <p>开启余额顺延后，周期结束时任何未使用的金额都会添加到下一期的预算中。例如，如果您的餐饮预算是 500 元，实际仅花费 400 元，则下个月的起始可用预算将变为 600 元（500 元基准 + 100 元顺延）。</p>
         <h3>7.4 追踪预算健康状况</h3>
-        <div class="screenshot">📊 [屏幕截图：预算健康指标] <br>展示绿色（健康）、橙色（接近上限）和红色（超支）进度条的示例。</div>
+        
+        <img src="assets/help7.4-en.jpg" alt="预算健康指标" class="hero-image" onerror="this.onerror=null;this.src='assets/help7.4-en.jpg';">
+        <div class="img-caption">📊 展示绿色（健康）、橙色（接近上限）和红色（超支）进度条的示例。</div>
+        
         <p>“当前预算”章节和仪表盘会显示您目前的现状：已分配多少、已支出多少、剩余余额以及颜色编码的进度条。“预算分析”（第 8.2 节）提供历史趋势图。</p>
     </section>
 
     <section id="reports-analytics">
         <h2>8. 报告与分析</h2>
         <h3>8.1 月度报告</h3>
-        <div class="screenshot">📈 [屏幕截图：月度报告摘要] <br>仪表盘视图，显示了类别占比的饼图。</div>
+        
+        <img src="assets/help8.1-en.jpg" alt="月度报告摘要" class="hero-image" onerror="this.onerror=null;this.src='assets/help8.1-en.jpg';">
+        <div class="img-caption">📈 仪表盘视图，显示了类别占比的饼图。</div>
+        
         <p>月度报告为您提供每个已结束月份的详细财务细分。进入主菜单的“月度报告”，内容包括：总收入、总支出、净现金流、按分组支出的可视化图表、按类别支出、月末账户余额以及大额支出项。使用导航箭头在已结束的月份间切换。</p>
         <h3>8.2 预算分析</h3>
         <p>预算分析提供周期性预算执行情况的历史视图。对于每项预算，您可以查看各期的表现（是否达标）、平均支出与目标的对比、表现最好和最差的月份以及趋势线。这有助于识别过高或过低的预算目标，并捕捉消费习惯的变化。</p>
@@ -250,14 +274,20 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
     <section id="workspaces-collaboration">
         <h2>10. 工作区与协作</h2>
         <h3>10.1 工作区概览</h3>
-        <div class="screenshot">🏠 [屏幕截图：工作区选择器] <br>显示顶部的导航入口及可用空间列表（个人 + 共享）。</div>
+        
+        <img src="assets/help10.1-en.jpg" alt="工作区选择器" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.1-en.jpg';">
+        <div class="img-caption">🏠 显示顶部的导航入口及可用空间列表（个人 + 共享）。</div>
+        
         <p>工作区是完全隔离的财务环境。Expense mnAI 支持两种类型：<strong>个人工作区</strong>（私人，存储在您的私人 iCloud 数据库中）和 <strong>共享工作区</strong>（协作，存储在共享 iCloud 数据库中）。通过选择器（点击顶部名称/头像）随时切换。</p>
         <h3>10.2 个人工作区</h3>
         <p>个人工作区在首次运行时自动创建（图标为花朵）。它仅存储在您的私人 iCloud 数据库中。您邀请加入共享工作区的人员无法访问您的个人工作区。该空间不可删除、重命名或转让。</p>
         <h3>10.3 共享工作区</h3>
         <p>共享工作区需要“家人共享”订阅。利用它可以共同追踪家庭收支、管理共同预算或分摊账单。所有受邀成员实时查看相同数据，并拥有完整的读写权限。如果所有者的家人共享计划过期，参与者仍可见该工作区，直到所有者撤销访问权限。</p>
         <h3>10.4 邀请他人协作</h3>
-        <div class="screenshot">✉️ [屏幕截图：邀请协作人员] <br>点击分享图标后出现的 iCloud 分享表单。</div>
+        
+        <img src="assets/help10.4-en.jpg" alt="邀请协作人员" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.4-en.jpg';">
+        <div class="img-caption">✉️ 点击分享图标后出现的 iCloud 分享表单。</div>
+        
         <p><strong>要求：</strong> 拥有家人共享计划，且工作区已同步至 iCloud。发送邀请：打开工作区选择器，点击共享工作区旁的分享图标（或进入工作区设置 → “邀请人员”）。会出现 iCloud 分享表单；通过信息、邮件、AirDrop 等分享链接。接收者点击链接并接受系统邀请即可加入。</p>
         <h3>10.5 接受工作区邀请</h3>
         <p>在安装了 Expense mnAI 的 iPhone、iPad 或 Mac 上打开邀请链接。系统会提示“加入 [空间名称]？”，点击加入。该工作区会在数秒内出现在您的选择器中。如果未立即出现，请尝试重启应用并等待一分钟。您无需拥有付费计划即可加入他人的共享工作区。</p>
@@ -293,8 +323,6 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 
     <p style="text-align: center; margin-top: 80px; font-size: 13px; color: var(--secondary);">Expense mnAI — 您的财务架构师，安全且私密。</p>
 </div>
-```
-
-\</div\>
-\</body\>
-\</html\>
+</div>
+</body>
+</html>
