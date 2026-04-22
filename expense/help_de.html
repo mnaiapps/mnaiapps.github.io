@@ -27,6 +27,7 @@
         .note { background: var(--tip-bg); border-left: 5px solid var(--tip-border); padding: 24px; border-radius: 12px; margin: 32px 0; font-size: 15px; }
         .note h5 { margin: 0 0 8px 0; color: var(--tip-border); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
         .screenshot { background: var(--bg); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; text-align: center; color: var(--secondary); font-style: italic; margin: 30px 0; font-size: 14px; }
+        .img-caption { text-align: center; color: var(--secondary); font-size: 14px; font-style: italic; margin-top: -20px; margin-bottom: 30px; }
         table { width: 100%; border-collapse: collapse; margin: 32px 0; background: var(--bg); border-radius: 12px; overflow: hidden; font-size: 15px; }
         th, td { text-align: left; padding: 14px; border-bottom: 1px solid var(--border); }
         th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 0.5px; background: rgba(0,0,0,0.02); }
@@ -35,6 +36,7 @@
         .toc ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
         .toc li { margin-bottom: 6px; font-size: 14px; }
         .toc a { text-decoration: none; color: var(--accent); font-weight: 500; }
+        .hero-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 30px 0; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         @media (max-width: 600px) { h1 { font-size: 32px; } .content-card { padding: 30px 20px; border-radius: 0; border: 0; } .container { padding: 0; } .toc ul { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -63,6 +65,9 @@
 
         <section id="introduction">
             <h2>1. Einleitung</h2>
+            
+            <img src="assets/infographic-de.jpg" alt="Expense mnAI Übersicht" class="hero-image" onerror="this.onerror=null;this.src='assets/infographic-en.jpg';">
+
             <p>Expense mnAI ist ein privater, intelligenter Finanzmanager, der exklusiv für Apple-Geräte entwickelt wurde. Er wurde entworfen, um Ihnen ein vollständiges Bild Ihres Finanzlebens zu vermitteln — Ihre Einnahmen, Ausgaben, wiederkehrenden Verpflichtungen und Ihre Budget-Gesundheit — ohne Ihre Daten jemals mit Werbetreibenden, Drittanbietern von Analysediensten oder externen Servern außerhalb von Apples eigener iCloud-Infrastruktur zu teilen.</p>
             <h3>Was Expense mnAI tut</h3>
             <p>Expense mnAI verfolgt das Geld, das eingeht, ausgeht und zwischen Ihren Konten bewegt wird. Es versteht den Unterschied zwischen einer Gehaltseinzahlung, einem Supermarktbesuch und einer Kreditkartenzahlung und organisiert jede einzelne, damit Sie verstehen können, wohin Ihr Geld jeden Monat tatsächlich fließt.</p>
@@ -110,9 +115,15 @@
 
             <h3>2.3 Navigations- & Interface-Leitfaden</h3>
             <p>Expense mnAI verwendet eine schwebende Navigationsleiste, die sich an Ihr Gerät anpasst.</p>
-            <div class="screenshot">📱 [SCREENSHOT: Navigation - Mobil Geschlossen vs. Offen] <br>Annotierte Ansicht der unteren Pill-Leiste und das Ergebnis beim Tippen auf den Menü-Button auf dem iPhone.</div>
+            
+            <img src="assets/help2.3.1-en.jpg" alt="Navigation - Mobil Geschlossen vs. Offen" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.1-en.jpg';">
+            <div class="img-caption">📱 Annotierte Ansicht der unteren Pill-Leiste und das Ergebnis beim Tippen auf den Menü-Button auf dem iPhone.</div>
+            
             <p><strong>Auf dem iPhone (Porträt):</strong> Eine pillenförmige Leiste schwebt am unteren Bildschirmrand mit zwei festen Tabs — Dashboard und Transaktionen — und einem Menü-Button auf der rechten Seite. Durch Tippen auf den Menü-Button öffnet sich ein Vollbild-Navigationspanel mit Zugriff auf alle Bereiche.</p>
-            <div class="screenshot">🖥️ [SCREENSHOT: Navigation - iPad Seitenleiste] <br>Ansicht, die zeigt, wie sich die kompakte obere Leiste auf dem iPad/Mac in die Seitenleiste erweitert.</div>
+            
+            <img src="assets/help2.3.2-en.jpg" alt="Navigation - iPad Seitenleiste" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.2-en.jpg';">
+            <div class="img-caption">🖥️ Ansicht, die zeigt, wie sich die kompakte obere Leiste auf dem iPad/Mac in die Seitenleiste erweitert.</div>
+            
             <p><strong>Auf dem iPad und Mac:</strong> Eine kompakte schwebende Leiste befindet sich oben. Durch Tippen auf das linke Symbol wird sie zu einer vollständigen Seitenleiste erweitert, die alle Navigationsbereiche anzeigt. Die Seitenleiste schließt sich automatisch, wenn Sie ein Ziel auswählen.</p>
             <p><strong>Hauptabschnitte:</strong></p>
             <table>
@@ -167,12 +178,18 @@
             <h2>5. Transaktionen</h2>
             <h3>5.1 Eine Ausgabe erfassen</h3>
             <p>Eine Ausgabe zeichnet Geld auf, das eines Ihrer Konten verlässt.</p>
-            <div class="screenshot">📸 [SCREENSHOT: Transaktionsformular - Ausgabe] <br>Annotiertes Formular mit Feldern für Betrag, Zahlen von, Kategorie und Notiz.</div>
+            
+            <img src="assets/help5.1-en.jpg" alt="Transaktionsformular - Ausgabe" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.1-en.jpg';">
+            <div class="img-caption">📸 Annotiertes Formular mit Feldern für Betrag, Zahlen von, Kategorie und Notiz.</div>
+            
             <p><strong>Um eine Ausgabe hinzuzufügen:</strong> Tippen Sie auf den +-Button (sichtbar auf dem Dashboard und dem Transaktionsbildschirm), wählen Sie „Ausgabe“, geben Sie den Betrag ein, wählen Sie das Datum, wählen Sie das Konto, von dem das Geld kam („Zahlen von“), wählen Sie eine Gruppe und Kategorie, fügen Sie optional Notizen/Tags/Belege hinzu und tippen Sie dann auf Speichern. Der Kontostand spiegelt den Abzug sofort wider.</p>
             <h3>5.2 Eine Einnahme erfassen</h3>
             <p>Einnahmen zeichnen Geld auf, das auf einem Ihrer Konten eingeht — ein Gehalt, eine freiberufliche Zahlung, ein Geldgeschenk oder jeder andere Zufluss. Tippen Sie auf +, wählen Sie „Einnahme“, geben Sie den Betrag ein, wählen Sie das Konto, auf dem das Geld eingegangen ist („Zahlen an“), wählen Sie eine Einnahmengruppe und -kategorie, fügen Sie bei Bedarf Notizen hinzu und tippen Sie dann auf Speichern.</p>
             <h3>5.3 Überweisungen zwischen Konten</h3>
-            <div class="screenshot">🔄 [SCREENSHOT: Transaktionsformular - Überweisung] <br>Hinweis auf die dualen Kontoselektoren: 'Zahlen von' und 'Zahlen an'.</div>
+            
+            <img src="assets/help5.3-en.jpg" alt="Transaktionsformular - Überweisung" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.3-en.jpg';">
+            <div class="img-caption">🔄 Hinweis auf die dualen Kontoselektoren: 'Zahlen von' und 'Zahlen an'.</div>
+            
             <p>Eine Überweisung zeichnet Geld auf, das sich zwischen zwei Ihrer eigenen Konten bewegt — zum Beispiel das Bezahlen Ihrer Kreditkartenrechnung von Ihrem Girokonto. Tippen Sie auf +, wählen Sie „Überweisung“, geben Sie den Betrag ein, wählen Sie das Quellkonto („Zahlen von“) und das Zielkonto („Zahlen an“), wählen Sie das Datum, fügen Sie Notizen hinzu und tippen Sie dann auf Speichern. Überweisungen haben keinen Einfluss auf Ihr Gesamtnettovermögen, wirken sich jedoch auf die einzelnen Kontosalden aus.</p>
             <h3>5.4 Belege anhängen</h3>
             <p>Sie können an jede Transaktion einen Foto- oder PDF-Beleg anhängen. Nachdem Sie eine Transaktion gespeichert haben, öffnen Sie diese und tippen Sie auf „Beleg hinzufügen“. Sie können ein neues Foto aufnehmen oder ein vorhandenes Bild aus Ihrer Fotomediathek wählen. Belege werden auf Ihrem Gerät gespeichert und mit Ihren anderen Daten in iCloud synchronisiert.</p>
@@ -191,7 +208,10 @@
             <h3>6.3 Rechnungsinstanzen verwalten</h3>
             <p>Jedes generierte Ereignis ist eine Rechnungsinstanz. Sie können alle Instanzen anzeigen, indem Sie die Vorlage für die wiederkehrende Rechnung öffnen. Ändern Sie eine einzelne Instanz, ohne die Vorlage zu beeinflussen, indem Sie sie öffnen und ihren Betrag, das Datum oder die Notizen bearbeiten. Um eine Instanz zu überspringen (z. B. eine Rechnung, die nicht angefallen ist), markieren Sie diese als übersprungen statt als bezahlt.</p>
             <h3>6.4 Rechnungen als bezahlt markieren</h3>
-            <div class="screenshot">✅ [SCREENSHOT: Liste anstehender Rechnungen] <br>Ansicht, die ausstehende Rechnungen mit hervorgehobener Aktion 'Als bezahlt markieren' zeigt.</div>
+            
+            <img src="assets/help6.4-en.jpg" alt="Liste anstehender Rechnungen" class="hero-image" onerror="this.onerror=null;this.src='assets/help6.4-en.jpg';">
+            <div class="img-caption">✅ Ansicht, die ausstehende Rechnungen mit hervorgehobener Aktion 'Als bezahlt markieren' zeigt.</div>
+            
             <p>Navigieren Sie im Hauptmenü zu „Anstehende Rechnungen“. Rechnungen, die in den nächsten 30 Tagen fällig sind, werden aufgelistet. Tippen Sie auf eine Rechnung und wählen Sie „Als bezahlt markieren“, um die Zahlung zu bestätigen, und passen Sie optional den tatsächlichen Betrag an, falls er vom Standard abweicht. Sobald sie als bezahlt markiert ist, erstellt die Rechnungsinstanz eine entsprechende Transaktion in Ihrer Historie.</p>
         </section>
 
@@ -204,14 +224,20 @@
             <h3>7.3 Übertrag (Carry-Forward)</h3>
             <p>Wenn der Übertrag aktiviert ist, wird jeder nicht ausgegebene Betrag am Ende eines Zeitraums zum Budget des nächsten Zeitraums hinzugefügt. Wenn Ihr Lebensmittelbudget beispielsweise 12.000 € beträgt und Sie nur 9.000 € ausgegeben haben, beginnt der nächste Monat mit 15.000 € (12.000 € Basis + 3.000 € Übertrag).</p>
             <h3>7.4 Budget-Gesundheit verfolgen</h3>
-            <div class="screenshot">📊 [SCREENSHOT: Budget-Gesundheitsindikatoren] <br>Darstellung von grünen (Gesund), gelben (Annähernd) und roten (Über Budget) Fortschrittsbalken.</div>
+            
+            <img src="assets/help7.4-en.jpg" alt="Budget-Gesundheitsindikatoren" class="hero-image" onerror="this.onerror=null;this.src='assets/help7.4-en.jpg';">
+            <div class="img-caption">📊 Darstellung von grünen (Gesund), gelben (Annähernd) und roten (Über Budget) Fortschrittsbalken.</div>
+            
             <p>Der Abschnitt „Aktive Budgets“ und das Dashboard zeigen Ihre aktuellen Budgetpositionen: zugewiesener Betrag, bisher ausgegeben, verbleibender Saldo und ein farbcodierter Fortschrittsbalken. Die Budgetanalyse (Abschnitt 8.2) bietet eine vollständige historische Ansicht.</p>
         </section>
 
         <section id="reports-analytics">
             <h2>8. Berichte & Analysen</h2>
             <h3>8.1 Monatsbericht</h3>
-            <div class="screenshot">📈 [SCREENSHOT: Monatsbericht Übersicht] <br>Gefüllte Dashboard-Ansicht mit dem Donut-Diagramm der Kategorieaufschlüsselung.</div>
+            
+            <img src="assets/help8.1-en.jpg" alt="Monatsbericht Übersicht" class="hero-image" onerror="this.onerror=null;this.src='assets/help8.1-en.jpg';">
+            <div class="img-caption">📈 Gefüllte Dashboard-Ansicht mit dem Donut-Diagramm der Kategorieaufschlüsselung.</div>
+            
             <p>Der Monatsbericht bietet Ihnen eine detaillierte Finanzanalyse für jeden vergangenen Monat. Greifen Sie über das Hauptmenü unter „Monatsbericht“ darauf zu. Er zeigt: Gesamteinnahmen, Gesamtausgaben, Netto-Cashflow, Ausgaben nach Gruppe (visuelles Diagramm), Ausgaben nach Kategorie, Kontosalden am Monatsende und Top-Ausgaben. Verwenden Sie die Navigationspfeile für den Monat, um zwischen vergangenen Monaten zu wechseln.</p>
             <h3>8.2 Budgetanalyse</h3>
             <p>Die Budgetanalyse bietet eine historische Ansicht Ihrer Budgetleistung über alle wiederkehrenden Budgets hinweg. Für jedes Budget können Sie die Leistung Zeitraum für Zeitraum (über/unter), durchschnittliche Ausgaben im Vergleich zum Ziel, beste und schlechteste Monate sowie eine Trendlinie sehen. Dies hilft dabei, zu hoch oder zu niedrig gesetzte Budgetziele zu identifizieren und Ausgabenabweichungen zu erkennen.</p>
@@ -248,14 +274,20 @@
         <section id="workspaces-collaboration">
             <h2>10. Workspaces & Zusammenarbeit</h2>
             <h3>10.1 Workspace-Übersicht</h3>
-            <div class="screenshot">🏠 [SCREENSHOT: Workspace-Picker] <br>Zeigt den Einstiegspunkt in der oberen Navigation und die Liste der verfügbaren Workspaces (Persönlich + Gemeinsam).</div>
+            
+            <img src="assets/help10.1-en.jpg" alt="Workspace-Picker" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.1-en.jpg';">
+            <div class="img-caption">🏠 Zeigt den Einstiegspunkt in der oberen Navigation und die Liste der verfügbaren Workspaces (Persönlich + Gemeinsam).</div>
+            
             <p>Ein Workspace ist eine völlig isolierte Finanzumgebung. Expense mnAI unterstützt zwei Typen: <strong>Persönlicher Workspace</strong> (privat, in Ihrer privaten iCloud-Datenbank gespeichert) und <strong>Gemeinsame Workspaces</strong> (kollaborativ, in einer gemeinsam genutzten iCloud-Datenbank gespeichert). Wechseln Sie jederzeit über den Workspace-Picker (tippen Sie auf den Workspace-Namen/Avatar oben auf dem Bildschirm) zwischen den Workspaces.</p>
             <h3>10.2 Persönlicher Workspace</h3>
             <p>Ihr persönlicher Workspace wird automatisch beim ersten Start erstellt (gekennzeichnet durch ein Blumen-Symbol). Er wird ausschließlich in Ihrer privaten iCloud-Datenbank gespeichert. Andere, die Sie zu gemeinsamen Workspaces einladen, haben keinen Zugriff auf Ihren persönlichen Workspace. Er kann nicht gelöscht, umbenannt oder übertragen werden.</p>
             <h3>10.3 Gemeinsame Workspaces</h3>
             <p>Gemeinsame Workspaces erfordern einen Familienfreigabe-Plan. Sie dienen dazu, Haushaltseinnahmen/-ausgaben gemeinsam zu verfolgen, gemeinsame Budgets zu verwalten oder Rechnungen zu teilen. Alle eingeladenen Mitglieder sehen dieselben Daten in Echtzeit und haben vollen Lese-/Schreibzugriff. Wenn das Familien-Abo des Besitzers abläuft, bleibt der Workspace für die Teilnehmer sichtbar, bis die Freigabe explizit widerrufen wird.</p>
             <h3>10.4 Andere zur Zusammenarbeit einladen</h3>
-            <div class="screenshot">✉️ [SCREENSHOT: Mitarbeiter einladen] <br>Das iCloud-Share-Sheet, das nach dem Tippen auf das Teilen-Symbol erscheint.</div>
+            
+            <img src="assets/help10.4-en.jpg" alt="Mitarbeiter einladen" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.4-en.jpg';">
+            <div class="img-caption">✉️ Das iCloud-Share-Sheet, das nach dem Tippen auf das Teilen-Symbol erscheint.</div>
+            
             <p><strong>Voraussetzungen:</strong> Familienfreigabe-Plan, Workspace bereits mit iCloud synchronisiert. Um eine Einladung zu senden: Öffnen Sie den Workspace-Picker, tippen Sie auf das Teilen-Symbol neben dem gemeinsamen Workspace (oder öffnen Sie die Workspace-Einstellungen → „Personen einladen“). Das iCloud-Share-Sheet erscheint; teilen Sie den Einladungslink über Nachrichten, Mail, AirDrop usw.. Der Empfänger tipt auf den Link und akzeptiert die Systemaufforderung zum Beitreten.</p>
             <h3>10.5 Eine Workspace-Einladung annehmen</h3>
             <p>Öffnen Sie den Einladungslink auf Ihrem iPhone, iPad oder Mac, auf dem Expense mnAI installiert ist. Eine Systemaufforderung „[Workspace-Name] beitreten?“ erscheint. Tippen Sie auf Akzeptieren. Der Workspace erscheint innerhalb weniger Sekunden in Ihrem Workspace-Picker. Wenn er nicht sofort erscheint, schließen Sie die App und öffnen Sie sie erneut, und warten Sie bis zu einer Minute. Sie benötigen keinen kostenpflichtigen Plan, um an einem gemeinsamen Workspace teilzunehmen.</p>
