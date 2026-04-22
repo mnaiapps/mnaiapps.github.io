@@ -27,6 +27,8 @@ strong { font-weight: 600; color: var(--text); }
 .note { background: var(--tip-bg); border-left: 5px solid var(--tip-border); padding: 24px; border-radius: 12px; margin: 32px 0; font-size: 15px; }
 .note h5 { margin: 0 0 8px 0; color: var(--tip-border); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
 .screenshot { background: var(--bg); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; text-align: center; color: var(--secondary); font-style: italic; margin: 30px 0; font-size: 14px; }
+.hero-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 30px 0; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.img-caption { text-align: center; color: var(--secondary); font-size: 14px; font-style: italic; margin-top: -20px; margin-bottom: 30px; }
 table { width: 100%; border-collapse: collapse; margin: 32px 0; background: var(--bg); border-radius: 12px; overflow: hidden; font-size: 15px; }
 th, td { text-align: left; padding: 14px; border-bottom: 1px solid var(--border); }
 th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 0.5px; background: rgba(0,0,0,0.02); }
@@ -63,6 +65,9 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 
     <section id="introduction">
         <h2>1. はじめに</h2>
+        
+        <img src="assets/infographic-ja.jpg" alt="Expense mnAIの概要" class="hero-image" onerror="this.onerror=null;this.src='assets/infographic-en.jpg';">
+
         <p>Expense mnAIは、Appleデバイス専用に設計された、インテリジェントでプライバシーを重視した家計管理アプリです。広告主やサードパーティの分析サービス、AppleのiCloudインフラストラクチャ以外の外部サーバーとデータを共有することなく、収入、支出、定期的な支払い、予算の健全性など、あなたの家計状況を完全に把握できるように構築されています。</p>
         <h3>Expense mnAIでできること</h3>
         <p>Expense mnAIは、お金の出入り、および口座間の移動を追跡します。給与の入金、食料品の購入、クレジットカードの支払いの違いを理解し、それぞれを整理することで、毎月のお金が実際にどこへ消えているのかを理解するのに役立ちます。</p>
@@ -94,7 +99,7 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <table>
             <thead><tr><th>グループ</th><th>カテゴリ</th></tr></thead>
             <tbody>
-                <tr><td>飲食</th><td>食料品、外食</td></tr>
+                <tr><td>飲食</td><td>食料品、外食</td></tr>
                 <tr><td>交通</td><td>燃料費、公共交通機関</td></tr>
                 <tr><td>住居</td><td>家賃 / ローン</td></tr>
                 <tr><td>公共料金</td><td>電気、インターネット</td></tr>
@@ -110,9 +115,15 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 
         <h3>2.3 インターフェースとナビゲーションガイド</h3>
         <p>Expense mnAIは、デバイスに合わせて適応するフローティングナビゲーションバーを使用しています。</p>
-        <div class="screenshot">📱 [スクリーンショット：ナビゲーション - モバイル 閉じた状態 vs 開いた状態] <br>ピル型のボトムバーと、iPhoneでメニューボタンをタップした際の結果を示す注釈付きビュー。</div>
+        
+        <img src="assets/help2.3.1-en.jpg" alt="ナビゲーション - モバイル 閉じた状態 vs 開いた状態" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.1-en.jpg';">
+        <div class="img-caption">📱 ピル型のボトムバーと、iPhoneでメニューボタンをタップした際の結果を示す注釈付きビュー。</div>
+        
         <p><strong>iPhone（ポートレート）：</strong> 画面下部にピル型のバーが浮かんでおり、「ダッシュボード」と「取引」の2つの固定タブと、右側にメニューボタンがあります。メニューボタンをタップすると、すべてのセクションにアクセスできるフルスクリーンのナビゲーションパネルが開きます。</p>
-        <div class="screenshot">🖥️ [スクリーンショット：ナビゲーション - iPad サイドバー] <br>iPad/Macでコンパクトなトップバーがサイドバーに展開されているビュー。</div>
+        
+        <img src="assets/help2.3.2-en.jpg" alt="ナビゲーション - iPad サイドバー" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.2-en.jpg';">
+        <div class="img-caption">🖥️ iPad/Macでコンパクトなトップバーがサイドバーに展開されているビュー。</div>
+        
         <p><strong>iPadおよびMac：</strong> 上部にコンパクトなフローティングバーがあります。左側のアイコンをタップするとフルサイドバーに展開され、すべてのナビゲーションセクションが表示されます。サイドバーは、移動先を選択すると自動的に閉じます。</p>
         <p><strong>主要セクション：</strong></p>
         <table>
@@ -167,12 +178,18 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h2>5. 取引</h2>
         <h3>5.1 支出の記録</h3>
         <p>支出は、あなたの口座からお金が出ていくことを記録します。</p>
-        <div class="screenshot">📸 [スクリーンショット：取引フォーム - 支出] <br>金額、支払い元、カテゴリ、メモの各フィールドを示す注釈付きのフォーム。</div>
+        
+        <img src="assets/help5.1-en.jpg" alt="取引フォーム - 支出" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.1-en.jpg';">
+        <div class="img-caption">📸 金額、支払い元、カテゴリ、メモの各フィールドを示す注釈付きのフォーム。</div>
+        
         <p><strong>支出の追加：</strong> ＋ボタン（ダッシュボードおよび取引画面で表示）をタップし、「支出」を選択し、金額を入力し、日付を選択し、お金が出る口座（「支払い元」）を選択し、グループとカテゴリを選択し、必要に応じてメモ/タグ/領収書を追加して「保存」をタップします。口座残高にすぐに反映されます。</p>
         <h3>5.2 収入の記録</h3>
         <p>収入は、給与、フリーランスの報酬、現金ギフトなど、口座にお金が入ることを記録します。＋ボタンをタップし、「収入」を選択し、金額を入力し、お金が入った口座（「入金先」）を選択し、収入グループとカテゴリを選択し、必要に応じてメモを追加して「保存」をタップします。</p>
         <h3>5.3 口座間の振替</h3>
-        <div class="screenshot">🔄 [スクリーンショット：取引フォーム - 振替] <br>「支払い元」と「入金先」の2つの口座セレクターを指し示すキャプション。</div>
+        
+        <img src="assets/help5.3-en.jpg" alt="取引フォーム - 振替" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.3-en.jpg';">
+        <div class="img-caption">🔄 「支払い元」と「入金先」の2つの口座セレクターを指し示すキャプション。</div>
+        
         <p>振替は、普通預金からクレジットカードの支払いを行うなど、自分自身の口座間での資金移動を記録します。＋ボタンをタップし、「振替」を選択し、金額を入力し、元の口座（「支払い元」）と宛先の口座（「入金先」）を選択し、日付を選択し、メモを追加して「保存」をタップします。振替は総純資産には影響しませんが、各口座の残高に影響します。</p>
         <h3>5.4 領収書の添付</h3>
         <p>取引に写真やPDFの領収書を添付できます。取引を保存した後、その取引を開いて「領収書を追加」をタップします。新しく写真を撮るか、ライブラリから既存の画像を選択できます。領収書はデバイスに保存され、他のデータと共にiCloudに同期されます。</p>
@@ -191,7 +208,10 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h3>6.3 支払い履歴の管理</h3>
         <p>生成された各支払いはインスタンスとなります。定期的な支払いのテンプレートを開くと、すべてのインスタンスを確認できます。テンプレートに影響を与えずに特定のインスタンスだけを変更するには、そのインスタンスを開いて金額、日付、またはメモを編集します。発生しなかった支払いなどを飛ばす場合は、「支払い済み」ではなく「スキップ」としてマークしてください。</p>
         <h3>6.4 支払い済みとしてマークする</h3>
-        <div class="screenshot">✅ [スクリーンショット：今後の支払いリスト] <br>「支払い済みとしてマーク」アクションが強調された、保留中の支払いのビュー。</div>
+        
+        <img src="assets/help6.4-en.jpg" alt="今後の支払いリスト" class="hero-image" onerror="this.onerror=null;this.src='assets/help6.4-en.jpg';">
+        <div class="img-caption">✅ 「支払い済みとしてマーク」アクションが強調された、保留中の支払いのビュー。</div>
+        
         <p>メインメニューから「今後の支払い」に移動します。今後30日以内に期限が来る支払いがリストされます。支払いをタップして「支払い済みとしてマーク」を選択して支払いを確定します。実際の金額がデフォルトと異なる場合は調整可能です。支払い済みとしてマークされると、そのインスタンスは履歴に対応する取引を作成します。</p>
     </section>
 
@@ -204,14 +224,20 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h3>7.3 残高の繰り越し（Carry-Forward）</h3>
         <p>残高の繰り越しが有効な場合、期間終了時に残った未使用分が次の期間の予算に加算されます。例えば、食費の予算が5万円で4万円しか使わなかった場合、翌月は6万円（基本5万円 ＋ 繰り越し1万円）からスタートします。</p>
         <h3>7.4 予算の健全性の追跡</h3>
-        <div class="screenshot">📊 [スクリーンショット：予算健全性インジケーター] <br>緑（健全）、オレンジ（制限間近）、赤（予算超過）のプログレスバーの表示例。</div>
+        
+        <img src="assets/help7.4-en.jpg" alt="予算健全性インジケーター" class="hero-image" onerror="this.onerror=null;this.src='assets/help7.4-en.jpg';">
+        <div class="img-caption">📊 緑（健全）、オレンジ（制限間近）、赤（予算超過）のプログレスバーの表示例。</div>
+        
         <p>「現在の予算」セクションとダッシュボードには、現在の予算状況（割り当て額、これまでの支出額、残り残高、色分けされたプログレスバー）が表示されます。予算分析（セクション8.2）では、より詳細な履歴を確認できます。</p>
     </section>
 
     <section id="reports-analytics">
         <h2>8. レポートと分析</h2>
         <h3>8.1 月間レポート</h3>
-        <div class="screenshot">📈 [スクリーンショット：月間レポート概要] <br>カテゴリ別の内訳を示すドーナツグラフが表示されたダッシュボードビュー。</div>
+        
+        <img src="assets/help8.1-en.jpg" alt="月間レポート概要" class="hero-image" onerror="this.onerror=null;this.src='assets/help8.1-en.jpg';">
+        <div class="img-caption">📈 カテゴリ別の内訳を示すドーナツグラフが表示されたダッシュボードビュー。</div>
+        
         <p>月間レポートでは、過去の任意の月の詳細な財務内訳を確認できます。メインメニューの「月間レポート」からアクセスしてください。総収入、総支出、純キャッシュフロー、グループ別支出（視覚的なグラフ）、カテゴリ別支出、月末の口座残高、および高額支出が表示されます。ナビゲーション矢印を使用して、過去の月間を移動できます。</p>
         <h3>8.2 予算分析</h3>
         <p>予算分析では、定期的な予算の達成状況を履歴として確認できます。予算ごとに、期間ごとのパフォーマンス（目標内/目標外）、目標に対する平均支出額、最高/最低月、トレンドラインを確認できます。これにより、高すぎたり低すぎたりする予算目標を特定し、支出の傾向を把握するのに役立ちます。</p>
@@ -248,14 +274,20 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
     <section id="workspaces-collaboration">
         <h2>10. ワークスペースとコラボレーション</h2>
         <h3>10.1 ワークスペースの概要</h3>
-        <div class="screenshot">🏠 [スクリーンショット：ワークスペースセレクター] <br>上部のナビゲーションエントリポイントと、利用可能なワークスペースのリスト（個人 ＋ 共有）の表示。</div>
+        
+        <img src="assets/help10.1-en.jpg" alt="ワークスペースセレクター" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.1-en.jpg';">
+        <div class="img-caption">🏠 上部のナビゲーションエントリポイントと、利用可能なワークスペースのリスト（個人 ＋ 共有）の表示。</div>
+        
         <p>ワークスペースは、完全に隔離された財務環境です。Expense mnAIは2つのタイプをサポートしています。<strong>個人ワークスペース</strong>（プライベート、個人のiCloudデータベースに保存）と<strong>共有ワークスペース</strong>（共同管理、共有iCloudデータベースに保存）です。ワークスペースセレクター（画面上部の名前/アバターをタップ）からいつでも切り替えが可能です。</p>
         <h3>10.2 個人ワークスペース</h3>
         <p>個人ワークスペースは初回起動時に自動的に作成されます（花のアイコンで識別）。これはあなたのプライベートなiCloudデータベースにのみ保存されます。共有ワークスペースに招待した他のユーザーがあなたの個人ワークスペースにアクセスすることはできません。削除、名前の変更、譲渡はできません。</p>
         <h3>10.3 共有ワークスペース</h3>
         <p>共有ワークスペースにはファミリー共有プランが必要です。世帯の収入/支出を一緒に追跡したり、共通の予算を管理したり、支払いを共有したりするために使用します。招待されたすべてのメンバーは、同じデータをリアルタイムで確認でき、完全な読み取り/書き込みアクセス権を持ちます。所有者のファミリープランが期限切れになっても、所有者が明示的にアクセス権を取り消さない限り、ワークスペースは参加者に表示され続けます。</p>
         <h3>10.4 他のユーザーの招待</h3>
-        <div class="screenshot">✉️ [スクリーンショット：コラボレーターを招待] <br>共有アイコンをタップした後に表示されるiCloud共有シート。</div>
+        
+        <img src="assets/help10.4-en.jpg" alt="コラボレーターを招待" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.4-en.jpg';">
+        <div class="img-caption">✉️ 共有アイコンをタップした後に表示されるiCloud共有シート。</div>
+        
         <p><strong>要件：</strong> ファミリー共有プランに加入しており、ワークスペースがすでにiCloudに同期されていること。招待を送信するには：ワークスペースセレクターを開き、共有ワークスペースの横にある共有アイコンをタップします（またはワークスペース設定 → 「ユーザーを招待」へ進みます）。iCloud共有シートが表示されるので、メッセージ、メール、AirDropなどで招待リンクを共有します。受信者がリンクをタップし、システムの参加プロンプトを承諾すると参加完了です。</p>
         <h3>10.5 ワークスペースへの参加</h3>
         <p>Expense mnAIがインストールされているiPhone、iPad、またはMacで招待リンクを開きます。「[ワークスペース名]に参加しますか？」というシステムプロンプトが表示されるので、「参加」をタップします。数秒以内にワークスペースセレクターに表示されます。すぐに表示されない場合は、アプリを一度閉じて再度開き、最大1分ほどお待ちください。共有ワークスペースに参加するために有料プランに加入する必要はありません。</p>
@@ -294,4 +326,3 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 </div>
 </body>
 </html>
-```
