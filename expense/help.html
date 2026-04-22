@@ -27,6 +27,7 @@
         .note { background: var(--tip-bg); border-left: 5px solid var(--tip-border); padding: 24px; border-radius: 12px; margin: 32px 0; font-size: 15px; }
         .note h5 { margin: 0 0 8px 0; color: var(--tip-border); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
         .screenshot { background: var(--bg); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; text-align: center; color: var(--secondary); font-style: italic; margin: 30px 0; font-size: 14px; }
+        .img-caption { text-align: center; color: var(--secondary); font-size: 14px; font-style: italic; margin-top: -20px; margin-bottom: 30px; }
         table { width: 100%; border-collapse: collapse; margin: 32px 0; background: var(--bg); border-radius: 12px; overflow: hidden; font-size: 15px; }
         th, td { text-align: left; padding: 14px; border-bottom: 1px solid var(--border); }
         th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 0.5px; background: rgba(0,0,0,0.02); }
@@ -36,7 +37,7 @@
         .toc li { margin-bottom: 6px; font-size: 14px; }
         .toc a { text-decoration: none; color: var(--accent); font-weight: 500; }
         
-        /* New styling for the infographic */
+        /* New styling for the infographic and screenshots */
         .hero-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 30px 0; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         
         @media (max-width: 600px) { h1 { font-size: 32px; } .content-card { padding: 30px 20px; border-radius: 0; border: 0; } .container { padding: 0; } .toc ul { grid-template-columns: 1fr; } }
@@ -117,9 +118,15 @@
 
             <h3>2.3 Navigation & Interface Guide</h3>
             <p>Expense mnAI uses a floating navigation bar that adapts to your device.</p>
-            <div class="screenshot">📱 [SCREENSHOT: Navigation - Mobile Closed vs Open] <br>Annotated view showing the bottom pill bar and the result of tapping the menu button on iPhone.</div>
+            
+            <img src="assets/help2.3.1-en.jpg" alt="Navigation - Mobile Closed vs Open" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.1-en.jpg';">
+            <div class="img-caption">📱 Annotated view showing the bottom pill bar and the result of tapping the menu button on iPhone.</div>
+            
             <p><strong>On iPhone (portrait):</strong> A pill-shaped bar floats at the bottom of the screen with two fixed tabs — Dashboard and Transactions — and a menu button on the right. Tapping the menu button opens a full-screen navigation panel with access to all sections.</p>
-            <div class="screenshot">🖥️ [SCREENSHOT: Navigation - iPad Sidebar] <br>View showing the compact top bar expanding into the sidebar on iPad/Mac.</div>
+            
+            <img src="assets/help2.3.2-en.jpg" alt="Navigation - iPad Sidebar" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.2-en.jpg';">
+            <div class="img-caption">🖥️ View showing the compact top bar expanding into the sidebar on iPad/Mac.</div>
+            
             <p><strong>On iPad and Mac:</strong> A compact floating bar sits at the top. Tapping the left icon expands it into a full sidebar showing all navigation sections. The sidebar closes automatically when you select a destination.</p>
             <p><strong>Main sections:</strong></p>
             <table>
@@ -174,12 +181,18 @@
             <h2>5. Transactions</h2>
             <h3>5.1 Recording an Expense</h3>
             <p>An expense records money leaving one of your accounts.</p>
-            <div class="screenshot">📸 [SCREENSHOT: Transaction Form - Expense] <br>Annotated form showing Amount, Pay From, Category, and Note fields.</div>
+            
+            <img src="assets/help5.1-en.jpg" alt="Transaction Form - Expense" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.1-en.jpg';">
+            <div class="img-caption">📸 Annotated form showing Amount, Pay From, Category, and Note fields.</div>
+            
             <p><strong>To add an expense:</strong> Tap the + button (visible on the Dashboard and Transactions screen), select "Expense", enter the amount, select the date, choose the account the money came from ("Pay From"), select a group and category, optionally add notes/tags/receipt, then tap Save. The account balance will immediately reflect the deduction.</p>
             <h3>5.2 Recording Income</h3>
             <p>Income records money arriving into one of your accounts — a salary, a freelance payment, a cash gift, or any other inflow. Tap +, select "Income", enter the amount, choose the account the money arrived into ("Pay To"), select an income group and category, add notes if needed, then tap Save.</p>
             <h3>5.3 Transfers Between Accounts</h3>
-            <div class="screenshot">🔄 [SCREENSHOT: Transaction Form - Transfer] <br>Callout pointing to the dual account selectors: 'Pay From' and 'Pay To'.</div>
+            
+            <img src="assets/help5.3-en.jpg" alt="Transaction Form - Transfer" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.3-en.jpg';">
+            <div class="img-caption">🔄 Callout pointing to the dual account selectors: 'Pay From' and 'Pay To'.</div>
+            
             <p>A transfer records money moving between two of your own accounts — for example, paying your credit card bill from your checking account. Tap +, select "Transfer", enter the amount, select the source account ("Pay From") and the destination account ("Pay To"), select the date, add notes, then tap Save. Transfers do not affect your total net worth but do affect individual account balances.</p>
             <h3>5.4 Attaching Receipts</h3>
             <p>You can attach a photo or PDF receipt to any transaction. After saving a transaction, open it and tap "Add Receipt." You can take a new photo or choose an existing image from your photo library. Receipts are stored on your device and synced to iCloud with your other data.</p>
@@ -198,7 +211,10 @@
             <h3>6.3 Managing Bill Instances</h3>
             <p>Each generated occurrence is a bill instance. You can view all instances by opening the recurring bill template. Modify a single instance without affecting the template by opening it and editing its amount, date, or notes. To skip an instance (e.g., a bill that did not occur), mark it as skipped rather than paid.</p>
             <h3>6.4 Marking Bills as Paid</h3>
-            <div class="screenshot">✅ [SCREENSHOT: Upcoming Bills List] <br>View showing pending bills with the 'Mark as Paid' action highlighted.</div>
+            
+            <img src="assets/help6.4-en.jpg" alt="Upcoming Bills List" class="hero-image" onerror="this.onerror=null;this.src='assets/help6.4-en.jpg';">
+            <div class="img-caption">✅ View showing pending bills with the 'Mark as Paid' action highlighted.</div>
+            
             <p>Navigate to "Upcoming Bills" from the main menu. Bills due in the next 30 days are listed. Tap a bill and select "Mark as Paid" to confirm payment, optionally adjusting the actual amount if it differed from the default. Once marked as paid, the bill instance creates a corresponding transaction in your history.</p>
         </section>
 
@@ -211,14 +227,20 @@
             <h3>7.3 Carry-Forward</h3>
             <p>When Carry-Forward is enabled, any unspent amount at the end of a period is added to the next period's budget. For example, if your Food budget is ₹12,000 and you only spent ₹9,000, the next month starts with ₹15,000 (₹12,000 base + ₹3,000 carried forward).</p>
             <h3>7.4 Tracking Budget Health</h3>
-            <div class="screenshot">📊 [SCREENSHOT: Budget Health Indicators] <br>Showcasing Green (Healthy), Amber (Approaching), and Red (Over Budget) progress bars.</div>
+            
+            <img src="assets/help7.4-en.jpg" alt="Budget Health Indicators" class="hero-image" onerror="this.onerror=null;this.src='assets/help7.4-en.jpg';">
+            <div class="img-caption">📊 Showcasing Green (Healthy), Amber (Approaching), and Red (Over Budget) progress bars.</div>
+            
             <p>The "Active Budgets" section and the Dashboard show your current budget positions: allocated amount, spent so far, remaining balance, and a colour‑coded progress bar. Budget Analysis (section 8.2) gives a full historical view.</p>
         </section>
 
         <section id="reports-analytics">
             <h2>8. Reports & Analytics</h2>
             <h3>8.1 Monthly Report</h3>
-            <div class="screenshot">📈 [SCREENSHOT: Monthly Report Overview] <br>Populated dashboard view with the category breakdown Donut Chart.</div>
+            
+            <img src="assets/help8.1-en.jpg" alt="Monthly Report Overview" class="hero-image" onerror="this.onerror=null;this.src='assets/help8.1-en.jpg';">
+            <div class="img-caption">📈 Populated dashboard view with the category breakdown Donut Chart.</div>
+            
             <p>The Monthly Report gives you a detailed financial breakdown for any past month. Access it from the main menu under "Monthly Report." It shows: Total Income, Total Expenses, Net Cash Flow, Spending by Group (visual chart), Spending by Category, Account Balances at month end, and Top Expenses. Use the month navigation arrows to move between past months.</p>
             <h3>8.2 Budget Analysis</h3>
             <p>Budget Analysis provides a historical view of your budget performance across all recurring budgets. For each budget you can see period‑by‑period performance (over/under), average spending vs. target, best and worst months, and a trend line. This helps identify budget targets that are set too high or too low and spot spending drift.</p>
@@ -255,14 +277,20 @@
         <section id="workspaces-collaboration">
             <h2>10. Workspaces & Collaboration</h2>
             <h3>10.1 Workspace Overview</h3>
-            <div class="screenshot">🏠 [SCREENSHOT: Workspace Picker] <br>Showing the top navigation entry point and the list of available workspaces (Personal + Shared).</div>
+            
+            <img src="assets/help10.1-en.jpg" alt="Workspace Picker" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.1-en.jpg';">
+            <div class="img-caption">🏠 Showing the top navigation entry point and the list of available workspaces (Personal + Shared).</div>
+            
             <p>A workspace is a completely isolated financial environment. Expense mnAI supports two types: <strong>Personal workspace</strong> (private, stored in your private iCloud database) and <strong>Shared workspaces</strong> (collaborative, stored in a shared iCloud database). Switch between workspaces at any time from the workspace picker (tap the workspace name/avatar at the top of the screen).</p>
             <h3>10.2 Personal Workspace</h3>
             <p>Your Personal workspace is created automatically on first launch (identified by a flower icon). It is stored exclusively in your private iCloud database. Others you invite to shared workspaces have no access to your Personal workspace. It cannot be deleted, renamed, or transferred.</p>
             <h3>10.3 Shared Workspaces</h3>
             <p>Shared workspaces require a Family Sharing plan. They are for tracking household income/expenses together, managing joint budgets, or sharing bills. All invited members see the same data in real time and have full read/write access. If the owner's Family plan lapses, the workspace remains visible to participants until the share is explicitly revoked.</p>
             <h3>10.4 Inviting Others to Collaborate</h3>
-            <div class="screenshot">✉️ [SCREENSHOT: Inviting Collaborators] <br>The iCloud Share Sheet appearing after tapping the share icon.</div>
+            
+            <img src="assets/help10.4-en.jpg" alt="Inviting Collaborators" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.4-en.jpg';">
+            <div class="img-caption">✉️ The iCloud Share Sheet appearing after tapping the share icon.</div>
+            
             <p><strong>Requirements:</strong> Family Sharing plan, workspace already synchronised to iCloud. To send an invitation: open the workspace picker, tap the share icon next to the shared workspace (or open workspace settings → "Invite People"). The iCloud sharing sheet appears; share the invitation link via Messages, Mail, AirDrop, etc. The recipient taps the link and accepts the system prompt to join.</p>
             <h3>10.5 Accepting a Workspace Invitation</h3>
             <p>Open the invitation link on your iPhone, iPad, or Mac with Expense mnAI installed. A system prompt "Join [Workspace Name]?" appears. Tap Accept. The workspace will appear in your workspace picker within a few seconds. If it does not appear immediately, close and reopen the app and wait up to one minute. You do not need a paid plan to participate in a shared workspace.</p>
