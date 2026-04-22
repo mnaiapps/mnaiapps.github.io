@@ -27,6 +27,8 @@ strong { font-weight: 600; color: var(--text); }
 .note { background: var(--tip-bg); border-left: 5px solid var(--tip-border); padding: 24px; border-radius: 12px; margin: 32px 0; font-size: 15px; }
 .note h5 { margin: 0 0 8px 0; color: var(--tip-border); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
 .screenshot { background: var(--bg); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; text-align: center; color: var(--secondary); font-style: italic; margin: 30px 0; font-size: 14px; }
+.hero-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 30px 0; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.img-caption { text-align: center; color: var(--secondary); font-size: 14px; font-style: italic; margin-top: -20px; margin-bottom: 30px; }
 table { width: 100%; border-collapse: collapse; margin: 32px 0; background: var(--bg); border-radius: 12px; overflow: hidden; font-size: 15px; }
 th, td { text-align: left; padding: 14px; border-bottom: 1px solid var(--border); }
 th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 0.5px; background: rgba(0,0,0,0.02); }
@@ -63,6 +65,9 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 
     <section id="introduction">
         <h2>1. Introduction</h2>
+        
+        <img src="assets/infographic-fr.jpg" alt="Aperçu de Expense mnAI" class="hero-image" onerror="this.onerror=null;this.src='assets/infographic-en.jpg';">
+        
         <p>Expense mnAI est un gestionnaire financier intelligent et privé, conçu exclusivement pour les appareils Apple. Il est conçu pour vous donner une image complète de votre vie financière — vos revenus, vos dépenses, vos engagements récurrents et la santé de votre budget — sans jamais partager vos données avec des annonceurs, des services d'analyse tiers ou tout serveur externe en dehors de l'infrastructure iCloud d'Apple.</p>
         <h3>Ce que fait Expense mnAI</h3>
         <p>Expense mnAI suit l'argent qui entre, qui sort et qui circule entre vos comptes. Il comprend la différence entre un dépôt de salaire, un passage au supermarché et un paiement par carte de crédit, et organise chacun d'eux pour que vous puissiez comprendre où va réellement votre argent chaque mois.</p>
@@ -110,9 +115,15 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 
         <h3>2.3 Guide de navigation et d'interface</h3>
         <p>Expense mnAI utilise une barre de navigation flottante qui s'adapte à votre appareil.</p>
-        <div class="screenshot">📱 [CAPTURE D'ÉCRAN : Navigation - Mobile Fermé vs Ouvert] <br>Vue annotée montrant la barre inférieure en forme de pilule et le résultat de l'appui sur le bouton menu sur iPhone.</div>
+        
+        <img src="assets/help2.3.1-en.jpg" alt="Navigation - Mobile Fermé vs Ouvert" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.1-en.jpg';">
+        <div class="img-caption">📱 Vue annotée montrant la barre inférieure en forme de pilule et le résultat de l'appui sur le bouton menu sur iPhone.</div>
+        
         <p><strong>Sur iPhone (portrait) :</strong> Une barre en forme de pilule flotte au bas de l'écran avec deux onglets fixes — Tableau de bord et Transactions — et un bouton menu sur la droite. Appuyer sur le bouton menu ouvre un panneau de navigation plein écran avec accès à toutes les sections.</p>
-        <div class="screenshot">🖥️ [CAPTURE D'ÉCRAN : Navigation - Barre latérale iPad] <br>Vue montrant la barre supérieure compacte s'étendant dans la barre latérale sur iPad/Mac.</div>
+        
+        <img src="assets/help2.3.2-en.jpg" alt="Navigation - Barre latérale iPad" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.2-en.jpg';">
+        <div class="img-caption">🖥️ Vue montrant la barre supérieure compacte s'étendant dans la barre latérale sur iPad/Mac.</div>
+        
         <p><strong>Sur iPad et Mac :</strong> Une barre flottante compacte se trouve en haut. Appuyer sur l'icône de gauche l'étend en une barre latérale complète montrant toutes les sections de navigation. La barre latérale se ferme automatiquement lorsque vous sélectionnez une destination.</p>
         <p><strong>Sections principales :</strong></p>
         <table>
@@ -167,12 +178,18 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h2>5. Transactions</h2>
         <h3>5.1 Enregistrer une dépense</h3>
         <p>Une dépense enregistre de l'argent quittant l'un de vos comptes.</p>
-        <div class="screenshot">📸 [CAPTURE D'ÉCRAN : Formulaire de transaction - Dépense] <br>Formulaire annoté montrant les champs Montant, Payer depuis, Catégorie et Note.</div>
+        
+        <img src="assets/help5.1-en.jpg" alt="Formulaire de transaction - Dépense" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.1-en.jpg';">
+        <div class="img-caption">📸 Formulaire annoté montrant les champs Montant, Payer depuis, Catégorie et Note.</div>
+        
         <p><strong>Pour ajouter une dépense :</strong> Appuyez sur le bouton + (visible sur le tableau de bord et l'écran des transactions), sélectionnez "Dépense", entrez le montant, sélectionnez la date, choisissez le compte d'où l'argent provient ("Payer depuis"), sélectionnez un groupe et une catégorie, ajoutez éventuellement des notes/tags/reçu, puis appuyez sur Enregistrer. Le solde du compte reflétera immédiatement la déduction.</p>
         <h3>5.2 Enregistrer un revenu</h3>
         <p>Un revenu enregistre l'argent arrivant sur l'un de vos comptes — un salaire, un paiement en freelance, un cadeau en espèces ou tout autre flux entrant. Appuyez sur +, sélectionnez "Revenu", entrez le montant, choisissez le compte sur lequel l'argent est arrivé ("Payer vers"), sélectionnez un groupe et une catégorie de revenus, ajoutez des notes si nécessaire, puis appuyez sur Enregistrer.</p>
         <h3>5.3 Transferts entre comptes</h3>
-        <div class="screenshot">🔄 [CAPTURE D'ÉCRAN : Formulaire de transaction - Transfert] <br>Légende pointant vers les doubles sélecteurs de compte : 'Payer depuis' et 'Payer vers'.</div>
+        
+        <img src="assets/help5.3-en.jpg" alt="Formulaire de transaction - Transfert" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.3-en.jpg';">
+        <div class="img-caption">🔄 Légende pointant vers les doubles sélecteurs de compte : 'Payer depuis' et 'Payer vers'.</div>
+        
         <p>Un transfert enregistre l'argent se déplaçant entre deux de vos propres comptes — par exemple, payer votre facture de carte de crédit depuis votre compte courant. Appuyez sur +, sélectionnez "Transfert", entrez le montant, sélectionnez le compte source ("Payer depuis") et le compte de destination ("Payer vers"), sélectionnez la date, ajoutez des notes, puis appuyez sur Enregistrer. Les transferts n'affectent pas votre valeur nette totale, mais affectent les soldes individuels des comptes.</p>
         <h3>5.4 Joindre des reçus</h3>
         <p>Vous pouvez joindre une photo ou un reçu PDF à n'importe quelle transaction. Après avoir enregistré une transaction, ouvrez-la et appuyez sur "Ajouter un reçu". Vous pouvez prendre une nouvelle photo ou choisir une image existante dans votre photothèque. Les reçus sont stockés sur votre appareil et synchronisés sur iCloud avec vos autres données.</p>
@@ -191,7 +208,10 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h3>6.3 Gestion des occurrences de factures</h3>
         <p>Chaque occurrence générée est une instance de facture. Vous pouvez voir toutes les instances en ouvrant le modèle de facture récurrente. Modifiez une seule instance sans affecter le modèle en l'ouvrant et en modifiant son montant, sa date ou ses notes. Pour ignorer une instance (ex. : une facture qui n'a pas eu lieu), marquez-la comme ignorée plutôt que payée.</p>
         <h3>6.4 Marquer les factures comme payées</h3>
-        <div class="screenshot">✅ [CAPTURE D'ÉCRAN : Liste des factures à venir] <br>Vue montrant les factures en attente avec l'action 'Marquer comme payé' en évidence.</div>
+        
+        <img src="assets/help6.4-en.jpg" alt="Liste des factures à venir" class="hero-image" onerror="this.onerror=null;this.src='assets/help6.4-en.jpg';">
+        <div class="img-caption">✅ Vue montrant les factures en attente avec l'action 'Marquer comme payé' en évidence.</div>
+        
         <p>Accédez à "Factures à venir" depuis le menu principal. Les factures dues dans les 30 prochains jours sont listées. Appuyez sur une facture et sélectionnez "Marquer comme payé" pour confirmer le paiement, en ajustant éventuellement le montant réel s'il différait du montant par défaut. Une fois marquée comme payée, l'instance de facture crée une transaction correspondante dans votre historique.</p>
     </section>
 
@@ -204,14 +224,20 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h3>7.3 Report de solde (Carry-Forward)</h3>
         <p>Lorsque le report de solde est activé, tout montant non dépensé à la fin d'une période est ajouté au budget de la période suivante. Par exemple, si votre budget Alimentation est de 12 000 € et que vous n'en avez dépensé que 9 000 €, le mois suivant commence avec 15 000 € (12 000 € de base + 3 000 € reportés).</p>
         <h3>7.4 Suivi de la santé du budget</h3>
-        <div class="screenshot">📊 [CAPTURE D'ÉCRAN : Indicateurs de santé du budget] <br>Présentation des barres de progression Vert (Sain), Orange (Approche de la limite) et Rouge (Dépassement du budget).</div>
+        
+        <img src="assets/help7.4-en.jpg" alt="Indicateurs de santé du budget" class="hero-image" onerror="this.onerror=null;this.src='assets/help7.4-en.jpg';">
+        <div class="img-caption">📊 Présentation des barres de progression Vert (Sain), Orange (Approche de la limite) et Rouge (Dépassement du budget).</div>
+        
         <p>La section "Budgets actifs" et le tableau de bord affichent vos positions budgétaires actuelles : montant alloué, dépensé jusqu'à présent, solde restant et une barre de progression à code couleur. L'analyse du budget (section 8.2) donne une vue historique complète.</p>
     </section>
 
     <section id="reports-analytics">
         <h2>8. Rapports et Analyses</h2>
         <h3>8.1 Rapport mensuel</h3>
-        <div class="screenshot">📈 [CAPTURE D'ÉCRAN : Aperçu du rapport mensuel] <br>Vue du tableau de bord remplie avec le graphique en anneau de la répartition par catégorie.</div>
+        
+        <img src="assets/help8.1-en.jpg" alt="Aperçu du rapport mensuel" class="hero-image" onerror="this.onerror=null;this.src='assets/help8.1-en.jpg';">
+        <div class="img-caption">📈 Vue du tableau de bord remplie avec le graphique en anneau de la répartition par catégorie.</div>
+        
         <p>Le rapport mensuel vous donne une ventilation financière détaillée pour n'importe quel mois passé. Accédez-y depuis le menu principal sous "Rapport mensuel". Il affiche : Revenus totaux, Dépenses totales, Flux de trésorerie net, Dépenses par groupe (graphique visuel), Dépenses par catégorie, Soldes des comptes à la fin du mois et Principales dépenses. Utilisez les flèches de navigation pour vous déplacer entre les mois passés.</p>
         <h3>8.2 Analyse du budget</h3>
         <p>L'analyse du budget offre une vue historique de la performance de vos budgets récurrents. Pour chaque budget, vous pouvez voir la performance période par période (au-dessus/en-dessous), la dépense moyenne par rapport à l'objectif, les meilleurs et les pires mois, ainsi qu'une courbe de tendance. Cela aide à identifier les objectifs budgétaires fixés trop haut ou trop bas et à repérer les dérives de dépenses.</p>
@@ -248,14 +274,20 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
     <section id="workspaces-collaboration">
         <h2>10. Espaces de travail et Collaboration</h2>
         <h3>10.1 Aperçu de l'espace de travail</h3>
-        <div class="screenshot">🏠 [CAPTURE D'ÉCRAN : Sélecteur d'espace de travail] <br>Montrant le point d'entrée de navigation supérieur et la liste des espaces de travail disponibles (Personnel + Partagé).</div>
+        
+        <img src="assets/help10.1-en.jpg" alt="Sélecteur d'espace de travail" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.1-en.jpg';">
+        <div class="img-caption">🏠 Montrant le point d'entrée de navigation supérieur et la liste des espaces de travail disponibles (Personnel + Partagé).</div>
+        
         <p>Un espace de travail est un environnement financier complètement isolé. Expense mnAI prend en charge deux types : <strong>Espace de travail personnel</strong> (privé, stocké dans votre base de données iCloud privée) et <strong>Espaces de travail partagés</strong> (collaboratifs, stockés dans une base de données iCloud partagée). Basculez entre les espaces de travail à tout moment à partir du sélecteur d'espace de travail (appuyez sur le nom/avatar de l'espace de travail en haut de l'écran).</p>
         <h3>10.2 Espace de travail personnel</h3>
         <p>Votre espace de travail personnel est créé automatiquement au premier lancement (identifié par une icône de fleur). Il est stocké exclusivement dans votre base de données iCloud privée. Les autres personnes que vous invitez dans des espaces de travail partagés n'ont aucun accès à votre espace de travail personnel. Il ne peut pas être supprimé, renommé ou transféré.</p>
         <h3>10.3 Espaces de travail partagés</h3>
         <p>Les espaces de travail partagés nécessitent un plan de Partage Familial. Ils servent à suivre ensemble les revenus/dépenses du foyer, à gérer des budgets communs ou à partager des factures. Tous les membres invités voient les mêmes données en temps réel et disposent d'un accès complet en lecture/écriture. Si le plan familial du propriétaire expire, l'espace de travail reste visible pour les participants jusqu'à ce que le partage soit explicitement révoqué.</p>
         <h3>10.4 Inviter d'autres personnes à collaborer</h3>
-        <div class="screenshot">✉️ [CAPTURE D'ÉCRAN : Inviter des collaborateurs] <br>La feuille de partage iCloud apparaissant après avoir appuyé sur l'icône de partage.</div>
+        
+        <img src="assets/help10.4-en.jpg" alt="Inviter des collaborateurs" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.4-en.jpg';">
+        <div class="img-caption">✉️ La feuille de partage iCloud apparaissant après avoir appuyé sur l'icône de partage.</div>
+        
         <p><strong>Conditions :</strong> Plan de Partage Familial, espace de travail déjà synchronisé sur iCloud. Pour envoyer une invitation : ouvrez le sélecteur d'espace de travail, appuyez sur l'icône de partage à côté de l'espace de travail partagé (ou ouvrez les réglages de l'espace de travail → "Inviter des personnes"). La feuille de partage iCloud apparaît ; partagez le lien d'invitation via Messages, Mail, AirDrop, etc. Le destinataire appuie sur le lien et accepte l'invite système pour rejoindre.</p>
         <h3>10.5 Accepter une invitation à un espace de travail</h3>
         <p>Ouvrez le lien d'invitation sur votre iPhone, iPad ou Mac avec Expense mnAI installé. Une invite système "Rejoindre [Nom de l'espace de travail] ?" apparaît. Appuyez sur Accepter. L'espace de travail apparaîtra dans votre sélecteur d'espace de travail en quelques secondes. S'il n'apparaît pas immédiatement, fermez et rouvrez l'application et attendez jusqu'à une minute. Vous n'avez pas besoin d'un plan payant pour participer à un espace de travail partagé.</p>
