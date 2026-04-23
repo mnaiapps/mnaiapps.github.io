@@ -27,6 +27,8 @@ strong { font-weight: 600; color: var(--text); }
 .note { background: var(--tip-bg); border-left: 5px solid var(--tip-border); padding: 24px; border-radius: 12px; margin: 32px 0; font-size: 15px; }
 .note h5 { margin: 0 0 8px 0; color: var(--tip-border); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
 .screenshot { background: var(--bg); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; text-align: center; color: var(--secondary); font-style: italic; margin: 30px 0; font-size: 14px; }
+.hero-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 30px 0; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.img-caption { text-align: center; color: var(--secondary); font-size: 14px; font-style: italic; margin-top: -20px; margin-bottom: 30px; }
 table { width: 100%; border-collapse: collapse; margin: 32px 0; background: var(--bg); border-radius: 12px; overflow: hidden; font-size: 15px; }
 th, td { text-align: left; padding: 14px; border-bottom: 1px solid var(--border); }
 th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 0.5px; background: rgba(0,0,0,0.02); }
@@ -63,6 +65,9 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
 
     <section id="introduction">
         <h2>1. Inleiding</h2>
+        
+        <img src="assets/infographic-nl.png" alt="Expense mnAI Overzicht" class="hero-image" onerror="this.onerror=null;this.src='assets/infographic-en.jpg';">
+
         <p>Expense mnAI is een intelligente, privacy-gerichte financiële manager die exclusief voor Apple-apparaten is ontworpen. Het is gebouwd om u een volledig overzicht te geven van uw financiële leven — uw inkomsten, uitgaven, terugkerende verplichtingen en budgettaire gezondheid — zonder uw gegevens ooit te delen met adverteerders, externe analysediensten of enige externe server buiten de iCloud-infrastructuur van Apple.</p>
         <h3>Wat Expense mnAI doet</h3>
         <p>Expense mnAI houdt het geld bij dat binnenkomt, weggaat en zich verplaatst tussen uw rekeningen. Het begrijpt het verschil tussen een salarisstorting, een aankoop in de supermarkt en een creditcardbetaling, en organiseert alles zodat u kunt begrijpen waar uw geld elke maand werkelijk naartoe gaat.</p>
@@ -94,44 +99,50 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <table>
             <thead><tr><th>Groep</th><th>Categorieën</th></tr></thead>
             <tbody>
-                <tr><td>Eten & Drinken</th><td>Boodschappen, Uit eten</th></tr>
-                <tr><td>Vervoer</th><td>Brandstof, Openbaar Vervoer</th></tr>
-                <tr><td>Wonen</th><td>Huur / Hypotheek</th></tr>
-                <tr><td>Nutsvoorzieningen</th><td>Elektriciteit, Internet</th></tr>
-                <tr><td>Entertainment</th><td>(Voeg eigen categorieën toe)</th></td>
-                <tr><td>Salaris</th><td>Basisloon, Bonus</th></tr>
-                <tr><td>Beleggingsinkomsten</th><td>(Voeg eigen categorieën toe)</th></td>
-                <tr><td>Freelance</th><td>(Voeg eigen categorieën toe)</th></td>
-                <tr><td>Cadeaus</th><td>(Voeg eigen categorieën toe)</th></td>
-                <tr><td>Overige Inkomsten</th><td>(Voeg eigen categorieën toe)</th></tr>
+                <tr><td>Eten & Drinken</td><td>Boodschappen, Uit eten</td></tr>
+                <tr><td>Vervoer</td><td>Brandstof, Openbaar Vervoer</td></tr>
+                <tr><td>Wonen</td><td>Huur / Hypotheek</td></tr>
+                <tr><td>Nutsvoorzieningen</td><td>Elektriciteit, Internet</td></tr>
+                <tr><td>Entertainment</td><td>(Voeg eigen categorieën toe)</td></tr>
+                <tr><td>Salaris</td><td>Basisloon, Bonus</td></tr>
+                <tr><td>Beleggingsinkomsten</td><td>(Voeg eigen categorieën toe)</td></tr>
+                <tr><td>Freelance</td><td>(Voeg eigen categorieën toe)</td></tr>
+                <tr><td>Cadeaus</td><td>(Voeg eigen categorieën toe)</td></tr>
+                <tr><td>Overige Inkomsten</td><td>(Voeg eigen categorieën toe)</td></tr>
             </tbody>
         </table>
         <p>We moedigen u aan om categorieën toe te voegen die uw echte leven weerspiegelen — of het nu "Schoolgeld", "Huisdierverzorging" of "Bijbaan" is.</p>
 
         <h3>2.3 Interface & Navigatiegids</h3>
         <p>Expense mnAI gebruikt een zwevende navigatiebalk die zich aanpast aan uw apparaat.</p>
-        <div class="screenshot">📱 [SCREENSHOT: Navigatie - Mobiel Gesloten vs Open] <br>Geannoteerde weergave die de pilvormige onderbalk toont en het resultaat van het tikken op de menuknop op iPhone.</div>
+        
+        <img src="assets/help2.3.1-en.jpg" alt="Navigatie - Mobiel Gesloten vs Open" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.1-en.jpg';">
+        <div class="img-caption">📱 Geannoteerde weergave die de pilvormige onderbalk toont en het resultaat van het tikken op de menuknop op iPhone.</div>
+        
         <p><strong>Op iPhone (Portret):</strong> Een pilvormige balk zweeft onderaan het scherm met twee vaste tabbladen — Dashboard en Transacties — en een menuknop aan de rechterkant. Tikken op de menuknop opent een schermvullend navigatiepaneel met toegang tot alle secties.</p>
-        <div class="screenshot">🖥️ [SCREENSHOT: Navigatie - iPad Zijbalk] <br>Weergave van de compacte bovenbalk die uitklapt tot een zijbalk op iPad/Mac.</div>
+        
+        <img src="assets/help2.3.2-en.jpg" alt="Navigatie - iPad Zijbalk" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.2-en.jpg';">
+        <div class="img-caption">🖥️ Weergave van de compacte bovenbalk die uitklapt tot een zijbalk op iPad/Mac.</div>
+        
         <p><strong>Op iPad en Mac:</strong> Een compacte zwevende balk bevindt zich bovenaan. Tikken op het pictogram aan de linkerkant klapt deze uit tot een volledige zijbalk met alle navigatiesecties. De zijbalk sluit automatisch wanneer u een bestemming selecteert.</p>
         <p><strong>Hoofdsecties:</strong></p>
-        </table>
+        <table>
             <thead><tr><th>Sectie</th><th>Wat u daar vindt</th></tr></thead>
             <tbody>
-                <tr><td>Dashboard</th><td>Nettovermogen, maandelijkse cashflow, komende facturen, budgetoverzicht</th></tr>
-                <tr><td>Transacties</th><td>Alle inkomsten, uitgaven en overboekingen voor de actieve werkruimte</th></tr>
-                <tr><td>Rekeningen</th><td>Uw rekeningen en hun huidige saldi</th></tr>
-                <tr><td>Maandrapport</th><td>Historische uitsplitsingen maand per maand</th></tr>
-                <tr><td>Budgetanalyse</th><td>Visuele uitsplitsing van budgetprestaties</th></tr>
-                <tr><td>Intelligence</th><td>Door AI gegenereerde inzichten en uitgavenpatronen</th></tr>
-                <tr><td>Komende Facturen</th><td>Facturen die in de komende 30 dagen vervallen</th></tr>
-                <tr><td>Actieve Budgetten</th><td>Budgettracking voor de huidige maand</th></tr>
-                <tr><td>Terugkerende Facturen</th><td>Beheer van factuursjablonen</th></tr>
-                <tr><td>Terugkerende Budgetten</th><td>Beheer van budgetsjablonen</th></tr>
-                <tr><td>Rekeningtypes</th><td>Beheer van labels voor rekeningtypes</th></tr>
-                <tr><td>Categorieën</th><td>Beheer van uitgavencategorieën</th></tr>
-                <tr><td>Categoriegroepen</th><td>Beheer van groepscontainers</th></tr>
-                <tr><td>Instellingen</th><td>Valuta, taal, uiterlijk, abonnement</th></tr>
+                <tr><td>Dashboard</td><td>Nettovermogen, maandelijkse cashflow, komende facturen, budgetoverzicht</td></tr>
+                <tr><td>Transacties</td><td>Alle inkomsten, uitgaven en overboekingen voor de actieve werkruimte</td></tr>
+                <tr><td>Rekeningen</td><td>Uw rekeningen en hun huidige saldi</td></tr>
+                <tr><td>Maandrapport</td><td>Historische uitsplitsingen maand per maand</td></tr>
+                <tr><td>Budgetanalyse</td><td>Visuele uitsplitsing van budgetprestanda</td></tr>
+                <tr><td>Intelligence</td><td>Door AI gegenereerde inzichten en uitgavenpatronen</td></tr>
+                <tr><td>Komende Facturen</td><td>Facturen die in de komende 30 dagen vervallen</td></tr>
+                <tr><td>Actieve Budgetten</td><td>Budgettracking voor de huidige maand</td></tr>
+                <tr><td>Terugkerende Facturen</td><td>Beheer van factuursjablonen</td></tr>
+                <tr><td>Terugkerende Budgetten</td><td>Beheer van budgetsjablonen</td></tr>
+                <tr><td>Rekeningtypes</td><td>Beheer van labels voor rekeningtypes</td></tr>
+                <tr><td>Categorieën</td><td>Beheer van uitgavencategorieën</td></tr>
+                <tr><td>Categoriegroepen</td><td>Beheer van groepscontainers</td></tr>
+                <tr><td>Instellingen</td><td>Valuta, taal, uiterlijk, abonnement</td></tr>
             </tbody>
         </table>
     </section>
@@ -167,12 +178,18 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h2>5. Transacties</h2>
         <h3>5.1 Een uitgave registreren</h3>
         <p>Een uitgave registreert geld dat een van uw rekeningen verlaat.</p>
-        <div class="screenshot">📸 [SCREENSHOT: Transactieformulier - Uitgave] <br>Geannoteerd formulier met de velden Bedrag, Betaal van, Categorie en Notitie.</div>
+        
+        <img src="assets/help5.1-en.jpg" alt="Transactieformulier - Uitgave" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.1-en.jpg';">
+        <div class="img-caption">📸 Geannoteerd formulier met de velden Bedrag, Betaal van, Categorie en Notitie.</div>
+        
         <p><strong>Om een uitgave toe te voegen:</strong> Tik op de + knop (zichtbaar op het dashboard en het transactiescherm), selecteer "Uitgave", voer het bedrag in, selecteer de datum, kies de rekening waar het geld vandaan komt ("Betaal van"), selecteer een groep en categorie, voeg optioneel notities/tags/bon toe en tik op Opslaan. Het rekeningsaldo zal onmiddellijk de aftrek weerspiegelen.</p>
         <h3>5.2 Een inkomst registreren</h3>
         <p>Een inkomst registreert geld dat op een van uw rekeningen binnenkomt — een salaris, freelance betaling, contant cadeau, of een andere instroom. Tik op +, selecteer "Inkomst", voer het bedrag in, kies de rekening waarop het geld is binnengekomen ("Betaal aan"), selecteer een inkomstengroep en -categorie, voeg notities toe indien nodig en tik op Opslaan.</p>
         <h3>5.3 Overboekingen tussen rekeningen</h3>
-        <div class="screenshot">🔄 [SCREENSHOT: Transactieformulier - Overboeking] <br>Bijschrift dat wijst op de dubbele rekeningkiezers: 'Betaal van' en 'Betaal aan'.</div>
+        
+        <img src="assets/help5.3-en.jpg" alt="Transactieformulier - Overboeking" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.3-en.jpg';">
+        <div class="img-caption">🔄 Bijschrift dat wijst op de dubbele rekeningkiezers: 'Betaal van' en 'Betaal aan'.</div>
+        
         <p>Een overboeking registreert de verplaatsing van geld tussen twee van uw eigen rekeningen — bijvoorbeeld het betalen van uw creditcardsaldo vanaf uw betaalrekening. Tik op +, selecteer "Overboeking", voer het bedrag in, selecteer de bronrekening ("Betaal van") en de doelrekening ("Betaal aan"), selecteer de datum, voeg notities toe en tik op Opslaan. Overboekingen hebben geen invloed op uw totale nettovermogen, maar veranderen wel de saldi van individuele rekeningen.</p>
         <h3>5.4 Bonnen bijvoegen</h3>
         <p>U kunt een foto of PDF-bon bijvoegen bij elke transactie. Na het opslaan van een transactie, opent u deze en tikt u op "Bon toevoegen". U kunt een nieuwe foto maken of een bestaande afbeelding uit uw bibliotheek kiezen. Bonnen worden op het apparaat opgeslagen en gesynchroniseerd naar iCloud samen met uw andere gegevens.</p>
@@ -191,7 +208,10 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h3>6.3 Factuurinstanties beheren</h3>
         <p>Elke gegenereerde betaling is een instantie. U kunt alle instanties zien door het terugkerende factuursjabloon te openen. Bewerk een enkele instantie zonder het sjabloon te beïnvloeden door deze te openen en het bedrag, de datum of de notities te wijzigen. Om een instantie over te slaan (bijv. een factuur die niet is verstuurd), markeert u deze als overgeslagen in plaats van betaald.</p>
         <h3>6.4 Facturen als betaald markeren</h3>
-        <div class="screenshot">✅ [SCREENSHOT: Lijst Komende Facturen] <br>Weergave van facturen in afwachting met de actie 'Markeer als betaald' uitgelicht.</div>
+        
+        <img src="assets/help6.4-en.jpg" alt="Lijst Komende Facturen" class="hero-image" onerror="this.onerror=null;this.src='assets/help6.4-en.jpg';">
+        <div class="img-caption">✅ Weergave van facturen in afwachting met de actie 'Markeer als betaald' uitgelicht.</div>
+        
         <p>Ga naar "Komende Facturen" in het hoofdmenu. Hier staan de facturen die in de komende 30 dagen vervallen. Tik op een factuur en selecteer "Markeer als betaald" om de betaling te bevestigen, waarbij u eventueel het werkelijke bedrag aanpast als dit afwijkt van de standaard. Eenmaal als betaald gemarkeerd, maakt de factuurinstantie een bijbehorende transactie aan in uw geschiedenis.</p>
     </section>
 
@@ -204,14 +224,20 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <h3>7.3 Saldo Meenemen (Carry-Forward)</h3>
         <p>Wanneer Saldo Meenemen is ingeschakeld, wordt elk ongebruikt bedrag aan het einde van een periode opgeteld bij het budget van de volgende periode. Als uw budget voor Eten bijvoorbeeld €500 is en u geeft slechts €400 uit, begint de volgende maand met €600 (€500 basis + €100 meegenomen).</p>
         <h3>7.4 Budgetgezondheid bijhouden</h3>
-        <div class="screenshot">📊 [SCREENSHOT: Indicatoren Budgetgezondheid] <br>Voorbeeld van Groene (Gezond), Oranje (Nadert limiet) en Rode (Over budget) voortgangsbalken.</div>
+        
+        <img src="assets/help7.4-en.jpg" alt="Indicatoren Budgetgezondheid" class="hero-image" onerror="this.onerror=null;this.src='assets/help7.4-en.jpg';">
+        <div class="img-caption">📊 Voorbeeld van Groene (Gezond), Oranje (Nadert limiet) en Rode (Over budget) voortgangsbalken.</div>
+        
         <p>De sectie "Actieve Budgetten" en het dashboard tonen uw huidige stand van zaken: hoeveel is toegewezen, hoeveel tot nu toe is uitgegeven, het resterende saldo en een gekleurde voortgangsbalk. Budgetanalyse (sectie 8.2) biedt een historisch overzicht.</p>
     </section>
 
     <section id="reports-analytics">
         <h2>8. Rapporten en Analyse</h2>
         <h3>8.1 Maandrapport</h3>
-        <div class="screenshot">📈 [SCREENSHOT: Samenvatting Maandrapport] <br>Dashboardweergave met de cirkelgrafiek van de uitsplitsing per categorie.</div>
+        
+        <img src="assets/help8.1-en.jpg" alt="Samenvatting Maandrapport" class="hero-image" onerror="this.onerror=null;this.src='assets/help8.1-en.jpg';">
+        <div class="img-caption">📈 Dashboardweergave met de cirkelgrafiek van de uitsplitsing per categorie.</div>
+        
         <p>Het maandrapport geeft u een gedetailleerde financiële uitsplitsing voor elke afgelopen maand. Ga naar "Maandrapport" in het hoofdmenu. Het toont: Totale Inkomsten, Totale Uitgaven, Netto Cashflow, Uitgaven per Groep (visuele grafiek), Uitgaven per Categorie, Rekeningsaldi aan het einde van de maand en Topuitgaven. Gebruik de navigatiepijlen om tussen afgelopen maanden te wisselen.</p>
         <h3>8.2 Budgetanalyse</h3>
         <p>Budgetanalyse biedt een historisch overzicht van de prestaties van uw terugkerende budgetten. Per budget kunt u de prestaties per periode zien (binnen/buiten doel), de gemiddelde uitgaven ten opzichte van het doel, de beste en slechtste maanden en een trendlijn. Dit helpt bij het identificeren van budgetdoelen die te hoog of te laag zijn en het signaleren van uitgavenverschuivingen.</p>
@@ -225,11 +251,11 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
         <table>
             <thead><tr><th>Plan</th><th>Wat u krijgt</th></tr></thead>
             <tbody>
-                <tr><td><strong>Gratis</strong></th><td>Volledige app-functies op één apparaat. Alleen lokale opslag. Geen iCloud-synchronisatie.</th></tr>
-                <tr><td><strong>Single Sync — Maandelijks / Jaarlijks</strong></th><td>Uw Persoonlijke werkruimte wordt gesynchroniseerd op al uw Apple-apparaten die zijn aangemeld bij hetzelfde Apple ID.</th></tr>
-                <tr><td><strong>Single Sync — Lifetime</strong></th><td>Hetzelfde als Single Sync, eenmalig betaald zonder terugkerende kosten.</th></td>
-                <tr><td><strong>Family Sharing — Maandelijks / Jaarlijks</strong></th><td>Alles van Single Sync plus de mogelijkheid om Gedeelde werkruimtes te maken en anderen uit te nodigen.</th></tr>
-                <tr><td><strong>Family Sharing — Lifetime</strong></th><td>Hetzelfde als Family Sharing, eenmalig betaald.</th></tr>
+                <tr><td><strong>Gratis</strong></td><td>Volledige app-functies op één apparaat. Alleen lokale opslag. Geen iCloud-synchronisatie.</td></tr>
+                <tr><td><strong>Single Sync — Maandelijks / Jaarlijks</strong></td><td>Uw Persoonlijke werkruimte wordt gesynchroniseerd op al uw Apple-apparaten die zijn aangemeld bij hetzelfde Apple ID.</td></tr>
+                <tr><td><strong>Single Sync — Lifetime</strong></td><td>Hetzelfde als Single Sync, eenmalig betaald zonder terugkerende kosten.</td></tr>
+                <tr><td><strong>Family Sharing — Maandelijks / Jaarlijks</strong></td><td>Alles van Single Sync plus de mogelijkheid om Gedeelde werkruimtes te maken en anderen uit te nodigen.</td></tr>
+                <tr><td><strong>Family Sharing — Lifetime</strong></td><td>Hetzelfde als Family Sharing, eenmalig betaald.</td></tr>
             </tbody>
         </table>
         <h3>9.2 Het juiste plan kiezen</h3>
@@ -248,14 +274,20 @@ th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter
     <section id="workspaces-collaboration">
         <h2>10. Werkruimtes en Samenwerking</h2>
         <h3>10.1 Werkruimte-overzicht</h3>
-        <div class="screenshot">🏠 [SCREENSHOT: Werkruimte-kiezer] <br>Toont het navigatiepunt bovenaan en de lijst met beschikbare ruimtes (Persoonlijk + Gedeeld).</div>
+        
+        <img src="assets/help10.1-en.jpg" alt="Werkruimte-kiezer" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.1-en.jpg';">
+        <div class="img-caption">🏠 Toont het navigatiepunt bovenaan en de lijst met beschikbare ruimtes (Persoonlijk + Gedeeld).</div>
+        
         <p>Een werkruimte is een volledig geïsoleerde financiële omgeving. Expense mnAI ondersteunt twee types: <strong>Persoonlijke Werkruimte</strong> (privé, opgeslagen in uw privé iCloud-database) en <strong>Gedeelde Werkruimtes</strong> (samenwerking, opgeslagen in een gedeelde iCloud-database). Wissel op elk moment van werkruimte via de kiezer (tik op de naam/avatar bovenaan).</p>
         <h3>10.2 Persoonlijke Werkruimte</h3>
         <p>Uw Persoonlijke werkruimte wordt automatisch gemaakt bij de eerste start (herkenbaar aan het bloempictogram). Deze wordt uitsluitend opgeslagen in uw privé iCloud-database. De mensen die u uitnodigt voor gedeelde werkruimtes hebben geen toegang tot uw Persoonlijke werkruimte. Deze kan niet worden verwijderd, hernoemd of overgedragen.</p>
         <h3>10.3 Gedeelde Werkruimtes</h3>
         <p>Gedeelde werkruimtes vereisen een Family Sharing abonnement. Gebruik deze om huishoudelijke inkomsten/uitgaven samen bij te houden, gemeenschappelijke budgetten te beheren of facturen te delen. Alle uitgenodigde leden zien in realtime dezelfde gegevens en hebben volledige lees-/schrijftoegang. Als het Family Sharing plan van de eigenaar verloopt, blijft de werkruimte zichtbaar voor deelnemers totdat de eigenaar de toegang intrekt.</p>
         <h3>10.4 Anderen uitnodigen om samen te werken</h3>
-        <div class="screenshot">✉️ [SCREENSHOT: Medewerkers uitnodigen] <br>Het iCloud-deelvenster dat verschijnt na het tikken op het deel-pictogram.</div>
+        
+        <img src="assets/help10.4-en.jpg" alt="Medewerkers uitnodigen" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.4-en.jpg';">
+        <div class="img-caption">✉️ Het iCloud-deelvenster dat verschijnt na het tikken op het deel-pictogram.</div>
+        
         <p><strong>Vereisten:</strong> Family Sharing plan, werkruimte al gesynchroniseerd met iCloud. Om een uitnodiging te sturen: open de werkruimte-kiezer, tik op het deel-pictogram naast de gedeelde werkruimte (of ga naar werkruimte-instellingen → "Mensen uitnodigen"). Het iCloud-deelvenster verschijnt; deel de link via Berichten, Mail, AirDrop, enz. De ontvanger tikt op de link en accepteert de systeemuitnodiging om deel te nemen.</p>
         <h3>10.5 Een uitnodiging voor een werkruimte accepteren</h3>
         <p>Open de uitnodigingslink op uw iPhone, iPad of Mac waarop Expense mnAI is geïnstalleerd. Er verschijnt een systeembericht "Deelnemen aan [Naam Ruimte]?". Tik op Deelnemen. De werkruimte verschijnt binnen enkele seconden in uw kiezer. Als deze niet meteen verschijnt, sluit en heropen de app en wacht maximaal een minuut. U heeft zelf geen betaald plan nodig om deel te nemen aan een gedeelde werkruimte.</p>
