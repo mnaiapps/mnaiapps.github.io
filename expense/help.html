@@ -3,329 +3,1786 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Expense mnAI - Complete User Guide</title>
+    <title>ChatExpense - Comprehensive User Guide & Documentation</title>
+    <meta name="description" content="Complete user manual and guide for ChatExpense (Expense mnAI). Learn how to use on-device conversational AI, multi-currency tracking, recurring budgets, receipt scanning, and financial goals.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --secondary: #636366;
-            --accent: #007aff; --border: #e5e5ea; --tip-bg: rgba(0, 122, 255, 0.05);
-            --tip-border: #007aff; --code-bg: #f8f8f8;
+            --bg-body: #f8fafc;
+            --card-bg: rgba(255, 255, 255, 0.88);
+            --card-border: rgba(226, 232, 240, 0.8);
+            --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 20px 25px -5px rgba(0, 0, 0, 0.02);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --primary: #0284c7;
+            --primary-glow: rgba(2, 132, 199, 0.15);
+            --accent: #6366f1;
+            --accent-green: #10b981;
+            --accent-purple: #8b5cf6;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --tag-bg: #e2e8f0;
+            --code-bg: #f1f5f9;
+            --nav-width: 290px;
+            --header-h: 70px;
         }
+
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg: #000000; --card: #1c1c1e; --text: #ffffff; --secondary: #8e8e93;
-                --accent: #0a84ff; --border: #38383a; --code-bg: #2c2c2e;
+                --bg-body: #090d16;
+                --card-bg: rgba(17, 24, 39, 0.78);
+                --card-border: rgba(255, 255, 255, 0.08);
+                --card-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+                --text-main: #f8fafc;
+                --text-muted: #94a3b8;
+                --primary: #38bdf8;
+                --primary-glow: rgba(56, 189, 248, 0.2);
+                --accent: #818cf8;
+                --tag-bg: #1e293b;
+                --code-bg: #111827;
             }
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 0; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .content-card { background: var(--card); border-radius: 32px; padding: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid var(--border); }
-        h1 { font-size: 42px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 20px; line-height: 1.1; }
-        h2 { font-size: 28px; font-weight: 700; margin-top: 80px; margin-bottom: 24px; border-bottom: 1.5px solid var(--border); padding-bottom: 16px; color: var(--accent); scroll-margin-top: 100px; }
-        h3 { font-size: 20px; font-weight: 600; margin-top: 40px; margin-bottom: 16px; scroll-margin-top: 100px; }
-        p, li { font-size: 16px; margin-bottom: 18px; color: var(--text); opacity: 0.9; }
-        strong { font-weight: 600; color: var(--text); }
-        .note { background: var(--tip-bg); border-left: 5px solid var(--tip-border); padding: 24px; border-radius: 12px; margin: 32px 0; font-size: 15px; }
-        .note h5 { margin: 0 0 8px 0; color: var(--tip-border); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
-        .screenshot { background: var(--bg); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; text-align: center; color: var(--secondary); font-style: italic; margin: 30px 0; font-size: 14px; }
-        .img-caption { text-align: center; color: var(--secondary); font-size: 14px; font-style: italic; margin-top: -20px; margin-bottom: 30px; }
-        table { width: 100%; border-collapse: collapse; margin: 32px 0; background: var(--bg); border-radius: 12px; overflow: hidden; font-size: 15px; }
-        th, td { text-align: left; padding: 14px; border-bottom: 1px solid var(--border); }
-        th { font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 0.5px; background: rgba(0,0,0,0.02); }
-        .toc { background: var(--bg); border-radius: 20px; padding: 30px; margin-bottom: 50px; }
-        .toc h4 { margin: 0 0 15px 0; font-size: 12px; text-transform: uppercase; color: var(--secondary); letter-spacing: 1.5px; }
-        .toc ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-        .toc li { margin-bottom: 6px; font-size: 14px; }
-        .toc a { text-decoration: none; color: var(--accent); font-weight: 500; }
-        
-        /* New styling for the infographic and screenshots */
-        .hero-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 30px 0; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        
-        @media (max-width: 600px) { h1 { font-size: 32px; } .content-card { padding: 30px 20px; border-radius: 0; border: 0; } .container { padding: 0; } .toc ul { grid-template-columns: 1fr; } }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+            background: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.65;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Ambient Background Glow */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 480px;
+            background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(99, 102, 241, 0.06) 45%, transparent 75%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Top Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
+            height: var(--header-h);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+        }
+
+        .brand-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #0284c7, #6366f1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 19px;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+        }
+
+        .brand-title {
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+            display: block;
+        }
+
+        .header-search {
+            position: relative;
+            width: 320px;
+        }
+
+        .header-search input {
+            width: 100%;
+            padding: 9px 16px 9px 38px;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            background: var(--code-bg);
+            color: var(--text-main);
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .header-search input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-glow);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Layout Container */
+        .layout-wrap {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Sidebar Navigation */
+        aside.sidebar {
+            width: var(--nav-width);
+            flex-shrink: 0;
+            position: sticky;
+            top: var(--header-h);
+            height: calc(100vh - var(--header-h));
+            overflow-y: auto;
+            padding: 28px 20px 48px 24px;
+            border-right: 1px solid var(--card-border);
+        }
+
+        aside.sidebar::-webkit-scrollbar {
+            width: 5px;
+        }
+        aside.sidebar::-webkit-scrollbar-thumb {
+            background: var(--card-border);
+            border-radius: 10px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 24px;
+        }
+
+        .sidebar-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 1.2px;
+            margin-bottom: 8px;
+            padding-left: 12px;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 13.5px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.15s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            background: var(--primary-glow);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            background: var(--primary-glow);
+            font-weight: 600;
+        }
+
+        .nav-icon {
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        /* Main Content */
+        main.main-content {
+            flex-grow: 1;
+            padding: 40px 48px 120px 48px;
+            max-width: 960px;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            box-shadow: var(--card-shadow);
+            border-radius: 24px;
+            padding: 48px;
+            margin-bottom: 48px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary-glow);
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: -1.2px;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--text-main) 60%, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p.lead {
+            font-size: 17px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+            max-width: 720px;
+        }
+
+        .hero-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pill-badge {
+            font-size: 12.5px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: var(--code-bg);
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Article / Guide Sections */
+        .guide-article {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            box-shadow: var(--card-shadow);
+            border-radius: 24px;
+            padding: 40px 44px;
+            margin-bottom: 44px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            scroll-margin-top: calc(var(--header-h) + 24px);
+            transition: border-color 0.2s ease;
+        }
+
+        .guide-article:hover {
+            border-color: rgba(2, 132, 199, 0.4);
+        }
+
+        .article-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            gap: 16px;
+        }
+
+        .header-icon-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .article-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .bg-blue { background: linear-gradient(135deg, #0284c7, #2563eb); }
+        .bg-teal { background: linear-gradient(135deg, #0d9488, #059669); }
+        .bg-purple { background: linear-gradient(135deg, #7c3aed, #9333ea); }
+        .bg-orange { background: linear-gradient(135deg, #ea580c, #d97706); }
+        .bg-indigo { background: linear-gradient(135deg, #4f46e5, #4338ca); }
+        .bg-green { background: linear-gradient(135deg, #16a34a, #059669); }
+        .bg-pink { background: linear-gradient(135deg, #db2777, #e11d48); }
+        .bg-cyan { background: linear-gradient(135deg, #0891b2, #0284c7); }
+
+        .article-title-wrap h2 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+            color: var(--text-main);
+        }
+
+        .article-title-wrap .subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        .category-pill {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.6px;
+            background: var(--code-bg);
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .article-overview {
+            font-size: 15.5px;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin-bottom: 28px;
+        }
+
+        /* Screenshot Container */
+        .screenshot-wrap {
+            margin: 28px 0;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            background: #000;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            text-align: center;
+        }
+
+        .screenshot-wrap img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .screenshot-wrap:hover img {
+            transform: scale(1.015);
+        }
+
+        .screenshot-caption {
+            padding: 12px 16px;
+            font-size: 13px;
+            color: #94a3b8;
+            background: #0f172a;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Step by Step Flow */
+        .steps-container {
+            margin: 28px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: var(--code-bg);
+            border: 1px solid var(--card-border);
+            padding: 16px 20px;
+            border-radius: 14px;
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+
+        .step-item:hover {
+            transform: translateX(4px);
+            background: var(--card-bg);
+        }
+
+        .step-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content {
+            flex-grow: 1;
+        }
+
+        .step-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 3px;
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Callout / Pro-Tip Box */
+        .callout-box {
+            background: var(--primary-glow);
+            border-left: 4px solid var(--primary);
+            border-radius: 12px;
+            padding: 20px 22px;
+            margin: 24px 0;
+        }
+
+        .callout-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+        }
+
+        .callout-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .callout-box li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .callout-box li:last-child {
+            margin-bottom: 0;
+        }
+
+        .callout-box li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            color: var(--primary);
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* AI Prompt Pill Display */
+        .ai-prompt-preview {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px dashed var(--accent-purple);
+            color: var(--accent-purple);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 14px;
+        }
+
+        /* Tables */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 28px 0;
+            border-radius: 14px;
+            border: 1px solid var(--card-border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            background: var(--card-bg);
+            text-align: left;
+        }
+
+        th {
+            background: var(--code-bg);
+            padding: 14px 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--card-border);
+            font-size: 12.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--card-border);
+            color: var(--text-muted);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--card-border);
+            padding: 60px 32px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            background: var(--card-bg);
+            margin-top: 80px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            aside.sidebar {
+                display: none;
+            }
+            main.main-content {
+                padding: 32px 20px;
+            }
+            .header-search {
+                display: none;
+            }
+            .hero {
+                padding: 32px 24px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .guide-article {
+                padding: 28px 20px;
+            }
+        }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="content-card">
-        <h1>Expense mnAI<br><span style="color: var(--secondary); font-weight: 500;">Complete User Guide</span></h1>
-        
-        <nav class="toc">
-            <h4>Jump to Section</h4>
-            <ul>
-                <li><a href="#introduction">1. Introduction</a></li>
-                <li><a href="#getting-started">2. Getting Started</a></li>
-                <li><a href="#accounts">3. Accounts</a></li>
-                <li><a href="#categories-groups">4. Categories & Groups</a></li>
-                <li><a href="#transactions">5. Transactions</a></li>
-                <li><a href="#recurring-bills">6. Recurring Bills</a></li>
-                <li><a href="#recurring-budgets">7. Recurring Budgets</a></li>
-                <li><a href="#reports-analytics">8. Reports & Analytics</a></li>
-                <li><a href="#sync-icloud">9. Sync & iCloud</a></li>
-                <li><a href="#workspaces-collaboration">10. Workspaces & Collaboration</a></li>
-                <li><a href="#privacy-security">11. Privacy & Security</a></li>
-                <li><a href="#faq">12. Frequently Asked Questions</a></li>
-            </ul>
-        </nav>
 
-        <section id="introduction">
-            <h2>1. Introduction</h2>
-            
-            <img src="assets/infographic-en.jpg" alt="Expense mnAI Overview" class="hero-image" onerror="this.onerror=null;this.src='assets/infographic-en.jpg';">
+    <div class="ambient-glow"></div>
 
-            <p>Expense mnAI is a private, intelligent finance manager built exclusively for Apple devices. It is designed to give you a complete picture of your financial life — your income, spending, recurring commitments, and budget health — without ever sharing your data with advertisers, third‑party analytics services, or any external server outside of Apple's own iCloud infrastructure.</p>
-            <h3>What Expense mnAI does</h3>
-            <p>Expense mnAI tracks the money coming in, going out, and moving between your accounts. It understands the difference between a salary deposit, a supermarket trip, and a credit card payment, and organises each one so you can understand where your money actually goes each month.</p>
-            <p>Beyond simple tracking, Expense mnAI automates the repetitive parts of personal finance. Your recurring bills — rent, subscriptions, utilities — are generated automatically on their due dates so you never have to log them manually. Your budgets reset themselves at the start of every month. And at a glance, the dashboard tells you your net worth, this month's cash flow, and your top spending categories before you have opened a single menu.</p>
-            <h3>What makes Expense mnAI different</h3>
-            <ul>
-                <li><strong>Zero developer access.</strong> Your transactions, balances, and accounts are stored exclusively on your device and in your personal iCloud account. The developers cannot see your data. There are no company servers holding your financial information.</li>
-                <li><strong>Apple-native protection.</strong> Everything is encrypted by your Apple ID and synced through iCloud. The same security infrastructure that protects your photos and messages protects your finances.</li>
-                <li><strong>No third-party tracking.</strong> Expense mnAI contains no advertising SDKs, no analytics frameworks, and no data brokers. Your financial behaviour is never used to profile you.</li>
-                <li><strong>Workspaces.</strong> Your personal finances and shared household finances are kept cleanly separate. A Personal workspace is yours alone. Shared workspaces let you collaborate with family members or a partner — each seeing the same data in real time.</li>
-            </ul>
-        </section>
+    <!-- Header Navigation -->
+    <header>
+        <a href="#welcome-overview" class="brand-badge">
+            <div class="brand-logo">✨</div>
+            <div>
+                <span class="brand-title">ChatExpense</span>
+                <span class="brand-subtitle">Official User Guide & Documentation</span>
+            </div>
+        </a>
 
-        <section id="getting-started">
-            <h2>2. Getting Started</h2>
-            <h3>2.1 Setting Up Workspaces</h3>
-            <p>When you open Expense mnAI for the first time, a Personal workspace is created automatically. This is your private financial environment — only you can see it, and it is stored exclusively in your personal iCloud account. No one else, not even people you later invite to a shared workspace, will ever see your Personal workspace.</p>
-            <p><strong>What is a workspace?</strong><br>
-            A workspace is a self-contained financial environment. It has its own accounts, categories, transactions, budgets, and bills. Think of it as a separate set of books. Your Personal workspace contains your individual finances. A shared workspace might contain your household finances — the expenses and income you manage together with someone else.</p>
-            <p><strong>Creating a shared workspace</strong><br>
-            Shared workspaces require a Family Sharing plan. To create one, tap the workspace name at the top of the screen to open the workspace picker, then tap "Create Shared Workspace." You will be asked to give it a name. Once created, you can invite others to join — see section 10.4 for the full process.</p>
-            <p><strong>Switching between workspaces</strong><br>
-            Tap the workspace name or avatar at the top of the screen at any time to see your available workspaces and switch between them. The app remembers which workspace you were last using.</p>
+        <div class="header-search">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="quickSearch" placeholder="Search guides, queries, features..." onkeyup="filterContent()">
+        </div>
+    </header>
 
-            <h3>2.2 Default Data & First Launch</h3>
-            <p>On first launch, Expense mnAI seeds your Personal workspace with a set of default account types, category groups, and categories. These are starting points based on common financial patterns — you are not locked into them and can add, edit, or delete everything except built-in system types.</p>
-            <p><strong>Default account types:</strong> Cash, Checking, Savings, Credit Card, Investment, Loan.</p>
-            <p><strong>Default category groups and categories</strong></p>
-            <table>
-                <thead><tr><th>Group</th><th>Categories</th></tr></thead>
-                <tbody>
-                    <tr><td>Food & Dining</td><td>Groceries, Dining Out</td></tr>
-                    <tr><td>Transportation</td><td>Fuel, Public Transit</td></tr>
-                    <tr><td>Housing</td><td>Rent / Mortgage</td></tr>
-                    <tr><td>Utilities</td><td>Electricity, Internet</td></tr>
-                    <tr><td>Entertainment</td><td>(Add your own categories)</td></tr>
-                    <tr><td>Salary</td><td>Base Salary, Bonus</td></tr>
-                    <tr><td>Investments</td><td>(Add your own categories)</td></tr>
-                    <tr><td>Freelance</td><td>(Add your own categories)</td></tr>
-                    <tr><td>Gifts</td><td>(Add your own categories)</td></tr>
-                    <tr><td>Other Income</td><td>(Add your own categories)</td></tr>
-                </tbody>
-            </table>
-            <p>You are encouraged to add categories that reflect your actual life — whether that is "School Fees," "Pet Care," or "Side Hustle."</p>
+    <div class="layout-wrap">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Getting Started</div>
+                <ul class="nav-list">
+                    <li><a href="#welcome-overview" class="nav-link"><span class="nav-icon">✨</span> Welcome & Overview</a></li>
+                    <li><a href="#workspaces-collaboration" class="nav-link"><span class="nav-icon">👥</span> Workspaces & Sharing</a></li>
+                    <li><a href="#accounts-setup" class="nav-link"><span class="nav-icon">💳</span> Accounts & Wallets</a></li>
+                </ul>
+            </div>
 
-            <h3>2.3 Navigation & Interface Guide</h3>
-            <p>Expense mnAI uses a floating navigation bar that adapts to your device.</p>
-            
-            <img src="assets/help2.3.1-en.jpg" alt="Navigation - Mobile Closed vs Open" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.1-en.jpg';">
-            <div class="img-caption">📱 Annotated view showing the bottom pill bar and the result of tapping the menu button on iPhone.</div>
-            
-            <p><strong>On iPhone (portrait):</strong> A pill-shaped bar floats at the bottom of the screen with two fixed tabs — Dashboard and Transactions — and a menu button on the right. Tapping the menu button opens a full-screen navigation panel with access to all sections.</p>
-            
-            <img src="assets/help2.3.2-en.jpg" alt="Navigation - iPad Sidebar" class="hero-image" onerror="this.onerror=null;this.src='assets/help2.3.2-en.jpg';">
-            <div class="img-caption">🖥️ View showing the compact top bar expanding into the sidebar on iPad/Mac.</div>
-            
-            <p><strong>On iPad and Mac:</strong> A compact floating bar sits at the top. Tapping the left icon expands it into a full sidebar showing all navigation sections. The sidebar closes automatically when you select a destination.</p>
-            <p><strong>Main sections:</strong></p>
-            <table>
-                <thead><tr><th>Section</th><th>What you will find</th></tr></thead>
-                <tbody>
-                    <tr><td>Dashboard</td><td>Net worth, monthly cash flow, upcoming bills, budget summary</td></tr>
-                    <tr><td>Transactions</td><td>All income, expenses, and transfers for the active workspace</td></tr>
-                    <tr><td>Accounts</td><td>Your accounts and their balances</td></tr>
-                    <tr><td>Monthly Report</td><td>Historical month‑by‑month breakdowns</td></tr>
-                    <tr><td>Budget Analysis</td><td>Visual breakdown of budget performance</td></tr>
-                    <tr><td>Intelligence</td><td>AI‑generated spending insights and patterns</td></tr>
-                    <tr><td>Upcoming Bills</td><td>Bills due in the next 30 days</td></tr>
-                    <tr><td>Active Budgets</td><td>Current month budget trackers</td></tr>
-                    <tr><td>Recurring Bills</td><td>Manage bill templates</td></tr>
-                    <tr><td>Recurring Budgets</td><td>Manage budget templates</td></tr>
-                    <tr><td>Account Types</td><td>Manage account type labels</td></tr>
-                    <tr><td>Categories</td><td>Manage your spending categories</td></tr>
-                    <tr><td>Category Groups</td><td>Manage group containers</td></tr>
-                    <tr><td>Settings</td><td>Currency, language, appearance, subscription</td></tr>
-                </tbody>
-            </table>
-        </section>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Daily Tracking</div>
+                <ul class="nav-list">
+                    <li><a href="#logging-transactions" class="nav-link"><span class="nav-icon">✍️</span> Logging Transactions</a></li>
+                    <li><a href="#categories-and-groups" class="nav-link"><span class="nav-icon">🏷️</span> Categories & Groups</a></li>
+                </ul>
+            </div>
 
-        <section id="accounts">
-            <h2>3. Accounts</h2>
-            <h3>3.1 Understanding Account Types</h3>
-            <p>An account type is a label that describes what kind of financial account something is — checking, savings, credit card, and so on. Account types do not affect calculations; they are for your own organisation and display. Expense mnAI comes with six default account types: Cash, Checking, Savings, Credit Card, Investment, and Loan. You can create your own custom types if none of the defaults match — for example "Crypto Wallet" or "Provident Fund."</p>
-            <h3>3.2 Creating and Managing Accounts</h3>
-            <p>Accounts are the financial containers inside a workspace. Every transaction must be linked to at least one account — either the account money came from, the account money went to, or both in the case of a transfer.</p>
-            <p><strong>To create an account:</strong> Navigate to Accounts from the menu, tap the + button, enter a name (e.g., "HDFC Savings"), select an account type, optionally enter an opening balance and date, then tap Save.</p>
-            <p><strong>Editing an account:</strong> Tap the account to open its detail view, then tap Edit. You can change the name, type, notes, and primary default setting.</p>
-            <p><strong>Setting a primary account:</strong> One account can be marked as your primary default. This account is pre‑selected when you open the transaction entry screen, saving you a tap for your most common account.</p>
-            <p><strong>Soft‑deleting an account:</strong> Rather than permanently deleting an account with historical transactions, you can mark it as inactive. Inactive accounts are hidden from active lists but their transaction history is preserved for accurate reporting.</p>
-            <h3>3.3 Opening Balances</h3>
-            <p>When you add an existing account to Expense mnAI, you can enter the balance it already had on a specific date. This is your opening balance. Expense mnAI uses this as the starting point and calculates the current balance by adding income and subtracting expenses from that date forward. If you are setting up Expense mnAI for the first time and your accounts already have existing money, set the opening balance to the current balance as of today with today's date.</p>
-        </section>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Conversational AI</div>
+                <ul class="nav-list">
+                    <li><a href="#conversational-ai-logging" class="nav-link"><span class="nav-icon">💬</span> AI Natural Language</a></li>
+                    <li><a href="#ai-prompt-library" class="nav-link"><span class="nav-icon">💡</span> Help & Prompts Drawer</a></li>
+                </ul>
+            </div>
 
-        <section id="categories-groups">
-            <h2>4. Categories & Groups</h2>
-            <h3>4.1 Understanding the Category System</h3>
-            <p>Expense mnAI uses a two-level system to organise your transactions: <strong>Groups</strong> and <strong>Categories</strong>. A Group is a broad container — for example "Food & Dining" or "Transportation." A Category is a specific item inside a group — for example "Groceries" or "Fuel." Every transaction can be assigned both a group and a category, giving you the ability to see your spending summarised at either level.</p>
-            <p>This two-level structure means you can see "I spent ₹14,000 on Food & Dining this month" and also drill down to see "₹9,000 was groceries and ₹5,000 was dining out." Groups are also typed: a group is either an Expense group or an Income group. This determines how transactions assigned to it are interpreted in your reports.</p>
-            <h3>4.2 Creating Custom Groups</h3>
-            <p>Navigate to Category Groups from the menu, tap the + button, enter a name, select an icon from the SF Symbols library, choose Expense or Income, then tap Save. Your custom group will appear alongside the defaults and can be used immediately.</p>
-            <h3>4.3 Creating Custom Categories</h3>
-            <p>Navigate to Categories from the menu, tap the + button, enter a name, select an icon, choose which group this category belongs to, then tap Save. Categories must belong to a group. The group determines the category's type (expense or income).</p>
-            <h3>4.4 Favourites</h3>
-            <p>Categories and groups can be marked as favourites. Favourites appear at the top of the selection list when you are entering a transaction, making your most common choices faster to reach. Tap and hold any category or group and select "Add to Favourites."</p>
-        </section>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Budgets & Bills</div>
+                <ul class="nav-list">
+                    <li><a href="#recurring-budgets" class="nav-link"><span class="nav-icon">📊</span> Recurring Budgets</a></li>
+                    <li><a href="#recurring-bills" class="nav-link"><span class="nav-icon">📅</span> Recurring Bills & Reminders</a></li>
+                </ul>
+            </div>
 
-        <section id="transactions">
-            <h2>5. Transactions</h2>
-            <h3>5.1 Recording an Expense</h3>
-            <p>An expense records money leaving one of your accounts.</p>
-            
-            <img src="assets/help5.1-en.jpg" alt="Transaction Form - Expense" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.1-en.jpg';">
-            <div class="img-caption">📸 Annotated form showing Amount, Pay From, Category, and Note fields.</div>
-            
-            <p><strong>To add an expense:</strong> Tap the + button (visible on the Dashboard and Transactions screen), select "Expense", enter the amount, select the date, choose the account the money came from ("Pay From"), select a group and category, optionally add notes/tags/receipt, then tap Save. The account balance will immediately reflect the deduction.</p>
-            <h3>5.2 Recording Income</h3>
-            <p>Income records money arriving into one of your accounts — a salary, a freelance payment, a cash gift, or any other inflow. Tap +, select "Income", enter the amount, choose the account the money arrived into ("Pay To"), select an income group and category, add notes if needed, then tap Save.</p>
-            <h3>5.3 Transfers Between Accounts</h3>
-            
-            <img src="assets/help5.3-en.jpg" alt="Transaction Form - Transfer" class="hero-image" onerror="this.onerror=null;this.src='assets/help5.3-en.jpg';">
-            <div class="img-caption">🔄 Callout pointing to the dual account selectors: 'Pay From' and 'Pay To'.</div>
-            
-            <p>A transfer records money moving between two of your own accounts — for example, paying your credit card bill from your checking account. Tap +, select "Transfer", enter the amount, select the source account ("Pay From") and the destination account ("Pay To"), select the date, add notes, then tap Save. Transfers do not affect your total net worth but do affect individual account balances.</p>
-            <h3>5.4 Attaching Receipts</h3>
-            <p>You can attach a photo or PDF receipt to any transaction. After saving a transaction, open it and tap "Add Receipt." You can take a new photo or choose an existing image from your photo library. Receipts are stored on your device and synced to iCloud with your other data.</p>
-            <h3>5.5 Tags</h3>
-            <p>Tags are free-form labels you can apply to transactions for custom organisation outside the group/category system. For example, tag several transactions as "Holiday 2025" or "Office Supplies." To add a tag, tap the Tags field when entering or editing a transaction and type a new tag name or select an existing one.</p>
-            <h3>5.6 Editing & Deleting Transactions</h3>
-            <p>Tap any transaction in the list to open it. From the detail view, tap Edit to make changes. To delete a transaction, swipe left on it in the list and tap Delete, or open the transaction and tap the Delete button. Deleted transactions are permanently removed and cannot be recovered.</p>
-        </section>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Receipts & OCR</div>
+                <ul class="nav-list">
+                    <li><a href="#receipts-scanning-ocr" class="nav-link"><span class="nav-icon">📷</span> Scanning & Vision OCR</a></li>
+                </ul>
+            </div>
 
-        <section id="recurring-bills">
-            <h2>6. Recurring Bills</h2>
-            <h3>6.1 How Recurring Bills Work</h3>
-            <p>Recurring bills are automated transaction templates. You define a bill once — its name, amount, frequency, category, and source account — and Expense mnAI generates a pending bill entry on each due date. Bills are generated into a "pending" state first. You review them in Upcoming Bills and mark them as paid once the money has actually left your account.</p>
-            <h3>6.2 Creating a Recurring Bill</h3>
-            <p>Navigate to Recurring Bills from the menu, tap the + button, enter the bill name, choose the transaction type (Expense or Income), set the frequency (Monthly, Weekly, Quarterly, or Yearly), set the start date, optionally enter a default amount, assign a category/group/source account, optionally set an end date, then tap Save.</p>
-            <h3>6.3 Managing Bill Instances</h3>
-            <p>Each generated occurrence is a bill instance. You can view all instances by opening the recurring bill template. Modify a single instance without affecting the template by opening it and editing its amount, date, or notes. To skip an instance (e.g., a bill that did not occur), mark it as skipped rather than paid.</p>
-            <h3>6.4 Marking Bills as Paid</h3>
-            
-            <img src="assets/help6.4-en.jpg" alt="Upcoming Bills List" class="hero-image" onerror="this.onerror=null;this.src='assets/help6.4-en.jpg';">
-            <div class="img-caption">✅ View showing pending bills with the 'Mark as Paid' action highlighted.</div>
-            
-            <p>Navigate to "Upcoming Bills" from the main menu. Bills due in the next 30 days are listed. Tap a bill and select "Mark as Paid" to confirm payment, optionally adjusting the actual amount if it differed from the default. Once marked as paid, the bill instance creates a corresponding transaction in your history.</p>
-        </section>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Milestones & Travel</div>
+                <ul class="nav-list">
+                    <li><a href="#financial-goals" class="nav-link"><span class="nav-icon">🎯</span> Financial Goals</a></li>
+                    <li><a href="#multi-currency-travel" class="nav-link"><span class="nav-icon">🌍</span> Multi-Currency Engine</a></li>
+                </ul>
+            </div>
 
-        <section id="recurring-budgets">
-            <h2>7. Recurring Budgets</h2>
-            <h3>7.1 How Budgets Work</h3>
-            <p>Recurring budgets are self-resetting spending targets. You define a budget once — its name, amount, frequency, and the categories or groups it covers — and Expense mnAI generates a fresh budget period automatically at the start of each cycle. No manual resetting required.</p>
-            <h3>7.2 Creating a Budget</h3>
-            <p>Navigate to Recurring Budgets from the menu, tap +, enter a name, set the frequency (Monthly, Weekly, Quarterly), enter the budget amount, set the start date (typically the 1st of the current month), assign the scope (one or more category groups or specific categories; leave empty to apply to all expenses), enable Carry‑Forward if desired, then tap Save.</p>
-            <h3>7.3 Carry-Forward</h3>
-            <p>When Carry-Forward is enabled, any unspent amount at the end of a period is added to the next period's budget. For example, if your Food budget is ₹12,000 and you only spent ₹9,000, the next month starts with ₹15,000 (₹12,000 base + ₹3,000 carried forward).</p>
-            <h3>7.4 Tracking Budget Health</h3>
-            
-            <img src="assets/help7.4-en.jpg" alt="Budget Health Indicators" class="hero-image" onerror="this.onerror=null;this.src='assets/help7.4-en.jpg';">
-            <div class="img-caption">📊 Showcasing Green (Healthy), Amber (Approaching), and Red (Over Budget) progress bars.</div>
-            
-            <p>The "Active Budgets" section and the Dashboard show your current budget positions: allocated amount, spent so far, remaining balance, and a colour‑coded progress bar. Budget Analysis (section 8.2) gives a full historical view.</p>
-        </section>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Business & Splits</div>
+                <ul class="nav-list">
+                    <li><a href="#business-expenses-tax" class="nav-link"><span class="nav-icon">💼</span> Business & Tax Write-Offs</a></li>
+                    <li><a href="#split-with-friends" class="nav-link"><span class="nav-icon">🤝</span> Split & "Who Owes Me"</a></li>
+                </ul>
+            </div>
 
-        <section id="reports-analytics">
-            <h2>8. Reports & Analytics</h2>
-            <h3>8.1 Monthly Report</h3>
-            
-            <img src="assets/help8.1-en.jpg" alt="Monthly Report Overview" class="hero-image" onerror="this.onerror=null;this.src='assets/help8.1-en.jpg';">
-            <div class="img-caption">📈 Populated dashboard view with the category breakdown Donut Chart.</div>
-            
-            <p>The Monthly Report gives you a detailed financial breakdown for any past month. Access it from the main menu under "Monthly Report." It shows: Total Income, Total Expenses, Net Cash Flow, Spending by Group (visual chart), Spending by Category, Account Balances at month end, and Top Expenses. Use the month navigation arrows to move between past months.</p>
-            <h3>8.2 Budget Analysis</h3>
-            <p>Budget Analysis provides a historical view of your budget performance across all recurring budgets. For each budget you can see period‑by‑period performance (over/under), average spending vs. target, best and worst months, and a trend line. This helps identify budget targets that are set too high or too low and spot spending drift.</p>
-            <h3>8.3 Intelligence & Insights</h3>
-            <p>The Intelligence section uses your transaction history to surface patterns, anomalies, and suggestions automatically. It analyses spending patterns, net worth trend, top spending days, category drift, cash flow forecast, and provides a weekly summary (requires notification permission). All insights are generated locally on your device — no data is sent to any server.</p>
-        </section>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Security & Reports</div>
+                <ul class="nav-list">
+                    <li><a href="#pdf-csv-export" class="nav-link"><span class="nav-icon">📑</span> PDF Claims & CSV Export</a></li>
+                    <li><a href="#security-and-privacy" class="nav-link"><span class="nav-icon">🔒</span> Face ID & Privacy Mode</a></li>
+                    <li><a href="#faq" class="nav-link"><span class="nav-icon">❓</span> FAQ</a></li>
+                </ul>
+            </div>
+        </aside>
 
-        <section id="sync-icloud">
-            <h2>9. Sync & iCloud</h2>
-            <h3>9.1 Sync Plans Overview</h3>
-            <table>
-                <thead><tr><th>Plan</th><th>What you get</th></tr></thead>
-                <tbody>
-                    <tr><td><strong>Free</strong></td><td>Full app features on one device. Local storage only. No iCloud sync.</td></tr>
-                    <tr><td><strong>Single Sync — Monthly / Yearly</strong></td><td>Your Personal workspace syncs across all your Apple devices signed into the same iCloud account.</td></tr>
-                    <tr><td><strong>Single Sync — Lifetime</strong></td><td>Same as Single Sync, paid once, no recurring charge.</td></tr>
-                    <tr><td><strong>Family Sharing — Monthly / Yearly</strong></td><td>Everything in Single Sync plus the ability to create Shared workspaces and invite others.</td></tr>
-                    <tr><td><strong>Family Sharing — Lifetime</strong></td><td>Same as Family Sharing, paid once.</td></tr>
-                </tbody>
-            </table>
-            <h3>9.2 Choosing the Right Plan</h3>
-            <p><strong>Free</strong> – single device only.<br>
-            <strong>Single Sync</strong> – multiple Apple devices for your Personal workspace.<br>
-            <strong>Family Sharing</strong> – Single Sync features plus shared workspaces with others.<br>
-            <strong>Lifetime plans</strong> – same features as monthly/yearly, one‑time payment.</p>
-            <h3>9.3 Multi-Device Sync</h3>
-            <p>With an active Single Sync or Family Sharing plan, your Personal workspace is automatically kept in sync across all Apple devices signed into the same iCloud account. Changes upload within seconds; other devices download changes within 30‑60 seconds. Conflict resolution: the most recently edited version wins.</p>
-            <h3>9.4 Adding a New Device</h3>
-            <p>Install the app on a new device, sign into the same iCloud account, purchase (or restore) your plan. Once your subscription is confirmed, the new device automatically downloads your existing data from iCloud. Within a minute or two, all your accounts, transactions, budgets, and bills appear.</p>
-            <h3>9.5 Restoring Purchases</h3>
-            <p>To restore your subscription after reinstalling or on a new device, go to Settings → Subscription & Plan → Restore Purchases, then sign in with your Apple ID if prompted. Lifetime plans are re‑activated on any device signed into the same Apple ID. If sync does not activate after restore, sign out of iCloud and back in, then try Restore Purchases again.</p>
-        </section>
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Hero Banner -->
+            <section class="hero">
+                <div class="hero-tag">Complete User Manual</div>
+                <h1>Master Your Money with On-Device AI</h1>
+                <p class="lead">
+                    ChatExpense merges double-entry precision with an on-device conversational AI engine. 
+                    Manage budgets, scan receipts with Apple Vision OCR, track multi-currency travel, and split group expenses—with 100% offline privacy.
+                </p>
+                <div class="hero-pills">
+                    <span class="pill-badge">🔒 100% Private (No Cloud AI APIs)</span>
+                    <span class="pill-badge">⚡ Sub-millisecond Local Engine</span>
+                    <span class="pill-badge">☁️ CloudKit E2E Encrypted Sync</span>
+                    <span class="pill-badge">🌍 10 Currencies & Dual Display</span>
+                </div>
+            </section>
 
-        <section id="workspaces-collaboration">
-            <h2>10. Workspaces & Collaboration</h2>
-            <h3>10.1 Workspace Overview</h3>
-            
-            <img src="assets/help10.1-en.jpg" alt="Workspace Picker" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.1-en.jpg';">
-            <div class="img-caption">🏠 Showing the top navigation entry point and the list of available workspaces (Personal + Shared).</div>
-            
-            <p>A workspace is a completely isolated financial environment. Expense mnAI supports two types: <strong>Personal workspace</strong> (private, stored in your private iCloud database) and <strong>Shared workspaces</strong> (collaborative, stored in a shared iCloud database). Switch between workspaces at any time from the workspace picker (tap the workspace name/avatar at the top of the screen).</p>
-            <h3>10.2 Personal Workspace</h3>
-            <p>Your Personal workspace is created automatically on first launch (identified by a flower icon). It is stored exclusively in your private iCloud database. Others you invite to shared workspaces have no access to your Personal workspace. It cannot be deleted, renamed, or transferred.</p>
-            <h3>10.3 Shared Workspaces</h3>
-            <p>Shared workspaces require a Family Sharing plan. They are for tracking household income/expenses together, managing joint budgets, or sharing bills. All invited members see the same data in real time and have full read/write access. If the owner's Family plan lapses, the workspace remains visible to participants until the share is explicitly revoked.</p>
-            <h3>10.4 Inviting Others to Collaborate</h3>
-            
-            <img src="assets/help10.4-en.jpg" alt="Inviting Collaborators" class="hero-image" onerror="this.onerror=null;this.src='assets/help10.4-en.jpg';">
-            <div class="img-caption">✉️ The iCloud Share Sheet appearing after tapping the share icon.</div>
-            
-            <p><strong>Requirements:</strong> Family Sharing plan, workspace already synchronised to iCloud. To send an invitation: open the workspace picker, tap the share icon next to the shared workspace (or open workspace settings → "Invite People"). The iCloud sharing sheet appears; share the invitation link via Messages, Mail, AirDrop, etc. The recipient taps the link and accepts the system prompt to join.</p>
-            <h3>10.5 Accepting a Workspace Invitation</h3>
-            <p>Open the invitation link on your iPhone, iPad, or Mac with Expense mnAI installed. A system prompt "Join [Workspace Name]?" appears. Tap Accept. The workspace will appear in your workspace picker within a few seconds. If it does not appear immediately, close and reopen the app and wait up to one minute. You do not need a paid plan to participate in a shared workspace.</p>
-            <h3>10.6 Managing Collaborators</h3>
-            <p>The workspace owner can remove a collaborator by opening the share sheet from the workspace picker, tapping the participant's name, and selecting "Remove Access." The participant will lose access immediately. A participant can leave a shared workspace by opening the share sheet and tapping "Stop Participating."</p>
-        </section>
+            <!-- 1. Welcome & Architecture -->
+            <article id="welcome-overview" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-blue">✨</div>
+                        <div class="article-title-wrap">
+                            <h2>Welcome to ChatExpense</h2>
+                            <div class="subtitle">Architecture, navigation hierarchy, and privacy foundation</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Getting Started</span>
+                </div>
 
-        <section id="privacy-security">
-            <h2>11. Privacy & Security</h2>
-            <p>Expense mnAI is built entirely on Apple's security infrastructure. There are no Expense mnAI company servers involved in storing or transmitting your financial data.</p>
-            <ul>
-                <li><strong>Local storage:</strong> Free plan data lives exclusively on your device in an encrypted SQLite database.</li>
-                <li><strong>iCloud sync:</strong> When sync is enabled, data is transmitted through Apple's iCloud servers with encryption in transit and at rest.</li>
-                <li><strong>Developer access:</strong> Developers have no mechanism to read your data. No admin portal, no database export, no analytics pipeline.</li>
-                <li><strong>No advertising:</strong> The app contains no advertising SDKs and participates in no ad targeting or retargeting systems.</li>
-                <li><strong>iCloud account changes:</strong> If you sign out of iCloud and sign in as a different user, the app detects the change and wipes the local database to protect the previous user's data.</li>
-            </ul>
-        </section>
+                <p class="article-overview">
+                    ChatExpense combines double-entry accounting integrity with an intelligent on-device Natural Language Understanding engine. 
+                    All data is persisted in private local SQLite databases on your Apple device. When CloudKit synchronization is enabled, records synchronize across your devices with end-to-end encryption—no central server ever sees or stores your financial transactions.
+                </p>
 
-        <section id="faq">
-            <h2>12. Frequently Asked Questions</h2>
-            <p><strong>Can I use Expense mnAI without an internet connection?</strong><br>Yes. All core features work fully offline. Changes sync to your other devices when you next connect.</p>
-            <p><strong>Does the app work on Mac?</strong><br>Yes. Expense mnAI is available on Mac via Mac Catalyst and behaves consistently with the iPhone and iPad experience.</p>
-            <p><strong>What happens to my data if I cancel my subscription?</strong><br>Your data remains on your device. You lose sync access, but your existing data is not removed.</p>
-            <p><strong>What happens to a shared workspace if the owner cancels their Family plan?</strong><br>The shared workspace remains accessible to participants through iCloud sharing infrastructure for as long as Apple maintains the share.</p>
-            <p><strong>Can I have multiple Personal workspaces?</strong><br>No. The Personal workspace is singular—one per iCloud account. You can create multiple shared workspaces instead.</p>
-            <p><strong>My transactions are not syncing. What should I try?</strong><br>Check your internet connection, verify your iCloud sign-in, and ensure your subscription is active in the app's settings. Try toggling airplane mode off and on to force a sync attempt. If the issue persists, contact support.</p>
-            <p><strong>Can two people share a Personal workspace?</strong><br>No. Personal workspaces are private by design. Create a Shared workspace for collaborative data.</p>
-            <p><strong>Is there a limit to how many transactions I can add?</strong><br>No. There is no artificial limit on the number of transactions, accounts, or categories.</p>
-            <p><strong>Does Expense mnAI support multiple currencies?</strong><br>Yes. Each workspace has its own currency setting. Cross-currency reporting between workspaces is not currently supported.</p>
-            <p><strong>How do I contact support?</strong><br>Navigate to Settings → Help & Support, or visit the support page linked in the App Store. Please include your device model and iOS version when reporting an issue.</p>
-        </section>
+                <div class="screenshot-wrap">
+                    <img src="assets/screenshot-dashboard.png" alt="ChatExpense Main Dashboard View" loading="lazy">
+                    <div class="screenshot-caption">Figure 1.1: Main Executive Dashboard displaying Net Worth, Cash Flow, and Category Outlays</div>
+                </div>
 
-        <p style="text-align: center; margin-top: 80px; font-size: 13px; color: var(--secondary);">Expense mnAI — Your Financial Architect, Secure & Private.</p>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Bottom Navigation Bar</div>
+                            <div class="step-desc">Access the AI Assistant in the center, Dashboard on the left, and Transactions ledger on the right.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Expanded Drawer & Pill Menu</div>
+                            <div class="step-desc">Tap the floating pill menu or swipe to access Budgets, Bills, Goals, Receipts, and Reports.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Universal Quick Action '+'</div>
+                            <div class="step-desc">Use the floating action button anywhere in the app to immediately record an expense, income, or transfer.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Customize your default currency, first day of the week, and date formats anytime in Settings.</li>
+                        <li>Enable Face ID in Settings for biometric protection whenever you switch away and return to the app.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "What can this app do?"
+                </div>
+            </article>
+
+            <!-- 2. Workspaces & Collaboration -->
+            <article id="workspaces-collaboration" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-blue">👥</div>
+                        <div class="article-title-wrap">
+                            <h2>Workspaces & Shared Books</h2>
+                            <div class="subtitle">Separate personal finances from family budgets and shared projects</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Getting Started</span>
+                </div>
+
+                <p class="article-overview">
+                    Workspaces act as independent accounting vaults. You have a private Personal Workspace by default, and you can create or join CloudKit-shared Workspaces to manage expenses cooperatively with family members, partners, or project collaborators.
+                </p>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Switch Active Workspace</div>
+                            <div class="step-desc">Tap your active workspace badge in Settings or the top navigation bar to open the Workspace Switcher.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Create a Shared Workspace</div>
+                            <div class="step-desc">Tap 'New Workspace', specify the book name, and send an Apple CloudKit invite link via Messages, Mail, or AirDrop.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Strict Isolation Firewall</div>
+                            <div class="step-desc">Every transaction, account, budget, and bill is strictly scoped to its active workspace. Cross-workspace data leaks are architecturally impossible.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Workspace participants can see and add shared records, but cannot inspect your Personal Workspace.</li>
+                        <li>Each workspace can maintain its own base reporting currency (e.g., USD for Personal, EUR for a European trip workspace).</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Quick financial health check"
+                </div>
+            </article>
+
+            <!-- 3. Accounts & Wallets -->
+            <article id="accounts-setup" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-blue">💳</div>
+                        <div class="article-title-wrap">
+                            <h2>Accounts & Wallets Setup</h2>
+                            <div class="subtitle">Checking, Savings, Credit Cards, Cash, and Digital Wallets</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Getting Started</span>
+                </div>
+
+                <p class="article-overview">
+                    Accounts represent the physical and digital containers holding your money. Configuring your accounts enables ChatExpense to automatically track running balances and maintain double-entry transfers with total ledger balance.
+                </p>
+
+                <div class="screenshot-wrap">
+                    <img src="assets/screenshot-accounts.png" alt="Accounts & Balances View" loading="lazy">
+                    <div class="screenshot-caption">Figure 1.2: Accounts List showing Checking, Savings, Credit Cards, and live balances</div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Add an Account</div>
+                            <div class="step-desc">Navigate to Accounts from the side menu and tap the '+' button in the top right.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Choose Account Type</div>
+                            <div class="step-desc">Select Checking, Savings, Credit Card, Investment, Cash, or Loan. Each type handles balances correctly.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Set Initial Balance</div>
+                            <div class="step-desc">Enter the starting balance. All future transactions from this account will adjust the running balance automatically.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Star your primary account to make it the default payment source in quick logging forms.</li>
+                        <li>Credit Card accounts automatically reflect outstanding debt as negative balances against your net worth.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Net worth"
+                </div>
+            </article>
+
+            <!-- 4. Logging Transactions -->
+            <article id="logging-transactions" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-teal">✍️</div>
+                        <div class="article-title-wrap">
+                            <h2>Logging Expenses, Income & Transfers</h2>
+                            <div class="subtitle">Complete double-entry recording with categories, payment sources, tags, and notes</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Daily Tracking</span>
+                </div>
+
+                <p class="article-overview">
+                    Every transaction in ChatExpense preserves financial integrity. You can record purchases manually, scan paper receipts via camera, or simply type conversational natural language into the AI Assistant.
+                </p>
+
+                <div class="screenshot-wrap">
+                    <img src="assets/screenshot-transactions.png" alt="Transactions Ledger View" loading="lazy">
+                    <div class="screenshot-caption">Figure 2.1: Transactions Screen with Search, Date Grouping, and Business/Personal Filter</div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Choose Transaction Type</div>
+                            <div class="step-desc">Select Expense, Income, or Transfer at the top of the entry sheet.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Enter Amount & Category</div>
+                            <div class="step-desc">Input the total and pick the appropriate category to automatically classify the expenditure.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Attach Receipts & Metadata</div>
+                            <div class="step-desc">Optionally take a photo of the receipt, tag a client/project, or toggle Tax Deductible business expense.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Transfer transactions atomically debit the source account and credit the destination account in a single operation.</li>
+                        <li>Enable 'Mark Cleared' for transactions that have already finalized on your bank statement.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Spent $15 on lunch"
+                </div>
+            </article>
+
+            <!-- 5. Categories & Groups -->
+            <article id="categories-and-groups" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-teal">🏷️</div>
+                        <div class="article-title-wrap">
+                            <h2>Categories & Category Groups</h2>
+                            <div class="subtitle">Organize spending into structured parent groups and subcategories</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Daily Tracking</span>
+                </div>
+
+                <p class="article-overview">
+                    Categories are organized into high-level parent groups (such as Living, Food & Dining, Transportation, and Utilities). This hierarchical structure powers clean pie charts, granular budget controls, and automatic AI classification.
+                </p>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Browse Default Categories</div>
+                            <div class="step-desc">Open Categories from the navigation menu to review default income and expense classifications.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Custom Icons & Colors</div>
+                            <div class="step-desc">Create custom categories with personalized SF Symbols and theme colors.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Budget Scope Targeting</div>
+                            <div class="step-desc">Assign budgets to entire parent groups or target specific individual categories.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Category breakdown"
+                </div>
+            </article>
+
+            <!-- 6. Conversational AI Logging -->
+            <article id="conversational-ai-logging" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-purple">💬</div>
+                        <div class="article-title-wrap">
+                            <h2>Conversational AI Logging</h2>
+                            <div class="subtitle">Speak or type natural language to log spending, check budgets, and ask queries</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">AI Assistant</span>
+                </div>
+
+                <p class="article-overview">
+                    ChatExpense features a 100% on-device Natural Language Understanding engine. You never need to fill out long forms—simply type what you spent, e.g. <em>"Spent 24 on groceries"</em> or <em>"Salary 4000 deposited into Checking"</em>, and the assistant drafts the transaction with intelligent category matching.
+                </p>
+
+                <div class="screenshot-wrap">
+                    <img src="assets/screenshot-assistant.png" alt="AI Assistant Chat Interface" loading="lazy">
+                    <div class="screenshot-caption">Figure 3.1: On-device conversational AI Assistant parsing transactions and answering queries</div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Open AI Assistant</div>
+                            <div class="step-desc">Tap the center sparkles icon on the bottom navigation bar.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Type or Tap a Prompt</div>
+                            <div class="step-desc">Type your expense in natural language, or tap any suggestion pill from the Prompt Drawer.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">1-Tap Confirmation Card</div>
+                            <div class="step-desc">Review the parsed amount and category card, then tap 'Confirm & Save' or say 'Undo' to cancel.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Tap the question mark button in the top right of the AI Assistant to open the interactive Prompt Pill drawer.</li>
+                        <li>Ask complex queries like <em>"How much did I spend this month?"</em> or <em>"Who owes me money?"</em> for instant calculations.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Spent $25 on groceries"
+                </div>
+            </article>
+
+            <!-- 7. Help & Prompts Drawer -->
+            <article id="ai-prompt-library" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-purple">💡</div>
+                        <div class="article-title-wrap">
+                            <h2>Help & Prompts Drawer</h2>
+                            <div class="subtitle">Over 35 interactive query pills spanning analytics, taxes, budgets, and travel</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">AI Assistant</span>
+                </div>
+
+                <p class="article-overview">
+                    The Help & Prompts Drawer inside the AI Assistant organizes ready-to-tap suggestions across 11 financial domains. Tapping any prompt executes the query immediately with zero typing required.
+                </p>
+
+                <div class="screenshot-wrap">
+                    <img src="assets/screenshot-intelligence.png" alt="Financial Intelligence Hub" loading="lazy">
+                    <div class="screenshot-caption">Figure 3.2: Financial Intelligence Hub with cash flow analytics and proactive AI insights</div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Open the Drawer</div>
+                            <div class="step-desc">Tap the question mark icon in the AI Assistant header.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Browse by Category</div>
+                            <div class="step-desc">Switch between Chat History and Help & Prompts to explore categories like Bills, OCR, Split, and Taxes.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Run Instant Queries</div>
+                            <div class="step-desc">Tap any pill such as 'Active budgets' or 'Upcoming bills' to trigger instant calculations.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Example Prompt Pill</th>
+                                <th>Action Performed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Bills</strong></td>
+                                <td><code>Upcoming bills</code></td>
+                                <td>Audits bills due in next 30 days</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Budgets</strong></td>
+                                <td><code>Active budgets</code></td>
+                                <td>Calculates spent vs cap for all categories</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Taxes</strong></td>
+                                <td><code>Tax deductible expenses this year</code></td>
+                                <td>Sums tax write-offs for tax filing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Currencies</strong></td>
+                                <td><code>Exchange rate USD to INR</code></td>
+                                <td>Fetches live cached conversion rate</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Splits</strong></td>
+                                <td><code>Who owes me money?</code></td>
+                                <td>Totals pending friend receivables</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "What can this app do?"
+                </div>
+            </article>
+
+            <!-- 8. Recurring Budgets -->
+            <article id="recurring-budgets" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-orange">📊</div>
+                        <div class="article-title-wrap">
+                            <h2>Recurring Budgets & Auto-Rollovers</h2>
+                            <div class="subtitle">Set spending limits per category or group with automatic period renewal</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Budgets & Bills</span>
+                </div>
+
+                <p class="article-overview">
+                    Recurring budgets allow you to set monthly, weekly, or quarterly spending ceilings. The engine automatically creates active budget instances for current cycles and tracks progress in real-time as you log expenses.
+                </p>
+
+                <div class="screenshot-wrap">
+                    <img src="assets/screenshot-budgets.png" alt="Recurring Budgets Screen" loading="lazy">
+                    <div class="screenshot-caption">Figure 4.1: Recurring Budgets list with visual progress indicators and period controls</div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Create Recurring Budget</div>
+                            <div class="step-desc">Select Recurring Budgets from the menu and tap '+'.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Define Amount & Cadence</div>
+                            <div class="step-desc">Set your spending cap (e.g. $500) and frequency (Monthly, Weekly, Bi-Weekly, Yearly).</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Choose Scope</div>
+                            <div class="step-desc">Select 'All Transactions' for a workspace-wide ceiling, or 'Selective' to focus on specific categories.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Carry Forward (Rollover)</div>
+                            <div class="step-desc">Enable Carry Forward to roll over unspent budget surplus into the subsequent period.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Color-coded progress gauges alert you in green (&lt;70%), yellow (70–90%), and red (&gt;90%) as spending nears your limit.</li>
+                        <li>View Active Budgets to inspect individual month-by-month spending versus limits.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Active budgets"
+                </div>
+            </article>
+
+            <!-- 9. Recurring Bills -->
+            <article id="recurring-bills" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-orange">📅</div>
+                        <div class="article-title-wrap">
+                            <h2>Recurring Bills & Due Date Reminders</h2>
+                            <div class="subtitle">Schedule upcoming dues, track subscriptions, and mark payments with 1 tap</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Budgets & Bills</span>
+                </div>
+
+                <p class="article-overview">
+                    Never miss a due date. ChatExpense tracks recurring bills such as rent, utilities, insurance, and streaming services. Upcoming bills are prominently surfaced on your Dashboard and generate local notifications ahead of time.
+                </p>
+
+                <div class="screenshot-wrap">
+                    <img src="assets/screenshot-bills.png" alt="Recurring Bills Blueprint View" loading="lazy">
+                    <div class="screenshot-caption">Figure 4.2: Recurring Bills management screen with payment cadences and source accounts</div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Create Bill Blueprint</div>
+                            <div class="step-desc">Open Recurring Bills from the menu and tap '+'.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Set Schedule & Due Date</div>
+                            <div class="step-desc">Enter the amount, due date, cadence, and source payment account.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">1-Tap Mark as Paid</div>
+                            <div class="step-desc">When a bill is due, tap 'Pay Bill' on the Dashboard to record the expense and advance the schedule.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Schedule variable amount bills where you adjust the total at payment time (e.g. electricity bills).</li>
+                        <li>The AI Assistant can schedule bills directly when you say: <em>"Add electricity bill $85 due next Friday"</em>.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Upcoming bills"
+                </div>
+            </article>
+
+            <!-- 10. Receipt Scanning & Vision OCR -->
+            <article id="receipts-scanning-ocr" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-indigo">📷</div>
+                        <div class="article-title-wrap">
+                            <h2>Receipt Scanning & On-Device OCR</h2>
+                            <div class="subtitle">Capture paper receipts, extract merchant totals, and link photos to transactions</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Receipts & OCR</span>
+                </div>
+
+                <p class="article-overview">
+                    Using Apple's native Vision framework, ChatExpense scans paper receipts locally on your device. It extracts merchant names, total amounts, dates, and itemized lines without uploading your receipts to any third-party cloud.
+                </p>
+
+                <div class="screenshot-wrap">
+                    <img src="assets/screenshot-receipts.png" alt="Receipts Hub Screen" loading="lazy">
+                    <div class="screenshot-caption">Figure 5.1: Receipts Hub with review status, merchant totals, and image attachment</div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Open Scanner</div>
+                            <div class="step-desc">Open Receipts from the menu and tap 'Scan Receipt' or use the camera button.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Review OCR Extraction</div>
+                            <div class="step-desc">The app automatically highlights the merchant, date, and detected price in the Review Tray.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Convert to Transaction</div>
+                            <div class="step-desc">Tap 'Convert to Expense' to save the record with the high-resolution receipt photo permanently attached.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Import PDF receipts or photo screenshots directly from other apps using the iOS Share Sheet.</li>
+                        <li>Scanned receipt photos are automatically included as evidence annexures in PDF Expense Claims.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Show scanned receipts"
+                </div>
+            </article>
+
+            <!-- 11. Financial Goals -->
+            <article id="financial-goals" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-green">🎯</div>
+                        <div class="article-title-wrap">
+                            <h2>Financial Goals & Savings Buckets</h2>
+                            <div class="subtitle">Set milestone targets, track funded progress, and allocate deposits</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Milestones & Travel</span>
+                </div>
+
+                <p class="article-overview">
+                    Financial Goals help you budget for milestones like an Emergency Fund, Vacation, New Vehicle, or Home Down Payment. Set target dates and monitor visual progress bars as you allocate savings.
+                </p>
+
+                <div class="screenshot-wrap">
+                    <img src="assets/screenshot-goals.png" alt="Financial Goals Screen" loading="lazy">
+                    <div class="screenshot-caption">Figure 6.1: Financial Goals dashboard with target dates and funded progress percentages</div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Create Goal</div>
+                            <div class="step-desc">Navigate to Financial Goals from the menu and tap 'New Goal'.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Target & Deadline</div>
+                            <div class="step-desc">Enter your target amount (e.g. $5,000), target completion date, icon, and theme color.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Deposit Funds</div>
+                            <div class="step-desc">Tap 'Add Funds' on any goal card to record a contribution from your checking account.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Ask the AI Assistant <em>"Financial goals status"</em> for an executive summary of all active savings buckets.</li>
+                        <li>Contribute via voice or chat anytime by telling the AI: <em>"Add $100 to Vacation goal"</em>.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Financial goals status"
+                </div>
+            </article>
+
+            <!-- 12. Multi-Currency Engine -->
+            <article id="multi-currency-travel" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-green">🌍</div>
+                        <div class="article-title-wrap">
+                            <h2>Multi-Currency Engine & Travel</h2>
+                            <div class="subtitle">Log purchases in foreign currencies with automatic base-currency conversion</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Milestones & Travel</span>
+                </div>
+
+                <p class="article-overview">
+                    ChatExpense features a built-in Multi-Currency Engine supporting USD, EUR, GBP, INR, AED, CAD, SGD, AUD, JPY, and THB. When traveling, log in local currency; the app converts and displays dual totals against your base home currency.
+                </p>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Select Currency</div>
+                            <div class="step-desc">In any transaction form, tap the currency pill to choose the foreign purchase currency.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Automatic Conversion</div>
+                            <div class="step-desc">The app applies verified exchange rates and stores both the original amount and base workspace equivalent.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Dual Currency Display</div>
+                            <div class="step-desc">Transaction lists clearly display both original currency (e.g. €45.00) and base currency (₹4,120.00).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Exchange rates cache locally, allowing accurate conversions even when completely offline on international flights.</li>
+                        <li>Ask the AI: <em>"Convert 100 EUR to USD"</em> or <em>"Exchange rate USD to INR"</em> for instant calculations.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Exchange rate USD to INR"
+                </div>
+            </article>
+
+            <!-- 13. Business Expenses & Tax -->
+            <article id="business-expenses-tax" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-pink">💼</div>
+                        <div class="article-title-wrap">
+                            <h2>Business Expenses & Tax Deductibles</h2>
+                            <div class="subtitle">Separate personal vs business outlays, tag client projects, and claim write-offs</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Business & Splits</span>
+                </div>
+
+                <p class="article-overview">
+                    Freelancers and professionals can tag transactions as Business Expenses, record Client / Project names, and flag Tax Deductible purchases to streamline tax preparation and expense claim reimbursements.
+                </p>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Enable Business Toggle</div>
+                            <div class="step-desc">In the transaction entry form, toggle 'Business Expense' ON.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Project & Tax Deductible</div>
+                            <div class="step-desc">Enter the Client or Project name and toggle 'Tax Deductible' if eligible for write-off.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Filter Lists & Export</div>
+                            <div class="step-desc">Use the Business / Personal filter in the Transactions screen to audit business spending separately.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Ask the AI: <em>"Business expenses this month"</em> or <em>"Tax deductible expenses this year"</em> for instantaneous totals.</li>
+                        <li>Export a branded PDF expense package filtered specifically for business reimbursement claims.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Business expenses this month"
+                </div>
+            </article>
+
+            <!-- 14. Split with Friends -->
+            <article id="split-with-friends" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-pink">🤝</div>
+                        <div class="article-title-wrap">
+                            <h2>Split with Friends ('Who Owes Me')</h2>
+                            <div class="subtitle">Share group dinners and trips with friends and track unsettled receivables</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Business & Splits</span>
+                </div>
+
+                <p class="article-overview">
+                    Split any shared bill with friends, family, or roommates. ChatExpense records your personal share as an expense, stores the friend's share in the 'Who Owes Me' ledger, and allows 1-tap settlement when they pay you back.
+                </p>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Toggle Split Bill</div>
+                            <div class="step-desc">In the expense form, switch 'Split Expense' ON.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Assign Friend's Share</div>
+                            <div class="step-desc">Specify your share and the friend's receivable amount.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Receivables Ledger</div>
+                            <div class="step-desc">The Dashboard displays a dedicated 'Who Owes Me' card showing all outstanding debts.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <div class="step-title">1-Tap Settle</div>
+                            <div class="step-desc">When repaid, tap 'Settle' to record the receipt of funds and clear the debt.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>Ask the AI: <em>"Who owes me money?"</em> to get a swift breakdown of outstanding receivables.</li>
+                        <li>Settle through conversation anytime: <em>"Settle split with Bob"</em>.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "Who owes me money?"
+                </div>
+            </article>
+
+            <!-- 15. PDF & CSV Export -->
+            <article id="pdf-csv-export" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-cyan">📑</div>
+                        <div class="article-title-wrap">
+                            <h2>Branded PDF Claims & CSV Export</h2>
+                            <div class="subtitle">Generate professional expense reports with receipt photo annexures or raw spreadsheets</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Export & Privacy</span>
+                </div>
+
+                <p class="article-overview">
+                    Export your complete financial records at any time. Generate clean CSV files for Excel, Numbers, and tax accountants, or generate branded PDF expense claims complete with itemized tables and high-resolution receipt images.
+                </p>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Open Export View</div>
+                            <div class="step-desc">Select Export & Reports from the navigation menu.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Choose Format & Date Range</div>
+                            <div class="step-desc">Select CSV or PDF and filter by month, quarter, or custom date range.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Filter Scope</div>
+                            <div class="step-desc">Export all records, or filter specifically for Business vs Personal expenses.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Share & Print</div>
+                            <div class="step-desc">Use the iOS Share Sheet to AirDrop, email, or save the document to the Files app.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>PDF exports include thumbnail photo annexures for every linked receipt, perfect for employer reimbursement.</li>
+                        <li>CSV exports preserve full audit trail metadata, exchange rates, and business project tags.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "How to export PDF report?"
+                </div>
+            </article>
+
+            <!-- 16. Security & Privacy -->
+            <article id="security-and-privacy" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-cyan">🔒</div>
+                        <div class="article-title-wrap">
+                            <h2>Biometric App Lock & Privacy Mode</h2>
+                            <div class="subtitle">Face ID / Touch ID protection, auto-lock timeouts, and on-screen amount masking</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Export & Privacy</span>
+                </div>
+
+                <p class="article-overview">
+                    Your privacy is paramount. ChatExpense includes hardware-level Face ID and Touch ID app lock with configurable timeouts, background blur masking when switching apps, and an on-screen Privacy Mode to hide financial amounts in public.
+                </p>
+
+                <div class="screenshot-wrap">
+                    <img src="assets/screenshot-settings.png" alt="Settings & Security Screen" loading="lazy">
+                    <div class="screenshot-caption">Figure 7.1: Settings screen with Biometric Lock, Appearance, and Workspace configuration</div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Enable Biometric Lock</div>
+                            <div class="step-desc">In Settings, toggle 'Face ID / Touch ID Lock' ON.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Configure Auto-Lock Timeout</div>
+                            <div class="step-desc">Select Immediately, 1 Minute, 5 Minutes, or 15 Minutes idle timeout.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Privacy Mode Masking</div>
+                            <div class="step-desc">Tap the Eye icon on the Dashboard to instantly mask balances and amounts with '••••' when in public spaces.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">💡 Pro Tips</div>
+                    <ul>
+                        <li>When switching apps, the app window automatically blurs to prevent sensitive numbers from showing in the iOS App Switcher.</li>
+                        <li>Ask the AI: <em>"How do you work offline?"</em> for a technical overview of local data storage.</li>
+                    </ul>
+                </div>
+
+                <div class="ai-prompt-preview">
+                    💬 Try asking AI: "How to enable Face ID app lock?"
+                </div>
+            </article>
+
+            <!-- 17. FAQ -->
+            <article id="faq" class="guide-article">
+                <div class="article-header">
+                    <div class="header-icon-title">
+                        <div class="article-icon bg-blue">❓</div>
+                        <div class="article-title-wrap">
+                            <h2>Frequently Asked Questions</h2>
+                            <div class="subtitle">Common questions regarding privacy, sync, and troubleshooting</div>
+                        </div>
+                    </div>
+                    <span class="category-pill">Support</span>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">Q</div>
+                        <div class="step-content">
+                            <div class="step-title">Is any of my financial data uploaded to external AI servers?</div>
+                            <div class="step-desc">No. The conversational parser, budget projections, receipt OCR, and financial analytics all execute 100% locally on your device. We do not use third-party cloud AI APIs.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">Q</div>
+                        <div class="step-content">
+                            <div class="step-title">How does iCloud sync work across multiple devices?</div>
+                            <div class="step-desc">When enabled, ChatExpense uses Apple's private CloudKit database linked exclusively to your personal Apple ID. Your data is encrypted in transit and at rest by Apple.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">Q</div>
+                        <div class="step-content">
+                            <div class="step-title">Can I restore data if I change my iPhone?</div>
+                            <div class="step-desc">Yes. By enabling iCloud Sync in Settings, signing into the same Apple ID on your new device will automatically download your workspaces, accounts, transactions, and attachments.</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">Q</div>
+                        <div class="step-content">
+                            <div class="step-title">Can I use the app completely offline without an internet connection?</div>
+                            <div class="step-desc">Yes. ChatExpense is offline-first. Transactions, receipt scans, calculations, and AI commands function perfectly with zero network connectivity.</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
     </div>
-</div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>ChatExpense (Expense mnAI)</strong> &bull; Crafted with privacy-first Apple engineering.</p>
+        <p style="margin-top: 8px;">
+            <a href="privacy.html">Privacy Policy</a> &bull; 
+            <a href="terms.html">Terms of Service</a> &bull; 
+            <a href="#welcome-overview">Back to Top ↑</a>
+        </p>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Smooth Active Link Highlighting
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('article.guide-article');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Quick Search Filter
+        function filterContent() {
+            const query = document.getElementById('quickSearch').value.toLowerCase();
+            const articles = document.querySelectorAll('article.guide-article');
+
+            articles.forEach(article => {
+                const text = article.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
